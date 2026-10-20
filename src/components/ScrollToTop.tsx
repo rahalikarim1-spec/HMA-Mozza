@@ -31,8 +31,9 @@ export default function ScrollToTop() {
         window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
       }
     };
-    document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+    // capture phase: Next <Link> calls preventDefault() in its own handler, which would make us bail out if we ran after it
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
   }, []);
 
   useEffect(() => {
