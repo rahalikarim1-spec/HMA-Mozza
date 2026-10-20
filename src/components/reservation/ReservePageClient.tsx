@@ -12,6 +12,6 @@ export default function ReservePageClient({ lang }: { lang: Lang }) {
     const b = new URLSearchParams(window.location.search).get("branch");
     setInit({ branch: BRANCHES.find((x) => x.slug === b)?.slug ?? null });
   }, []);
-  if (!init) return <p className="py-6" aria-hidden="true">…</p>;
+  if (!init) return <div className="min-h-[46rem]" aria-hidden="true" />;
   return <ReservationFlow lang={lang} initialBranch={init.branch} entryPage="/reserve" />;
 }

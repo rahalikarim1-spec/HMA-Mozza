@@ -12,64 +12,51 @@ English `/`, Thai `/th/`, Arabic `/ar/` (RTL). 5 branch pages, HTML menu, locati
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000
-npm run build        # static export -> ./out
-npm start            # serves ./out (npx serve)
+npm run dev              # http://localhost:3000 (copies menu PDFs to public/menus first)
+npm run build            # static export -> ./out
+npm start                # serves ./out
+npm run check            # post-build: broken internal links/anchors, title<=60, description<=155, 1 H1, noindex, hreflang, canonical, OG, JSON-LD, banner
 npm run typecheck
-npm run review-strings   # regenerates NATIVE_REVIEW.md
-npm run review-priority  # regenerates NATIVE_REVIEW_PRIORITY.md
+npm run review-strings   # NATIVE_REVIEW.md (every Thai/Arabic string)
+npm run review-priority  # NATIVE_REVIEW_PRIORITY.md (Thai: banner, home, Central Park, /menu)
+npm run verify-list      # docs/VERIFY_LIST.md (everything verify:true)
 npm run build:protected  # build + optional Hostinger basic auth (see below)
 ```
 
-`dev`/`build` use `--webpack` on purpose: with Turbopack, every language's font preloads leak into
-every page (Thai + Arabic files in the English `<head>`); webpack preloads only what each language needs.
+`dev`/`build` use `--webpack` on purpose (per-language font preloads; Turbopack leaks all of them into every page).
+Route files under `src/app/(en|th|ar)/` are generated: edit `scripts/routes.json`, run `python3 scripts/gen-routes.py`.
+
+## Site map (EN `/`, TH `/th/`, AR `/ar/`)
+
+`/` · `/menu/` + `/menu/{food,brunch,aperitivo,afternoon-tea}/` · `/locations/` + 6 branches (central-park, emquartier, siam-paragon, iconsiam, central-chidlom, central-world) · `/neapolitan-pizza-bangkok/` · `/pasta-bangkok/` · `/celebrations/` · `/about/` · `/hma-privilege/` · `/delivery/` · `/contact/` · `/blog/` + 2 posts · `/reserve/` (+ modal from every Reserve button) · 404 (one tri-lingual `404.html`).
 
 ## Where to edit things
 
 | What | File |
 |---|---|
-| WhatsApp number, LINE / booking / PDF / Instagram / Facebook placeholders, demo rating, site origin, GTM id | `src/config/site.ts` (top of file) |
-| **Branch data** (address, hours, closing time, map link query, images, 3 signature dishes) | `src/config/site.ts` → `BRANCHES` |
-| **Demo prices** (THB, `null` = "TBC") | `src/config/site.ts` → `PRICES` |
-| Menu structure, categories, dietary tags (`confirm: true` shows "to confirm") | `src/config/menu.ts` |
-| **Colours** (mustard, tomato, cream, ink) | `src/app/globals.css` → `:root` variables |
-| Logo (inline SVG placeholder) | `src/components/Logo.tsx` |
-| All copy EN / TH / AR (typed dictionaries) | `src/content/en.ts`, `th.ts`, `ar.ts` (shape in `dict.ts`) |
-| Branch intro, transit, landmark, branch FAQ per language | `branches` key inside each dictionary |
-| Fonts | `src/fonts/*.ts` |
-| Demo `dataLayer` events | `src/lib/track.ts` |
-| JSON-LD builders | `src/lib/jsonld.ts` |
-| Images | `public/images/*.jpg` (grey placeholders — overwrite with real photos, keep names/ratios) |
+| Placeholder links (WhatsApp, LINE, delivery), social URLs, group links, awards flag, rating, site origin | `src/config/site.ts` (top) |
+| **Branches** (address parts, floor, closing time, `verify` flags, map position) | `src/config/site.ts` → `BRANCHES` |
+| **Menu data** (4 menus, transcribed) | `src/data/menus/*.json` + `docs/MENU_REVIEW.md` |
+| Menu descriptions TH/AR | `src/data/menus/descriptions.i18n.json` |
+| Menu UI / category names | `src/content/menus-ui.ts` |
+| Signature dishes (home, branches) | `src/config/signature.ts` |
+| Site copy EN/TH/AR | `src/content/{en,th,ar}.ts`, `branches.ts`, `landing.ts`, `company.ts`, `reservation-ui.ts` |
+| Reservation logic (hours range, simulated availability, zones) | `src/lib/reservation.ts` |
+| Colours | `src/app/globals.css` `:root` |
+| Logo (placeholder SVG) | `src/components/Logo.tsx` |
+| Tracking | `src/lib/track.ts` → `docs/TRACKING_PLAN.md` |
 
-Branch opening/closing times: `opens` is `"TBC"` for every branch until provided; `closes` is set per brief
-(Central Chidlom: `"TBC"`). Per-day exceptions: `hoursOverrides` on a branch.
+## Rules this build follows
 
-Booking links: `bookingUrlFor(slug)` turns `#reserve-demo` into `#reserve-demo-<slug>`; a real URL gets `?branch=<slug>`.
+- **No invented facts.** Hours, addresses, phones, awards, prices come only from `source/menus/*.pdf`, `src/config` or `/context`. Anything else is `null`/`TBC` with `verify: true` and **hidden** in the UI (`shown()` in `site.ts`). Full list: `docs/VERIFY_LIST.md`.
+- **Pork / alcohol labelled** in all languages; vegetarian / spicy tags only from the icons printed on Mozza's food menu.
+- **Prices from the PDFs, THB**, with the note "Prices as published by Mozza — demo" (translated).
+- **Reservation flow sends/stores nothing**: no network request, no cookies/localStorage/sessionStorage, no payment; confirmation says "Demo — no reservation has been made". The `.ics` is built locally with no personal data.
+- Every page: `noindex, nofollow`, demo banner (EN/TH/AR); `robots.txt` allows crawling (a crawler must fetch a page to see its `noindex`).
 
-## What the demo contains (per brief)
+## Docs
 
-- Fixed top banner (EN/TH/AR), `noindex, nofollow` meta on every page, `robots.txt` (allow + sitemap link), `sitemap.xml` with hreflang alternates.
-- Language switcher (EN | ไทย | العربية) on every page; keeps you on the same page. hreflang `en/th/ar/x-default`, self-canonicals.
-- Mobile sticky bottom bar (Reserve / WhatsApp / LINE / Directions): WhatsApp first for EN & AR, LINE first for TH;
-  branch pages pre-set Reserve, Directions and the WhatsApp message to the branch. On non-branch pages "Directions" opens the locations hub.
-- Pork / alcohol labelled in all three languages. "Vegetarian" (risotto) and "may contain alcohol" (tiramisu) are marked *to confirm*.
-  No dietary-certification claims are made anywhere (the word is deliberately absent from the codebase).
-- Every price is labelled "Demo price" and comes from config.
-- Tracking: `window.dataLayer` + `console.log("[dataLayer]", …)` for `reservation_click`, `whatsapp_click`, `line_click`,
-  `directions_click` (`{branch, language}`; `branch` is `"any"` outside branch pages), `menu_view`, `pdf_download`
-  (`{language}`), `language_switch` (`{from, to}`). GTM snippet is commented out with `GTM-XXXXXXX` (`src/components/RootDocument.tsx`).
-- JSON-LD: Organization (parent Hospitality Management Asia), Restaurant per branch, Menu/MenuSection/MenuItem, BreadcrumbList, FAQPage.
-  `openingHours` is a placeholder string (`Mo-Su TBC-22:00`), not valid schema.org until real times are in config.
-  No `aggregateRating` / `telephone` is emitted.
-
-## Unverified transit / landmark text (hidden)
-
-The transit line and landmark text for every branch was added by the demo author and is unconfirmed. Each branch in
-`BRANCHES` has `transit: { verify: true }` and `landmark: { verify: true }`. While `true`, **nothing is rendered**; the
-"Getting here" block shows only a "Directions on Google Maps" link. Confirm a branch's text (in `src/content/en.ts|th.ts|ar.ts`,
-`branches.<slug>.transit` / `.landmark`) and flip the flag to `false` to show it.
-Not covered by the flag (also unconfirmed, still visible): postcodes and sub-district names in `BRANCHES`, and the
-district wording inside the Central Park intro paragraphs ("Rama IV Road where Silom meets the edge of Lumphini").
+`docs/SEO_PLAN.md` · `docs/TRACKING_PLAN.md` · `docs/MENU_REVIEW.md` · `docs/VERIFY_LIST.md` · `NATIVE_REVIEW.md` · `NATIVE_REVIEW_PRIORITY.md`
 
 ## Optional password protection for deployment
 
@@ -136,6 +123,6 @@ Dish names are intentionally kept in their original Latin form in all languages.
 
 ## Measured (Lighthouse mobile, local static server with gzip)
 
-Performance 92–99, Accessibility 100, Best Practices 100, CLS 0 on EN/TH/AR home, menu, locations hub and branch pages.
-**SEO scores ~69, and that is expected:** the only failing audit is `is-crawlable`, caused by the mandatory `noindex`.
-Everything else in the SEO category passes. Expect Performance to vary with hosting — serve with gzip/brotli.
+Accessibility 100, Best Practices 100, CLS 0 on all measured pages. Performance (several runs): home 86–92, Central Park 95, /menu/food 94, /reserve 89–94 (mobile throttled; run-to-run variance ±4).
+**SEO ~66–69 is expected:** the only failing audit is `is-crawlable`, caused by the mandatory `noindex`.
+Preview-only: do not merge to production.

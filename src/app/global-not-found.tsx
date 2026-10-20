@@ -25,12 +25,13 @@ export default function GlobalNotFound() {
         <Banner d={getDict("en")} />
         <main className="mx-auto max-w-3xl px-4 py-10">
           <Logo className="h-16 w-auto" />
-          {LANGS.map((l: Lang) => {
+          {LANGS.map((l: Lang, idx: number) => {
+            const H = idx === 0 ? "h1" : "h2";
             const n = company[l].notFound;
             const d = getDict(l);
             return (
               <section key={l} lang={d.htmlLang} dir={d.dir} className="mt-8 rounded-sm bg-cream p-6">
-                <h1 className="text-3xl">404 — {n.h1}</h1>
+                <H className="text-3xl">404 — {n.h1}</H>
                 <p className="mt-2">{n.text}</p>
                 <p className="mt-4 flex flex-wrap gap-4 font-semibold underline underline-offset-4">
                   <a href={pathFor(l)}>{n.home}</a>

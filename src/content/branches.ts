@@ -60,7 +60,7 @@ const FACTS: Record<BranchSlug, Facts> = {
     imageAlt: {
       en: "Placeholder photo of Mozza Central Chidlom",
       th: "ภาพตัวอย่างแทนของ Mozza Central Chidlom",
-      ar: "صورة نائبة لـ Mozza Central Chidlom",
+      ar: "صورة نائبة لفرع Mozza Central Chidlom",
     },
   },
   "central-world": {
@@ -70,7 +70,7 @@ const FACTS: Record<BranchSlug, Facts> = {
     imageAlt: {
       en: "Placeholder photo of Mozza CentralWorld",
       th: "ภาพตัวอย่างแทนของ Mozza CentralWorld",
-      ar: "صورة نائبة لـ Mozza CentralWorld",
+      ar: "صورة نائبة لفرع Mozza CentralWorld",
     },
   },
 };
@@ -78,7 +78,7 @@ const FACTS: Record<BranchSlug, Facts> = {
 interface Tpl {
   h1: (n: string, mall: string) => string;
   title: (n: string, mall: string) => string;
-  description: (n: string, mall: string, road: string | null) => string;
+  description: (n: string, mall: string) => string;
   intro: Record<BranchSlug, string[]>;
   transit: Partial<Record<BranchSlug, string>>;
   landmark: Partial<Record<BranchSlug, string>>;
@@ -89,8 +89,8 @@ const TPL: Record<Lang, Tpl> = {
   en: {
     h1: (n, mall) => `${n} — Italian Restaurant at ${mall}`,
     title: (n) => `${n} | Italian Restaurant Bangkok`,
-    description: (n, mall, road) =>
-      `${n} at ${mall}${road ? `, ${road}` : ""}: Italian trattoria with handmade pasta and Neapolitan pizza. See menus, directions and reserve (demo).`,
+    description: (n, mall) =>
+      `${n} at ${mall}: Italian trattoria with handmade pasta and Neapolitan pizza. See menus, get directions and reserve (concept demo).`,
     intro: {
       "central-park": [
         "Mozza Central Park is on the ground floor of Dusit Central Park, on Rama IV Road in the Silom–Sathorn–Lumphini area. Mozza describes the spot as perfectly situated beside Lumphini Park, where Bangkok's vibrant energy meets its most treasured green sanctuary.",
@@ -118,8 +118,8 @@ const TPL: Record<Lang, Tpl> = {
   th: {
     h1: (n, mall) => `${n} — ร้านอาหารอิตาเลียน ${mall}`,
     title: (n) => `${n} | ร้านอาหารอิตาเลียน กรุงเทพฯ`,
-    description: (n, mall, road) =>
-      `${n} ที่${mall}${road ? ` ${road}` : ""}: ทราตตอเรียอิตาเลียน พาสต้าทำมือ พิซซ่านาโปลี ดูเมนู เส้นทาง และจองโต๊ะ (เดโม)`,
+    description: (n, mall) =>
+      `${n} ที่${mall}: ทราตตอเรียอิตาเลียน พาสต้าทำมือ พิซซ่านาโปลี ดูเมนู เส้นทาง และจองโต๊ะ (เดโมแนวคิด)`,
     intro: {
       "central-park": [
         "Mozza Central Park ตั้งอยู่ชั้นล่างของดุสิต เซ็นทรัล พาร์ค ถนนพระราม 4 ย่านสีลม–สาทร–ลุมพินี Mozza อธิบายว่าทำเลอยู่ข้างสวนลุมพินีอย่างลงตัว จุดที่พลังชีวิตของกรุงเทพฯ มาพบกับพื้นที่สีเขียวอันล้ำค่าที่สุดของเมือง",
@@ -147,8 +147,8 @@ const TPL: Record<Lang, Tpl> = {
   ar: {
     h1: (n, mall) => `${n} — مطعم إيطالي في ${mall}`,
     title: (n) => `${n} | مطعم إيطالي في بانكوك`,
-    description: (n, mall, road) =>
-      `${n} في ${mall}${road ? `، ${road}` : ""}: تراتوريا إيطالية بمعكرونة منزلية وبيتزا نابولية. القوائم والاتجاهات والحجز (تجريبي).`,
+    description: (n, mall) =>
+      `${n} في ${mall}: تراتوريا إيطالية بمعكرونة منزلية وبيتزا نابولية. القوائم والاتجاهات والحجز (عرض تجريبي).`,
     intro: {
       "central-park": [
         "يقع Mozza Central Park في الطابق الأرضي من دوسيت سنترال بارك على شارع راما 4 في منطقة سيلوم وساثورن ولومبيني. ويصف Mozza الموقع بأنه يقع بمحاذاة حديقة لومبيني، حيث تلتقي حيوية بانكوك بأثمن ملاذ أخضر فيها.",
@@ -186,7 +186,7 @@ export function branchTexts(lang: Lang): Record<BranchSlug, BranchText> {
       district: road,
       h1: t.h1(f.name, f.mall[lang]),
       metaTitle: t.title(slug === "central-park" ? "Mozza Dusit Central Park" : f.name, f.mall[lang]),
-      metaDescription: t.description(f.name, f.mall[lang], road),
+      metaDescription: t.description(f.name, f.mall[lang]),
       imageAlt: f.imageAlt[lang],
       intro: t.intro[slug],
       transit: t.transit[slug] ?? null,

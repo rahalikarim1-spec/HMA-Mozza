@@ -233,10 +233,10 @@ export const company: Record<Lang, CompanyText> = {
     },
     privilege: {
       title: "HMA Privilege | مطاعم Hospitality Management Asia",
-      description: "HMA Privilege مرتبط بـ Hospitality Management Asia، المجموعة التي تقف خلف Mozza ومطاعمها الشقيقة. تفاصيل البرنامج بانتظار التأكيد.",
+      description: "HMA Privilege مرتبط مع Hospitality Management Asia، المجموعة التي تقف خلف Mozza ومطاعمها الشقيقة. تفاصيل البرنامج بانتظار التأكيد.",
       h1: "HMA Privilege",
       body: [
-        "HMA Privilege مرتبط بـ Hospitality Management Asia (HMA)، المجموعة التي تقف خلف Mozza ومطاعمها الشقيقة.",
+        "HMA Privilege مرتبط مع Hospitality Management Asia (HMA)، المجموعة التي تقف خلف Mozza ومطاعمها الشقيقة.",
         "تفاصيل البرنامج — المزايا وشروط الأهلية وطريقة الانضمام — لا تُعرض حتى يتم تأكيدها.",
       ],
       link: "زيارة Hospitality Management Asia (hmgtasia.net)",
@@ -252,9 +252,9 @@ export const company: Record<Lang, CompanyText> = {
       branchesTitle: "اختر فرعك",
     },
     contact: {
-      title: "اتصل بـ Mozza | مطعم إيطالي في بانكوك",
+      title: "تواصل مع Mozza | مطعم إيطالي في بانكوك",
       description: "تواصل مع Mozza بانكوك: راسل عبر واتساب أو LINE (روابط تجريبية)، واعثر على كل فرع واحصل على الاتجاهات، أو تابع Mozza عبر الإنترنت.",
-      h1: "اتصل بـ Mozza",
+      h1: "تواصل مع Mozza",
       intro: "راسل الفريق أو اعثر على فرع أو تابع Mozza عبر الإنترنت. لا تحتوي هذه الصفحة على نموذج اتصال ولا تجمع أي بيانات.",
       messageTitle: "راسلنا (روابط تجريبية)",
       visitTitle: "زر أحد الفروع",

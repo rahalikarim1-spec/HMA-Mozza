@@ -9,8 +9,10 @@
     "start": "npx serve out",
     "build:protected": "npm run build && node scripts/protect-hostinger.mjs",
     "typecheck": "tsc --noEmit",
+    "check": "node scripts/check-site.mjs",
     "review-strings": "tsx scripts/native-review.ts",
-    "review-priority": "tsx scripts/native-review-priority.ts"
+    "review-priority": "tsx scripts/native-review-priority.ts",
+    "verify-list": "tsx scripts/verify-list.ts"
   },
   "dependencies": {
     "next": "^16.4.2",
