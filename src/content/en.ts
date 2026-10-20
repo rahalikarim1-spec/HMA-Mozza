@@ -109,6 +109,7 @@ export const en: Dict = {
     facebook: "Facebook",
     part: "Part of Hospitality Management Asia",
     disclaimer: "Private concept demo. Not the official Mozza website. Not indexed.",
+    photos: "Demo photos — for concept demonstration only.",
   },
   menuPage: {
     h1: "Mozza Menu — Italian Trattoria in Bangkok",
@@ -175,6 +176,7 @@ export const en: Dict = {
     mapAlt: "Placeholder map image showing the branch location",
     mapCaption: "Static map placeholder — no map API key used.",
     gettingHere: "Getting here",
+    directionsFallback: "Directions on Google Maps",
     transitLabel: "Nearest BTS / MRT",
     landmarkLabel: "Landmark",
     aboutTitle: "About this branch",
@@ -199,10 +201,10 @@ export const en: Dict = {
       intro: [
         "Mozza Central Park sits on the ground floor of Dusit Central Park, on Rama IV Road where Silom meets the edge of Lumphini. It is a natural stop for people working in the Silom, Sathorn and Lumphini business district.",
         "Weekday lunch suits a quick plate of handmade pasta or a thin wood-fired pizza between meetings. In the evening the same menu works for a relaxed dinner after work, or a table with friends and family.",
-        "Check the menu for pork and alcohol labels before you book, and use the Reserve button to pick your table. Opening times, the nearest station and parking details on this page are demo placeholders.",
+        "Check the menu for pork and alcohol labels before you book, and use the Reserve button to pick your table. Opening times and parking details on this page are demo placeholders.",
       ],
-      transit: "BTS Sala Daeng / MRT Si Lom — placeholder, walking time to be verified",
-      landmark: "Opposite Lumphini Park — placeholder, to be verified",
+      transit: "BTS Sala Daeng / MRT Si Lom",
+      landmark: "Opposite Lumphini Park",
       faq: [
         {
           q: "Is there parking at Dusit Central Park?",
@@ -230,8 +232,8 @@ export const en: Dict = {
         "Mozza EmQuartier serves Italian trattoria dishes in the Phrom Phong area of Sukhumvit Road, in the heart of one of Bangkok's busiest shopping and dining districts.",
         "Opening hours, the exact address number and transit details are demo placeholders to be verified.",
       ],
-      transit: "BTS Phrom Phong — placeholder, to be verified",
-      landmark: "EmQuartier, Sukhumvit Rd — placeholder, to be verified",
+      transit: "BTS Phrom Phong",
+      landmark: "EmQuartier, Sukhumvit Rd",
       faq: genericFaq("Mozza EmQuartier"),
     },
     "siam-paragon": {
@@ -246,8 +248,8 @@ export const en: Dict = {
         "Mozza Siam Paragon is on the ground floor of Siam Paragon on Rama I Road, in the Siam shopping district.",
         "Opening hours and transit details are demo placeholders to be verified.",
       ],
-      transit: "BTS Siam — placeholder, to be verified",
-      landmark: "Siam Paragon, Rama I Rd — placeholder, to be verified",
+      transit: "BTS Siam",
+      landmark: "Siam Paragon, Rama I Rd",
       faq: genericFaq("Mozza Siam Paragon"),
     },
     iconsiam: {
@@ -262,8 +264,8 @@ export const en: Dict = {
         "Mozza ICONSIAM is on the ground floor of ICONSIAM on Charoen Nakhon Road, in the Khlong San district on the Chao Phraya riverside.",
         "Opening hours and transit details are demo placeholders to be verified.",
       ],
-      transit: "Gold Line / BTS Krung Thon Buri — placeholder, to be verified",
-      landmark: "ICONSIAM, Chao Phraya riverside — placeholder, to be verified",
+      transit: "Gold Line / BTS Krung Thon Buri",
+      landmark: "ICONSIAM, Chao Phraya riverside",
       faq: genericFaq("Mozza ICONSIAM"),
     },
     "central-chidlom": {
@@ -277,8 +279,8 @@ export const en: Dict = {
       intro: [
         "Mozza Central Chidlom is listed here as a placeholder branch in the Chidlom and Ploenchit area. Its address and opening hours are to be confirmed.",
       ],
-      transit: "BTS Chit Lom — placeholder, to be verified",
-      landmark: "Central Chidlom — placeholder, to be verified",
+      transit: "BTS Chit Lom",
+      landmark: "Central Chidlom",
       faq: genericFaq("Mozza Central Chidlom"),
     },
   },

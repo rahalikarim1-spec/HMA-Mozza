@@ -61,6 +61,7 @@ export interface Dict {
     facebook: string;
     part: string;
     disclaimer: string;
+    photos: string;
   };
   menuPage: {
     h1: string;
@@ -82,6 +83,7 @@ export interface Dict {
     mapAlt: string;
     mapCaption: string;
     gettingHere: string;
+    directionsFallback: string;
     transitLabel: string;
     landmarkLabel: string;
     aboutTitle: string;

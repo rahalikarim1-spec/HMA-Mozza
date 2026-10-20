@@ -36,6 +36,8 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "deploy",
+    "node_modules",
+    "scripts/protect-hostinger.mjs"
   ]
 }

@@ -41,6 +41,8 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
   const hub = pathFor(lang, "locations");
   const others = BRANCHES.filter((x) => x.slug !== slug);
   const defaultHours = hoursText(b.opens, b.closes, d);
+  const showTransit = !b.transit.verify;
+  const showLandmark = !b.landmark.verify;
 
   return (
     <PageShell lang={lang} route={`locations/${slug}`} branch={slug}>
@@ -137,16 +139,36 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
               <span className="text-base">{t.mall} · {t.district}</span>
             </address>
             <h3 className="mt-8 text-2xl">{d.branchPage.gettingHere}</h3>
-            <dl className="mt-3 space-y-3">
-              <div>
-                <dt className="text-sm font-bold uppercase tracking-wide">{d.branchPage.transitLabel}</dt>
-                <dd>{t.transit}</dd>
-              </div>
-              <div>
-                <dt className="text-sm font-bold uppercase tracking-wide">{d.branchPage.landmarkLabel}</dt>
-                <dd>{t.landmark}</dd>
-              </div>
-            </dl>
+            {/* Unconfirmed transit/landmark text (verify: true in BRANCHES) is never rendered. */}
+            {showTransit || showLandmark ? (
+              <dl className="mt-3 space-y-3">
+                {showTransit && (
+                  <div>
+                    <dt className="text-sm font-bold uppercase tracking-wide">{d.branchPage.transitLabel}</dt>
+                    <dd>{t.transit}</dd>
+                  </div>
+                )}
+                {showLandmark && (
+                  <div>
+                    <dt className="text-sm font-bold uppercase tracking-wide">{d.branchPage.landmarkLabel}</dt>
+                    <dd>{t.landmark}</dd>
+                  </div>
+                )}
+              </dl>
+            ) : (
+              <p className="mt-3">
+                <TrackedLink
+                  href={directionsUrl(b)}
+                  external
+                  event="directions_click"
+                  params={params}
+                  className="inline-flex min-h-11 items-center gap-2 font-semibold underline underline-offset-4"
+                >
+                  <Icon name="pin" className="h-5 w-5" />
+                  {d.branchPage.directionsFallback}
+                </TrackedLink>
+              </p>
+            )}
           </div>
           <figure>
             <Image

@@ -7,8 +7,10 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "npx serve out",
+    "build:protected": "npm run build && node scripts/protect-hostinger.mjs",
     "typecheck": "tsc --noEmit",
-    "review-strings": "tsx scripts/native-review.ts"
+    "review-strings": "tsx scripts/native-review.ts",
+    "review-priority": "tsx scripts/native-review-priority.ts"
   },
   "dependencies": {
     "next": "^16.4.2",

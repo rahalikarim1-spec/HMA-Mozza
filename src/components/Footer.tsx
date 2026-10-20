@@ -44,6 +44,8 @@ export default function Footer({ lang, d }: { lang: Lang; d: Dict }) {
       </div>
       <p className="border-t border-cream/20 px-4 py-4 text-center text-xs text-cream/80">
         {d.footer.disclaimer}
+        <br />
+        {d.footer.photos}
       </p>
     </footer>
   );

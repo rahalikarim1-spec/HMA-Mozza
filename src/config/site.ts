@@ -71,6 +71,13 @@ export interface BranchConfig {
   mapsQuery: string;
   image: string;
   mapImage: string;
+  /**
+   * Transit line and landmark texts (per language, in src/content/*.ts) were ADDED by the
+   * demo author and are unconfirmed. While `verify: true` they are NOT shown anywhere in
+   * the UI; the page falls back to "Directions on Google Maps". Set to false once confirmed.
+   */
+  transit: { verify: boolean };
+  landmark: { verify: boolean };
   /** Three dishes highlighted on the branch page (ids from the menu). */
   signature: [DishId, DishId, DishId];
 }
@@ -88,6 +95,8 @@ export const BRANCHES: BranchConfig[] = [
     mapsQuery: "Mozza Dusit Central Park, 946 Rama IV Rd, Bangkok",
     image: "/images/branch-central-park.jpg",
     mapImage: "/images/map-placeholder.jpg",
+    transit: { verify: true },
+    landmark: { verify: true },
     signature: ["burrata", "truffle-tagliolini", "carpi-salerno"],
   },
   {
@@ -102,6 +111,8 @@ export const BRANCHES: BranchConfig[] = [
     mapsQuery: "Mozza EmQuartier, 693 Sukhumvit Rd, Bangkok",
     image: "/images/branch-emquartier.jpg",
     mapImage: "/images/map-placeholder.jpg",
+    transit: { verify: true },
+    landmark: { verify: true },
     signature: ["carpi-salerno", "truffle-risotto", "tiramisu"],
   },
   {
@@ -116,6 +127,8 @@ export const BRANCHES: BranchConfig[] = [
     mapsQuery: "Mozza Siam Paragon, 991 Rama I Rd, Bangkok",
     image: "/images/branch-siam-paragon.jpg",
     mapImage: "/images/map-placeholder.jpg",
+    transit: { verify: true },
+    landmark: { verify: true },
     signature: ["burrata", "lobster-spaghetti", "tiramisu"],
   },
   {
@@ -130,6 +143,8 @@ export const BRANCHES: BranchConfig[] = [
     mapsQuery: "Mozza ICONSIAM, 299 Charoen Nakhon Rd, Bangkok",
     image: "/images/branch-iconsiam.jpg",
     mapImage: "/images/map-placeholder.jpg",
+    transit: { verify: true },
+    landmark: { verify: true },
     signature: ["truffle-tagliolini", "truffle-risotto", "tiramisu"],
   },
   {
@@ -143,6 +158,8 @@ export const BRANCHES: BranchConfig[] = [
     mapsQuery: "Mozza Central Chidlom, Bangkok",
     image: "/images/branch-central-chidlom.jpg",
     mapImage: "/images/map-placeholder.jpg",
+    transit: { verify: true },
+    landmark: { verify: true },
     signature: ["burrata", "carpi-salerno", "lobster-spaghetti"],
   },
 ];
