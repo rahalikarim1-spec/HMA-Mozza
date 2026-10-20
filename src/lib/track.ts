@@ -9,8 +9,6 @@ export type TrackName =
   | "pdf_download"
   | "language_switch"
   | "strategy_button_click"
-  | "strategy_unlock_success"
-  | "strategy_unlock_fail"
   | "booking_start"
   | "booking_step"
   | "booking_zone_select"

@@ -1,4 +1,4 @@
-// Authoring file for the /strategy page. Build-time only: imported by scripts/encrypt-strategy.mjs, NEVER by app code.
+// Authoring file for the /strategy page: imported by the server page src/app/(en)/strategy/page.tsx (rendered at build time).
 // Every text is written as T(english, french) so both languages stay side by side. No names of HMA people, no service prices.
 import * as D from "./data.mjs";
 

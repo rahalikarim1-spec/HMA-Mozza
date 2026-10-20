@@ -110,20 +110,16 @@ if (locs.includes("/strategy/")) errors.push("sitemap must NOT list /strategy/")
 for (const u of Object.keys(html)) if (u !== "/strategy/" && isCoreUrl(u) && !locs.includes(u)) errors.push(`page ${u} missing from sitemap`);
 function isCoreUrl(u) { return u !== "/404/" && u !== "/404.html" && !u.startsWith("/_not-found"); }
 
-// --- strategy content must never appear in plain text anywhere in the export
+// --- /strategy: public URL, but noindex + not in sitemap + really rendered
 {
-  const { buildDoc } = await import("../strategy/doc.mjs");
-  const strings = [];
-  const walk = (x) => { if (typeof x === "string") { if (x.length >= 30) strings.push(x); } else if (Array.isArray(x)) x.forEach(walk); else if (x && typeof x === "object") Object.values(x).forEach(walk); };
-  // the button label (= document title) is intentionally public, so it is excluded from the leak scan
-  for (const L of ["en", "fr"]) { const d = buildDoc(L); const pub = d.ui.title; const clone = JSON.parse(JSON.stringify(d)); clone.ui.title = ""; walk(clone); void pub; }
-  const sample = strings.filter((_, i) => i % Math.max(1, Math.floor(strings.length / 120)) === 0);
-  const files = [];
-  (function w(d) { for (const f of readdirSync(d)) { const p = join(d, f); if (statSync(p).isDirectory()) w(p); else if (/\.(html|js|json|txt|css|xml)$/.test(f) && !p.includes("strategy-data")) files.push(p); } })(OUT);
-  let leaked = 0;
-  for (const f of files) { const c = readFileSync(f, "utf8"); for (const s of sample) if (c.includes(s)) { errors.push(`LEAK: strategy text found in plain text in ${f}: "${s.slice(0, 50)}…"`); leaked++; } }
-  const payload = join(OUT, "strategy-data", "payload.json");
-  console.log(existsSync(payload) ? `strategy payload present (encrypted); scanned ${files.length} files for ${sample.length} sample sentences: ${leaked} leaks` : "strategy payload NOT built (STRATEGY_PASSCODE unset)");
+  const st = html["/strategy/"];
+  if (!st) errors.push("/strategy/ page missing");
+  else {
+    const txt = strip(st);
+    if (!txt.includes("Executive summary")) errors.push("/strategy/: content not rendered at build time");
+    if (!/<meta name="robots" content="noindex, nofollow"/.test(st)) errors.push("/strategy/: missing noindex,nofollow");
+  }
+  console.log(st ? "/strategy/ rendered as a normal static page (noindex, not in sitemap)" : "");
 }
 console.log(`checked ${Object.keys(html).length} pages, ${linkCount} internal links`);
 warn.forEach((w) => console.log("WARN", w));

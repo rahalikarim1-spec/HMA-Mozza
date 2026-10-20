@@ -6,7 +6,7 @@ A shorter first-pass list for Thai is in `NATIVE_REVIEW_PRIORITY.md`.
 
 # Thai (th)
 
-## Thai (th) — site dictionary (nav, home, branches, FAQ, common) (185 strings)
+## Thai (th) — site dictionary (nav, home, branches, FAQ, common) (177 strings)
 
 <!-- NEEDS NATIVE REVIEW -->
 
@@ -102,14 +102,6 @@ A shorter first-pass list for Thai is in `NATIVE_REVIEW_PRIORITY.md`.
 | `branchPage.faqTitle` | คำถามเกี่ยวกับสาขา |
 | `branchPage.otherTitle` | สาขา Mozza อื่น ๆ |
 | `strategy.button` | กลยุทธ์การเติบโตสำหรับร้านอาหารหลายสาขา |
-| `strategy.dialogTitle` | หน้ากลยุทธ์ส่วนตัว |
-| `strategy.passcodeLabel` | รหัสผ่าน |
-| `strategy.open` | เปิด |
-| `strategy.cancel` | ยกเลิก |
-| `strategy.wrong` | รหัสผ่านไม่ถูกต้อง โปรดลองอีกครั้ง |
-| `strategy.unavailable` | เนื้อหากลยุทธ์ไม่พร้อมใช้งานในเวอร์ชันนี้ |
-| `strategy.checking` | กำลังตรวจสอบ… |
-| `strategy.hint` | กรอกรหัสผ่านที่คุณได้รับ |
 | `strategy.back` | ← กลับไปที่เดโม |
 | `sticky.label` | ติดต่อด่วน |
 | `sticky.reserve` | จองโต๊ะ |
@@ -720,7 +712,7 @@ A shorter first-pass list for Thai is in `NATIVE_REVIEW_PRIORITY.md`.
 
 # Arabic (ar)
 
-## Arabic (ar) — site dictionary (nav, home, branches, FAQ, common) (185 strings)
+## Arabic (ar) — site dictionary (nav, home, branches, FAQ, common) (177 strings)
 
 <!-- NEEDS NATIVE REVIEW -->
 
@@ -816,14 +808,6 @@ A shorter first-pass list for Thai is in `NATIVE_REVIEW_PRIORITY.md`.
 | `branchPage.faqTitle` | أسئلة عن الفرع |
 | `branchPage.otherTitle` | فروع Mozza الأخرى |
 | `strategy.button` | استراتيجية النمو للمطاعم متعددة الفروع |
-| `strategy.dialogTitle` | صفحة الاستراتيجية الخاصة |
-| `strategy.passcodeLabel` | رمز الدخول |
-| `strategy.open` | فتح |
-| `strategy.cancel` | إلغاء |
-| `strategy.wrong` | رمز الدخول غير صحيح. يرجى المحاولة مرة أخرى. |
-| `strategy.unavailable` | محتوى الاستراتيجية غير متاح في هذه النسخة. |
-| `strategy.checking` | جارٍ التحقق… |
-| `strategy.hint` | أدخل رمز الدخول الذي حصلت عليه. |
 | `strategy.back` | ← العودة إلى العرض التجريبي |
 | `sticky.label` | تواصل سريع |
 | `sticky.reserve` | احجز |
