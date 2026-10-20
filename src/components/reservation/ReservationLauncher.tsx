@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { BRANCHES } from "@/config/site";
 import { reservationUi } from "@/content/reservation-ui";
@@ -18,6 +19,13 @@ export default function ReservationLauncher({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState<{ branch: BranchSlug | null; entry: string } | null>(null);
   const ref = useRef<HTMLDialogElement>(null);
   const t = reservationUi[lang];
+  const pathname = usePathname();
+
+  // Navigating away (e.g. "View menu") must close the modal and fully release the scroll lock.
+  useEffect(() => {
+    setOpen(null);
+    document.body.style.overflow = "";
+  }, [pathname]);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {

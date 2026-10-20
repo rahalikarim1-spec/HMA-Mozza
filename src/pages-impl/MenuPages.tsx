@@ -182,7 +182,7 @@ export function MenuDetailPage({ lang, id }: { lang: Lang; id: MenuId }) {
         </div>
       </div>
 
-      <div className="fixed bottom-6 end-6 z-40 hidden md:block">
+      <div className="fixed bottom-24 end-6 z-40 hidden md:block">
         <TrackedLink
           href={bookingHref(lang)}
           event="reservation_click"

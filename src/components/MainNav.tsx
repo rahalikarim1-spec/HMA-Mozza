@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import TrackedLink from "./TrackedLink";
 import type { BranchSlug, Lang } from "@/content/types";
@@ -37,6 +38,14 @@ export default function MainNav({ items, reserve, lang, navLabel, menuButton, cl
   const navRef = useRef<HTMLElement>(null);
   const dlg = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+
+  // Close menus and release the body scroll lock whenever the route changes.
+  useEffect(() => {
+    setDrawer(false);
+    setOpenIdx(null);
+    document.body.style.overflow = "";
+  }, [pathname]);
 
   useEffect(() => {
     const onDoc = (e: MouseEvent) => {
@@ -66,7 +75,7 @@ export default function MainNav({ items, reserve, lang, navLabel, menuButton, cl
 
   const closeDrawer = () => {
     setDrawer(false);
-    trigger.current?.focus();
+    trigger.current?.focus({ preventScroll: true });
   };
 
   return (

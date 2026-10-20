@@ -54,6 +54,15 @@ Route files under `src/app/(en|th|ar)/` are generated: edit `scripts/routes.json
 - **Reservation flow sends/stores nothing**: no network request, no cookies/localStorage/sessionStorage, no payment; confirmation says "Demo — no reservation has been made". The `.ics` is built locally with no personal data.
 - Every page: `noindex, nofollow`, demo banner (EN/TH/AR); `robots.txt` allows crawling (a crawler must fetch a page to see its `noindex`).
 
+## Private /strategy page (encrypted)
+
+A private audit-and-proposal page (EN | FR toggle, 21 sections, calculator, print-to-PDF) reachable **only** through the sticky "Growth strategy for multi-location restaurants" button (EN/FR/TH/AR labels) and a passcode dialog.
+
+- **Content is encrypted at build time**: authoring files `strategy/data.mjs` + `strategy/doc.mjs` (never imported by app code) -> `scripts/encrypt-strategy.mjs` -> `public/strategy-data/payload.json` (AES-256-GCM; key = PBKDF2-SHA256, 600 000 iterations, random salt/IV). The browser decrypts with WebCrypto. The exported HTML/JS contain **no** strategy text; `npm run check` scans for leaks.
+- **Set the passcode as an environment variable at build time**: `STRATEGY_PASSCODE='a long passphrase'` (Vercel: Project -> Settings -> Environment Variables; Hostinger: export it before `npm run build`). Without it no payload is built and `/strategy` says the content is not available in this build. Optional: `STRATEGY_EUR_THB` (default `38`) for the "≈ THB" bid conversion (shown as "rate to verify").
+- **Security notes**: this is real encryption, but the encrypted file is public, so strength = passphrase strength (offline guessing is possible; use 16+ random characters). After a successful unlock the passcode is kept in `sessionStorage` for that tab only so `/strategy` opens without asking again. Events `strategy_button_click`, `strategy_unlock_success`, `strategy_unlock_fail` never include the passcode.
+- `/strategy` is `noindex, nofollow`, not in `sitemap.xml`, not in the nav/footer. FR copy is written for business French and still needs a native read; TH/AR button/dialog strings are in `NATIVE_REVIEW.md`.
+
 ## Docs
 
 `docs/SEO_PLAN.md` · `docs/TRACKING_PLAN.md` · `docs/MENU_REVIEW.md` · `docs/VERIFY_LIST.md` · `NATIVE_REVIEW.md` · `NATIVE_REVIEW_PRIORITY.md`
