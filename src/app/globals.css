@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   BRAND COLOURS - adjust here with an eyedropper. Everything reads these.
+   ------------------------------------------------------------------ */
+:root {
+  --mustard: #f6b21a;
+  --tomato: #b3261e;
+  --cream: #fff6e5;
+  --ink: #1e1a16;
+  --leaf: #2e6b3c; /* vegetarian tag */
+  --banner-h: 2.75rem; /* demo banner height on mobile (2 lines) */
+}
+@media (min-width: 640px) {
+  :root { --banner-h: 1.75rem; }
+}
+
+@theme inline {
+  --color-mustard: var(--mustard);
+  --color-tomato: var(--tomato);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-leaf: var(--leaf);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+}
+
+/* Font stacks per language. Display serif has Latin only, so TH/AR glyphs fall
+   through to their dedicated fonts glyph-by-glyph (no layout shift: next/font
+   injects size-adjusted fallbacks). */
+html {
+  --font-body: var(--f-inter), system-ui, sans-serif;
+  --font-heading: var(--f-display), Georgia, serif;
+  scroll-padding-top: calc(var(--banner-h) + 4.5rem);
+  scroll-behavior: smooth;
+}
+html[lang="th"] {
+  --font-body: var(--f-inter), var(--f-thai), system-ui, sans-serif;
+  --font-heading: var(--f-display), var(--f-thai), system-ui, sans-serif;
+}
+html[lang="ar"] {
+  --font-body: var(--f-arabic), var(--f-inter), system-ui, sans-serif;
+  --font-heading: var(--f-display), var(--f-arabic), system-ui, sans-serif;
+}
+
+body {
+  background: var(--mustard);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding-top: var(--banner-h);
+  padding-bottom: 4.75rem; /* room for the mobile sticky bar */
+  -webkit-text-size-adjust: 100%;
+}
+html[lang="th"] body { line-height: 1.75; }
+@media (min-width: 768px) {
+  body { padding-bottom: 0; }
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-synthesis-weight: none; /* DM Serif Display has a single weight */
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+}
+html[lang="th"] h1, html[lang="th"] h2, html[lang="th"] h3 { line-height: 1.35; }
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { line-height: 1.4; letter-spacing: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--cream);
+}
+
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
