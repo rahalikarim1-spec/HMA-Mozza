@@ -14,7 +14,12 @@ export type Block =
   | { t: "diagram"; nodes: string[] }
   | { t: "timeline"; items: { label: string; items: string[] }[] }
   | { t: "source"; text: string }
-  | { t: "cta"; label: string; note: string };
+  | { t: "cta"; label: string; note: string }
+  | ContactBlock
+  | { t: "results"; title: string; note: string; all: ExtLink; items: { title: string; metric: string; text: string; href: string; featured?: boolean }[] };
+
+export interface ExtLink { label: string; href: string; external?: boolean }
+export interface ContactBlock { t: "contact"; location: string; whatsapp: ExtLink; links: ExtLink[] }
 
 export interface Section {
   id: string;
@@ -22,6 +27,7 @@ export interface Section {
   title: string;
   summary: { found: string; why: string; propose: string };
   blocks: Block[];
+  learn?: ExtLink;
 }
 
 export interface CalcUi {
@@ -39,6 +45,7 @@ export interface StrategyDocData {
     tech: string; source: string; example: string; footer: string; bandHint: string; bands: string[]; calc: CalcUi;
   };
   sections: Section[];
+  closing: { title: string; contact: ContactBlock };
 }
 export interface StrategyPayload {
   v: number;

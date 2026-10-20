@@ -61,7 +61,8 @@ A growth-strategy and audit page (EN | FR toggle, 21 sections, return calculator
 - It is a **normal static page** rendered at build time from `strategy/data.mjs` + `strategy/doc.mjs` (route: `src/app/(en)/strategy/page.tsx`, components: `src/components/strategy/`). **There is no passcode and no encryption: the content is publicly readable if someone knows the URL.**
 - It is `noindex, nofollow`, **not** in `sitemap.xml`, and not in the nav/footer. Only the sticky button links to it. Use the optional host-level password protection (see "Optional password protection") if the URL must not be reachable.
 - Optional build env var: `STRATEGY_EUR_THB` (default `38`) for the "≈ THB" conversion of Keyword Planner bids (labelled "rate to verify").
-- Event: `strategy_button_click` only. FR copy needs a native read; TH/AR button strings are in `NATIVE_REVIEW.md`.
+- Contact + links (only on /strategy, never elsewhere in the demo): section 19 has a WhatsApp CTA (`wa.me/21628320998`, prefilled EN/FR message), secondary links (website, arabicmarket.asia, LinkedIn, phone) and a "Selected results" block (3 published case studies); sections 2, 6–10, 14, 15 end their "What we propose" card with a "Learn more →" link; a closing contact strip follows section 21. All external links use `target="_blank" rel="noopener noreferrer"`. Link data lives in `strategy/doc.mjs` (`CONTACT`, `learnMore`).
+- Events: `strategy_button_click`, `whatsapp_contact_click {location}`, `external_link_click {destination, section}`. FR copy needs a native read; TH/AR button strings are in `NATIVE_REVIEW.md`.
 
 ## Docs
 
