@@ -34,7 +34,7 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
   const params = { branch: slug, language: lang } as const;
   const hub = pathFor(lang, "locations");
   const status = statusText(b, d);
-  const address = fullAddress(b);
+  const address = fullAddress(b) ?? (shown(b, "floor") ? `${b.floor}, ${t.mall}` : null);
   const hoursRows = WEEKDAYS.map((day) => ({ day, cell: hoursCell(b, day, d) }));
   const showHours = hoursRows.every((r) => r.cell !== null);
   const showTransit = !b.verify.transit && !!t.transit;

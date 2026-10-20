@@ -17,3 +17,10 @@ export function asMenuIdOr404(value: string): MenuId {
   if ((MENU_IDS as string[]).includes(value)) return value as MenuId;
   notFound();
 }
+
+export const BLOG_SLUGS = ["fresh-italian-food-at-mozza", "aperitivo-in-bangkok"];
+export const BLOG_PARAMS = BLOG_SLUGS.map((slug) => ({ slug }));
+export function asBlogSlug(value: string): string {
+  if (BLOG_SLUGS.includes(value)) return value;
+  notFound();
+}

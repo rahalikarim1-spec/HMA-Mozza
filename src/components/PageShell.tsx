@@ -30,7 +30,7 @@ export default function PageShell({
       </a>
       <Header lang={lang} route={route} d={d} branch={branch} />
       <main id="main">{children}</main>
-      <Footer lang={lang} d={d} />
+      <Footer lang={lang} d={d} route={route} />
       <StickyBar lang={lang} d={d} branch={branch} />
     </>
   );

@@ -39,5 +39,51 @@
   "metadata": "landingMetadata",
   "metaArgs": ", \"celebrations\"",
   "props": " id=\"celebrations\""
+ },
+ {
+  "path": "about",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "AboutPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"about\""
+ },
+ {
+  "path": "hma-privilege",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "PrivilegePage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"hma-privilege\""
+ },
+ {
+  "path": "delivery",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "DeliveryPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"delivery\""
+ },
+ {
+  "path": "contact",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "ContactPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"contact\""
+ },
+ {
+  "path": "blog",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "BlogIndexPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"blog\""
+ },
+ {
+  "path": "blog/[slug]",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "BlogPostPage",
+  "metadata": "blogPostMetadata",
+  "param": "slug",
+  "as_fn": "asBlogSlug",
+  "params_const": "BLOG_PARAMS",
+  "params_mod": "@/lib/params",
+  "prop_name": "slug"
  }
 ]

@@ -4,6 +4,10 @@ import { categoryName, describe, getMenu } from "./menus";
 import type { Lang } from "@/content/types";
 import {
   BRAND_NAME,
+  FACEBOOK_URL,
+  HMA_URL,
+  INSTAGRAM_URL,
+  ORG_NAME,
   BRANCHES,
   PARENT_ORG_NAME,
   SITE_ORIGIN,
@@ -20,9 +24,24 @@ export function organizationLd() {
     "@context": CTX,
     "@type": "Organization",
     "@id": ORG_ID,
-    name: `${BRAND_NAME} Trattoria Italiana`,
+    name: ORG_NAME,
+    alternateName: `${BRAND_NAME} Trattoria Italiana`,
     url: `${SITE_ORIGIN}/`,
-    parentOrganization: { "@type": "Organization", name: PARENT_ORG_NAME },
+    parentOrganization: { "@type": "Organization", name: PARENT_ORG_NAME, url: HMA_URL },
+    sameAs: [FACEBOOK_URL, INSTAGRAM_URL],
+  };
+}
+
+export function blogPostingLd(lang: Lang, slug: string, headline: string, description: string) {
+  return {
+    "@context": CTX,
+    "@type": "BlogPosting",
+    headline,
+    description,
+    inLanguage: lang,
+    mainEntityOfPage: absoluteUrl(lang, `blog/${slug}`),
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
   };
 }
 

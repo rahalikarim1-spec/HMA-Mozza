@@ -15,6 +15,8 @@ export const INSTAGRAM_URL = "https://www.instagram.com/mozzabkk/";
 export const FACEBOOK_URL = "https://www.facebook.com/mozzabkk";
 /** Public website printed on the menus. */
 export const MOZZA_WEBSITE = "https://www.mozza-bangkok.com";
+/** Delivery ordering links per branch. PLACEHOLDERS (no real ordering provider connected). */
+export const DELIVERY_URL = "#delivery-demo";
 export const HMA_URL = "https://www.hmgtasia.net/";
 export const GROUP_LINKS = [
   { name: "Cocotte", url: "https://www.cocotte-bangkok.com/" },
@@ -225,7 +227,7 @@ export function fullAddress(b: BranchConfig): string | null {
     shown(b, "area") ? b.area : null,
     shown(b, "postalCode") ? `${b.city} ${b.postalCode}` : b.city,
   ].filter(Boolean) as string[];
-  return shown(b, "street") || shown(b, "floor") ? parts.join(", ") : null;
+  return shown(b, "street") ? parts.join(", ") : null;
 }
 
 /** Reservation demo only: used when a branch has no confirmed hours. Labelled "demo range" in the UI. */
