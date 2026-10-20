@@ -38,7 +38,9 @@ Route files in `src/app/(en|th|ar)/` are **generated**: edit `scripts/routes.jso
 | **H — Quality** | `scripts/check-site.mjs`, RTL fixes (no `لـ`/`بـ` before Latin), `docs/VERIFY_LIST.md`, native-review generators | `scripts/` |
 | **Scroll fix** | Pages opened mid-scroll. Cause: global `scroll-behavior: smooth` animated Next's scroll-to-top; plus the reservation flow focused its heading on first render (`/reserve/`). Fix: removed smooth scrolling, no first-render focus, drawer/modal close + body-scroll-lock release on route change, `ScrollToTop` safety net (skips `#hash` and back/forward) | `src/app/globals.css`, `src/components/ScrollToTop.tsx`, `MainNav.tsx`, `ReservationLauncher.tsx`, `ReservationFlow.tsx` |
 
-Navigation regression test: `scratchpad` script (not in repo) — see §9 for the result.
+| **/strategy (private)** | Encrypted strategy & audit page: 21 sections, EN\|FR toggle, calculator, range-band charts, print CSS; sticky "Growth strategy…" button on every page (EN/FR/TH/AR) + passcode dialog; content AES-GCM-encrypted at build time (`STRATEGY_PASSCODE`), decrypted in the browser; noindex, not in sitemap/nav/footer; events `strategy_button_click/unlock_success/unlock_fail` | `strategy/data.mjs`, `strategy/doc.mjs` (authoring, build-time only), `scripts/encrypt-strategy.mjs`, `src/components/strategy/*`, `src/lib/strategy-crypto.ts`, `src/app/(en)/strategy/page.tsx`, README "Private /strategy page" |
+
+Navigation regression test: ad-hoc Playwright script (not in repo) — see §9 for the result.
 
 ## 5. Data sources and the core rule
 **NEVER INVENT FACTS.** Allowed sources only: `source/menus/*.pdf` (food, brunch, afternoon-tea, aperitivo), `src/config/*`, `/context/*.md` (`2026-10-20_update_new-findings.md`: GBP snapshot 4.9★/~1.5K reviews, Popular Times, GEO findings), and the user's briefs. Anything else = `null`/"TBC" with `verify: true` and **hidden** in the UI until the user confirms. `food.pdf` and `brunch.pdf` are image-only (read by eye; no OCR in the environment). Prices come only from the PDFs, THB, with "Prices as published by Mozza — demo". food.pdf pp. 22–24 (Cocotte brand promo) are deliberately not used.
@@ -76,5 +78,10 @@ NAVTEST_RESULT_PLACEHOLDER
 6. Never invent facts (see §5). Every new TH/AR string goes to `NATIVE_REVIEW.md`.
 7. Commit after each phase; report with screenshots (360×800 and 1440×900, EN/TH/AR).
 
-## 11. NEXT TASK
-Build the **private `/strategy` page** from the file the user will attach next session: **`mozza-strategy-page-prompt.md`**. Read that file first; follow the non-negotiable rules above (especially: no invented facts, noindex, EN/TH/AR if requested, no merge). Likely touchpoints: add the route to `scripts/routes.json` + `src/lib/allRoutes.ts`, content module in `src/content/`, run `npm run build && npm run check`, regenerate native-review lists. Consider whether the page should be excluded from the public nav/sitemap (it is "private") and say so to the user.
+## 11. NEXT TASKS
+The `/strategy` page (from `mozza-strategy-page-prompt.md`) is **built** (see §4). Remaining:
+1. **Set `STRATEGY_PASSCODE`** (long passphrase, 16+ chars) as a build env var on every Vercel project / local build that should expose the page — without it the page says "not available in this build". Optional `STRATEGY_EUR_THB` (default 38).
+2. **French read-through** of `strategy/doc.mjs` (FR text is written, not natively reviewed); TH/AR button/dialog strings are in `NATIVE_REVIEW.md`.
+3. The user's strategy data is used as supplied (Keyword Planner ranges, Ahrefs/Mangools, rankings, Rank Math). Section 19 "Verified results" is intentionally NOT rendered (verify:true). The "Discuss the pilot" CTA is a placeholder (no contact link).
+4. Apply the user-confirmed items from §6 (awards flag, social links, "brick-oven", "handmade pasta", Central Park wording) once the user gives the approved text.
+5. Anything else the user asks; open a PR only when asked, never merge.
