@@ -33,6 +33,14 @@ export const PARENT_ORG_NAME = "Hospitality Management Asia";
 export const DEMO_AUTHOR = "Wadhah Belhassen";
 export const GTM_ID = "GTM-XXXXXXX"; // commented out in layouts - demo only
 
+/** Awards printed on food.pdf p.1. Hidden everywhere until the client confirms names, years and wording. */
+export const AWARDS_VERIFIED = false;
+export const AWARDS = [
+  { name: "Tripadvisor Travellers' Choice Awards", detail: "2023, 2024, 2025" },
+  { name: "LSA Best Bites Awards", detail: "2026 — Best Pizza" },
+  { name: "Gambero Rosso", detail: "Selected: Top Italian Restaurants" },
+];
+
 /* ---------- Social proof (editable demo text) ---------- */
 export const RATING = {
   value: "4.9", // from /context (Google Business Profile snapshot, 20 Oct 2026) - Central Park only; re-check

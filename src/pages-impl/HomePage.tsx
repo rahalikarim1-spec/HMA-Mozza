@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getDict } from "@/content";
 import type { Lang } from "@/content/types";
-import { BRANCHES, } from "@/config/site";
+import { AWARDS, AWARDS_VERIFIED, BRANCHES } from "@/config/site";
 import { HOME_SIGNATURE } from "@/config/signature";
 import { buildMetadata } from "@/lib/seo";
 import { faqLd, organizationLd } from "@/lib/jsonld";
@@ -105,18 +105,22 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* Awards strip: text placeholders only, no copied logos */}
-      <section className="bg-ink py-10 text-cream" aria-labelledby="awards-h">
-        <div className={`${container} text-center`}>
-          <h2 id="awards-h" className="text-xl text-mustard">{d.awards.title}</h2>
-          <ul className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-10">
-            {d.awards.items.map((a) => (
-              <li key={a} className="font-[family-name:var(--font-heading)] text-2xl">{a}</li>
-            ))}
-          </ul>
-          <p className="mt-4 text-xs text-cream/75">{d.awards.note}</p>
-        </div>
-      </section>
+      {/* Awards strip: hidden until AWARDS_VERIFIED (config). Text only, no logos. */}
+      {AWARDS_VERIFIED && (
+        <section className="bg-ink py-10 text-cream" aria-labelledby="awards-h">
+          <div className={`${container} text-center`}>
+            <h2 id="awards-h" className="text-xl text-mustard">{d.awards.title}</h2>
+            <ul className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-10">
+              {AWARDS.map((a) => (
+                <li key={a.name} className="font-[family-name:var(--font-heading)] text-2xl">
+                  {a.name} <span className="block text-sm font-sans text-cream/80">{a.detail}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-xs text-cream/75">{d.awards.note}</p>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="bg-cream py-12">

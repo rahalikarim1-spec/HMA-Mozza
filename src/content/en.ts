@@ -32,9 +32,9 @@ export const en: Dict = {
   },
   meta: {
     home: {
-      title: "Mozza Bangkok | Authentic Italian Trattoria, Wood-Fired Pizza & Fresh Pasta",
+      title: "Italian Restaurant Bangkok | Mozza Italian Trattoria",
       description:
-        "Concept demo: Italian trattoria in Bangkok with wood-fired pizza and handmade pasta. Choose your branch, see the menu, reserve a table.",
+        "Mozza Italian trattoria in Bangkok: handmade pasta, wood-fired pizza and 6 branches. See menus, get directions and reserve a table (concept demo).",
     },
     locations: {
       title: "Locations | Mozza Italian Restaurants in Bangkok",
