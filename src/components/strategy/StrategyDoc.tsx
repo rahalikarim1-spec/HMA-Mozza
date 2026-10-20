@@ -2,13 +2,54 @@
 
 import { useEffect, useRef, useState } from "react";
 import Calculator from "./Calculator";
-import type { Block, Section, StrategyDocData } from "./types";
+import Icon from "@/components/Icon";
+import { track } from "@/lib/track";
+import type { Block, ContactBlock, ExtLink, Section, StrategyDocData } from "./types";
 
 const card = "rounded-sm border-2 border-ink bg-white p-4";
 const srcCls = "mt-2 text-xs text-ink/75";
 
 function Source({ text }: { text?: string }) {
   return text ? <p className={srcCls}>{text}</p> : null;
+}
+
+/** External link on the strategy page only: new tab, no opener, tracked. */
+function Ext({ l, section, className, children }: { l: ExtLink; section: string; className?: string; children?: React.ReactNode }) {
+  const ext = l.external !== false;
+  return (
+    <a
+      href={l.href}
+      {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className={className}
+      onClick={() => track("external_link_click", { destination: l.href, section })}
+    >
+      {children ?? l.label}
+    </a>
+  );
+}
+
+const outlineBtn = "inline-flex min-h-12 items-center rounded-sm border-2 border-ink bg-white px-4 font-semibold hover:bg-ink hover:text-cream";
+
+function Contact({ c }: { c: ContactBlock }) {
+  return (
+    <div className="mt-6">
+      <a
+        href={c.whatsapp.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex min-h-12 items-center gap-2 rounded-sm bg-tomato px-6 font-semibold text-cream"
+        onClick={() => track("whatsapp_contact_click", { location: c.location })}
+      >
+        <Icon name="whatsapp" className="h-5 w-5" />
+        {c.whatsapp.label}
+      </a>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {c.links.map((l) => (
+          <li key={l.href}><Ext l={l} section={c.location} className={outlineBtn} /></li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 function BlockView({ b, doc }: { b: Block; doc: StrategyDocData }) {
@@ -154,6 +195,28 @@ function BlockView({ b, doc }: { b: Block; doc: StrategyDocData }) {
       );
     case "source":
       return <Source text={b.text} />;
+    case "contact":
+      return <Contact c={b} />;
+    case "results":
+      return (
+        <div className="mt-8">
+          <h3 className="text-2xl">{b.title}</h3>
+          <ul className="mt-3 grid gap-3 md:grid-cols-3">
+            {b.items.map((r) => (
+              <li key={r.href}>
+                <Ext l={{ label: r.title, href: r.href }} section="results" className={`block h-full ${card} hover:bg-ink hover:text-cream ${r.featured ? "shadow-[3px_3px_0_var(--ink)]" : ""}`}>
+                  <span className="block text-xs font-bold uppercase tracking-wide text-tomato">{r.title}</span>
+                  <span className="mt-1 block text-xl font-semibold">{r.metric}</span>
+                  <span className="mt-1 block text-sm">{r.text}</span>
+                </Ext>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-xs text-ink/75">
+            {b.note} · <Ext l={b.all} section="results" className="underline underline-offset-2" />
+          </p>
+        </div>
+      );
     case "cta":
       return (
         <p className="mt-5">
@@ -177,6 +240,9 @@ function SectionView({ s, doc }: { s: Section; doc: StrategyDocData }) {
           <div key={k} className="rounded-sm bg-white p-4 shadow-[3px_3px_0_var(--ink)]">
             <p className="text-xs font-bold uppercase tracking-wide text-tomato">{label}</p>
             <p className="mt-1">{s.summary[k]}</p>
+            {k === "propose" && s.learn ? (
+              <p className="mt-2"><Ext l={s.learn} section={`s${s.n}`} className="text-sm font-semibold text-tomato underline underline-offset-2" /></p>
+            ) : null}
           </div>
         ))}
       </div>
@@ -253,6 +319,10 @@ export default function StrategyDoc({ en, fr }: { en: StrategyDocData; fr: Strat
         </aside>
         <div className="min-w-0 space-y-12">
           {doc.sections.map((s) => <SectionView key={s.id} s={s} doc={doc} />)}
+          <section aria-labelledby="closing" className="border-t-4 border-ink pt-8">
+            <h2 id="closing" className="text-3xl sm:text-4xl">{doc.closing.title}</h2>
+            <Contact c={doc.closing.contact} />
+          </section>
           <p className="border-t-4 border-ink pt-4 text-xs">{doc.ui.footer}</p>
         </div>
       </div>

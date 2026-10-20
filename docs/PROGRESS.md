@@ -38,7 +38,7 @@ Route files in `src/app/(en|th|ar)/` are **generated**: edit `scripts/routes.jso
 | **H — Quality** | `scripts/check-site.mjs`, RTL fixes (no `لـ`/`بـ` before Latin), `docs/VERIFY_LIST.md`, native-review generators | `scripts/` |
 | **Scroll fix** | Pages opened mid-scroll. Cause: global `scroll-behavior: smooth` animated Next's scroll-to-top; plus the reservation flow focused its heading on first render (`/reserve/`). Fix: removed smooth scrolling, no first-render focus, drawer/modal close + body-scroll-lock release on route change, `ScrollToTop` safety net (skips `#hash` and back/forward) | `src/app/globals.css`, `src/components/ScrollToTop.tsx`, `MainNav.tsx`, `ReservationLauncher.tsx`, `ReservationFlow.tsx` |
 
-| **/strategy** | Strategy & audit page: 21 sections, EN\|FR toggle, calculator, range-band charts, print CSS; sticky "Growth strategy…" link on every page (EN/FR/TH/AR) going straight to `/strategy/`. **Public URL but `noindex, nofollow`, not in sitemap/nav/footer — no passcode, no encryption** (an earlier encrypted version was removed on the user's request); event `strategy_button_click` | `strategy/data.mjs`, `strategy/doc.mjs` (rendered at build time by the server page), `src/app/(en)/strategy/page.tsx`, `src/components/strategy/*`, README "/strategy page" |
+| **/strategy** | Strategy & audit page: 21 sections, EN\|FR toggle, calculator, range-band charts, print CSS; sticky "Growth strategy…" link on every page (EN/FR/TH/AR) going straight to `/strategy/`. **Public URL but `noindex, nofollow`, not in sitemap/nav/footer — no passcode, no encryption** (an earlier encrypted version was removed on the user's request); events `strategy_button_click`, `whatsapp_contact_click`, `external_link_click` | `strategy/data.mjs`, `strategy/doc.mjs` (rendered at build time by the server page), `src/app/(en)/strategy/page.tsx`, `src/components/strategy/*`, README "/strategy page" |
 
 Navigation regression test: ad-hoc Playwright script (not in repo) — see §9 for the result.
 
@@ -67,7 +67,17 @@ The user said they already confirmed: **awards**, **social links**, **"brick-ove
 - Brand colours/logo are placeholders (`src/app/globals.css`, `Logo.tsx`).
 
 ## 9. Navigation/scroll test result (final)
-NAVTEST_RESULT_PLACEHOLDER
+Ad-hoc Playwright test (not in repo) run against the final build: scroll position after navigation must be 0 (except `#hash` targets), body scroll lock released, modal closes with Esc.
+Covered: every header nav link (dropdown items on desktop, drawer on mobile), every footer link, branch cards, breadcrumbs, language switches, signature-card `#hash` anchor, direct loads of `/reserve/`, `/menu/food/`, a branch page.
+
+| Language | Desktop 1440x900 | Mobile 360x800 |
+|---|---|---|
+| EN | 48 checks, 0 failures | 53 checks, 0 failures |
+| TH | 48 checks, 0 failures | 53 checks, 0 failures |
+| AR | 48 checks, 0 failures | 53 checks, 0 failures |
+
+Total 303 checks, 0 failures. Failures found and fixed along the way: (1) `scroll-behavior: smooth` animating Next's scroll-to-top and first-render focus on `/reserve/`; (2) a footer link to the page you are already on did not scroll to top (fixed with a capture-phase click handler in `ScrollToTop`, because Next `Link` calls `preventDefault` first). Two aborted runs were caused by the local test server dying, not by the site.
+
 
 ## 10. Non-negotiable rules
 1. **Never use the word "halal"** anywhere (code, content, docs shipped to the site). Label **pork** and **alcohol** clearly in all languages; dietary tags only if stated in the source menus.
@@ -81,7 +91,7 @@ NAVTEST_RESULT_PLACEHOLDER
 ## 11. NEXT TASKS
 The `/strategy` page (from `mozza-strategy-page-prompt.md`) is **built and public (noindex)**. Remaining:
 1. **French read-through** of `strategy/doc.mjs` (FR written, not natively reviewed); TH/AR button strings are in `NATIVE_REVIEW.md`. Optional `STRATEGY_EUR_THB` env var (default 38).
-2. The user's strategy data is used as supplied (Keyword Planner ranges, Ahrefs/Mangools, rankings, Rank Math). Section 19 "Verified results" is intentionally NOT rendered (verify:true); the "Discuss the pilot" CTA is a placeholder (no contact link).
+2. The user's strategy data is used as supplied (Keyword Planner ranges, Ahrefs/Mangools, rankings, Rank Math). Section 19 now has the WhatsApp CTA, website links and a visible "Selected results" block (3 published case studies supplied by the user); contextual "Learn more →" links sit in sections 2, 6–10, 14, 15 and a closing contact strip ends the page. These external links exist ONLY on /strategy. Events: `whatsapp_contact_click`, `external_link_click`.
 3. Apply the user-confirmed items from §6 (awards flag, social links, "brick-oven", "handmade pasta", Central Park wording) once the user gives the approved text.
 4. If the strategy URL must be private again: host-level password protection (README) — the page itself has none.
 5. Anything else the user asks; open a PR only when asked, never merge.

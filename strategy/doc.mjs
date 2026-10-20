@@ -28,7 +28,24 @@ export function buildDoc(L, { fx = 38 } = {}) {
   const bandRows = (rows) => rows.map((r) => ({ label: r[0], bands: bands(r[1]), note: Array.isArray(r[1]) ? r[1].join(" / ") : r[1] }));
 
   const sections = [];
-  const S = (id, title, summary, blocks) => sections.push({ id, n: sections.length + 1, title, summary, blocks });
+  const S = (id, title, summary, blocks, learn) => sections.push({ id, n: sections.length + 1, title, summary, blocks, ...(learn ? { learn } : {}) });
+  const WA_NUMBER = "21628320998";
+  const WA_TEXT = T("Hi Wadhah, I've seen the Mozza growth strategy. Let's discuss the pilot.", "Bonjour Wadhah, j'ai vu la stratégie de croissance Mozza. Parlons du pilote.");
+  const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT)}`;
+  const WA_LABEL = T("Discuss the pilot on WhatsApp", "Discuter du pilote sur WhatsApp");
+  // External links (English URLs are used in the FR version too: no unverified FR paths), except the main website home
+  const WD = "https://www.wadhah.digital";
+  const AM = "https://arabicmarket.asia";
+  const learnMore = (href) => ({ label: T("Learn more →", "En savoir plus →"), href });
+  const CONTACT = (location, short) => ({ t: "contact", location, whatsapp: { label: WA_LABEL, href: WA_URL },
+    links: [
+      { label: T("Website", "Site web"), href: siteHref },
+      { label: T("Southeast Asia & GCC growth", "Croissance Asie du Sud-Est & GCC"), href: `${AM}/` },
+      { label: T("Restaurants & F&B", "Restaurants & F&B"), href: `${AM}/industries/restaurants/` },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/belhassen-wadhah/" },
+      { label: "+216 28 320 998", href: "tel:+21628320998", external: false },
+    ].slice(0, short ? 2 : undefined) });
+  const siteHref = L === "fr" ? `${WD}/` : `${WD}/en`;
 
   /* 1 */
   S("summary", T("Executive summary", "Synthèse"), {
@@ -52,7 +69,7 @@ export function buildDoc(L, { fx = 38 } = {}) {
   }, [
     { t: "calc" },
     { t: "callout", text: T("The pilot exists to replace these example values with your real numbers.", "Le pilote sert à remplacer ces valeurs d'exemple par vos chiffres réels.") },
-  ]);
+  ], learnMore(`${WD}/en/services/conversion-optimization`));
 
   /* 3 */
   S("works", T("What already works", "Ce qui fonctionne déjà"), {
@@ -146,7 +163,7 @@ export function buildDoc(L, { fx = 38 } = {}) {
     { t: "details", summary: T("Technical detail", "Détail technique"), blocks: [
       { t: "p", text: T("Observations come from the public website, Rank Math's analyser and Google Business Profile listings (Oct 2026). Efforts: S = small, M = medium, L = large. Redirects must be mapped one-to-one and monitored in Search Console.", "Les observations proviennent du site public, de l'analyseur Rank Math et des fiches Google Business Profile (oct. 2026). Efforts : S = limité, M = moyen, L = important. Les redirections doivent être cartographiées une à une et suivies dans Search Console.") },
     ] },
-  ]);
+  ], learnMore(`${WD}/en/services/web-development`));
 
   /* 7 */
   S("local", T("Local SEO / Google Business Profile", "SEO local / Google Business Profile"), {
@@ -161,14 +178,14 @@ export function buildDoc(L, { fx = 38 } = {}) {
       T("Photos, Q&A, review replies and posts are kept up to date.", "Photos, questions-réponses, réponses aux avis et publications sont tenues à jour."),
       T("NAP is consistent across Google, Chope, Wongnai, Tripadvisor and mall directories.", "Le NAP est cohérent sur Google, Chope, Wongnai, Tripadvisor et les annuaires des centres commerciaux."),
     ] },
-  ]);
+  ], learnMore(`${WD}/en/services/local-seo`));
 
   /* 8 */
   S("multilingual", T("Multilingual strategy", "Stratégie multilingue"), {
     found: T("English and Thai are both proven by demand (section 4).", "L'anglais et le thaï sont tous deux démontrés par la demande (section 4)."),
     why: T("Each language reaches guests who would not find the other version; native Thai copy converts better than machine translation.", "Chaque langue touche des convives qui ne trouveraient pas l'autre version ; un thaï natif convertit mieux qu'une traduction automatique."),
     propose: T("English + Thai as the core. Arabic only as an optional later layer if data supports it — not part of the pilot. Native Thai copy.", "Anglais + thaï comme socle. Arabe seulement comme couche optionnelle ultérieure si les données le justifient — hors pilote. Textes thaï natifs."),
-  }, [{ t: "p", text: T("The structure (same page, same URL logic, hreflang between versions) is already shown in this demo for English, Thai and Arabic; for the pilot we would publish English and Thai.", "La structure (même page, même logique d'URL, hreflang entre les versions) est déjà illustrée dans cette démo en anglais, thaï et arabe ; pour le pilote, nous publierions l'anglais et le thaï.") }]);
+  }, [{ t: "p", text: T("The structure (same page, same URL logic, hreflang between versions) is already shown in this demo for English, Thai and Arabic; for the pilot we would publish English and Thai.", "La structure (même page, même logique d'URL, hreflang entre les versions) est déjà illustrée dans cette démo en anglais, thaï et arabe ; pour le pilote, nous publierions l'anglais et le thaï.") }], learnMore(`${AM}/services/arabic-localization/`));
 
   /* 9 */
   S("brand", T("Brand protection (conditional)", "Protection de la marque (conditionnelle)"), {
@@ -187,7 +204,7 @@ export function buildDoc(L, { fx = 38 } = {}) {
         T("Metrics: impression share, top / absolute-top impression share, lost IS (rank / budget), CPC, CTR, reservation actions.", "Indicateurs : part d'impressions, part en haut / tout en haut, part perdue (classement / budget), CPC, CTR, actions de réservation."),
       ] },
     ] },
-  ]);
+  ], learnMore(`${WD}/en/services/google-ads`));
 
   /* 10 */
   S("pilot-ads", T("Google Ads pilot — non-brand Search (Central Park)", "Pilote Google Ads — Search hors marque (Central Park)"), {
@@ -215,7 +232,7 @@ export function buildDoc(L, { fx = 38 } = {}) {
         T("Assets: location, call, sitelinks (Menu, Reserve, Directions), callouts (handmade pasta, brick-oven pizza).", "Assets : lieu, appel, liens de site (Menu, Réserver, Itinéraire), accroches (pâtes faites main, pizza au four en brique)."),
       ] },
     ] },
-  ]);
+  ], learnMore(`${WD}/en/services/google-ads`));
 
   /* 11 */
   S("daypart", T("Demand shaping by daypart", "Piloter la demande par plage horaire"), {
@@ -272,7 +289,7 @@ export function buildDoc(L, { fx = 38 } = {}) {
       T("Editing workflow for the team (editor-friendly CMS).", "Circuit d'édition pour l'équipe (CMS simple)."),
       T("Phased rollout: one brand first.", "Déploiement par phases : une marque d'abord."),
     ] }] },
-  ]);
+  ], learnMore(`${WD}/en/services/web-development`));
 
   /* 15 */
   S("measurement", T("Measurement & attribution", "Mesure et attribution"), {
@@ -287,7 +304,7 @@ export function buildDoc(L, { fx = 38 } = {}) {
       T("Reporting outline: search, ads, reservations by branch and daypart.", "Trame de reporting : recherche, ads, réservations par restaurant et par plage horaire."),
     ] },
     { t: "details", summary: T("Technical detail — event list", "Détail technique — liste d'événements"), blocks: [{ t: "p", text: T("reservation_click, booking_start, booking_step, booking_zone_select, booking_time_select, booking_submit_demo, whatsapp_click, line_click, directions_click, menu_view, pdf_download, language_switch (see docs/TRACKING_PLAN.md in the demo repository).", "reservation_click, booking_start, booking_step, booking_zone_select, booking_time_select, booking_submit_demo, whatsapp_click, line_click, directions_click, menu_view, pdf_download, language_switch (voir docs/TRACKING_PLAN.md dans le dépôt de la démo).") }] },
-  ]);
+  ], learnMore(`${AM}/services/conversion-tracking/`));
 
   /* 16 */
   const obj = [
@@ -340,8 +357,14 @@ export function buildDoc(L, { fx = 38 } = {}) {
       T("Skills: Google Ads · SEO & technical SEO · Local SEO / Google Business Profile · GA4 / GTM tracking · conversion optimisation · multilingual acquisition (EN / FR / AR, with native Thai partners) · market and search-demand research.", "Compétences : Google Ads · SEO et SEO technique · SEO local / Google Business Profile · suivi GA4 / GTM · optimisation de la conversion · acquisition multilingue (EN / FR / AR, avec des partenaires thaï natifs) · études de marché et de demande de recherche."),
       T("Experience types: local growth for a café / bakery in Berlin (Search, Maps, Ads); multilingual growth partnership in Tunisia (website, SEO, Ads, tracking).", "Types d'expérience : croissance locale pour un café / une boulangerie à Berlin (Search, Maps, Ads) ; partenariat de croissance multilingue en Tunisie (site, SEO, Ads, suivi)."),
     ] },
-    // "Verified results" placeholder: intentionally NOT rendered (verify: true) until the user supplies confirmed results.
-    { t: "cta", label: T("Discuss the pilot", "Échanger sur le pilote"), note: T("(placeholder — no contact link yet)", "(espace réservé — pas encore de lien de contact)") },
+    { t: "results", title: T("Selected results", "Résultats sélectionnés"), note: T("Source: published case study", "Source : étude de cas publiée"),
+      all: { label: T("All case studies →", "Toutes les études de cas →"), href: `${WD}/en/case-studies` },
+      items: [
+        { title: T("LIT Coffee Bar, Berlin", "LIT Coffee Bar, Berlin"), metric: T("+230% store visits in 60 days", "+230 % de visites en magasin en 60 jours"), text: T("Performance Max", "Performance Max"), href: `${WD}/en/case-studies/lit-coffee-bar`, featured: true },
+        { title: T("Medical practice, Lyon", "Cabinet médical, Lyon"), metric: T("Cost per lead cut by 53%", "Coût par lead réduit de 53 %"), text: T("Restructured Google Ads Search", "Restructuration de Google Ads Search"), href: `${WD}/en/case-studies/cabinet-medical-lyon` },
+        { title: T("Real estate agency, Tunis", "Agence immobilière, Tunis"), metric: T("Page 1 on Google for 23 target keywords in 4 months", "Page 1 de Google sur 23 mots-clés cibles en 4 mois"), text: T("Local SEO", "SEO local"), href: `${WD}/en/case-studies/agence-immobiliere-tunis` },
+      ] },
+    CONTACT("author"),
   ]);
 
   /* 20 */
@@ -401,5 +424,5 @@ export function buildDoc(L, { fx = 38 } = {}) {
       unit: T("THB", "THB"),
     },
   };
-  return { lang: L, ui, sections };
+  return { lang: L, ui, sections, closing: { title: T("Ready to discuss the pilot?", "Prêt à échanger sur le pilote ?"), contact: CONTACT("closing", true) } };
 }
