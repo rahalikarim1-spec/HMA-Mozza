@@ -8,6 +8,7 @@ import { absoluteUrl, pathFor } from "@/lib/routes";
 import { container } from "@/lib/ui";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import StylisedMap from "@/components/StylisedMap";
 import BranchCard from "@/components/BranchCard";
 import JsonLd from "@/components/JsonLd";
 
@@ -37,7 +38,12 @@ export default function LocationsPage({ lang }: { lang: Lang }) {
           <p className="mt-3 max-w-prose text-lg">{d.locationsPage.intro}</p>
         </div>
       </section>
-      <section className="bg-cream py-10">
+      <section className="bg-cream py-8">
+        <div className={`${container} max-w-3xl`}>
+          <StylisedMap lang={lang} label={d.locationsPage.mapLabel} caption={d.locationsPage.mapCaption} />
+        </div>
+      </section>
+      <section className="bg-mustard py-10">
         <div className={`${container} grid gap-6 sm:grid-cols-2 lg:grid-cols-3`}>
           {BRANCHES.map((b) => (
             <BranchCard key={b.slug} branch={b} d={d} lang={lang} headingLevel={2} />

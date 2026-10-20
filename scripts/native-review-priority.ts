@@ -35,8 +35,6 @@ const GROUPS: { title: string; items: [string, Get][] }[] = [
       ["hero.aiCaption", g((d) => d.hero.aiCaption)],
       ["chooser.title", g((d) => d.chooser.title)],
       ["chooser.intro", g((d) => d.chooser.intro)],
-      ["common.openToday", g((d) => d.common.openToday("22:00"))],
-      ["common.openTbc", g((d) => d.common.openTbc)],
       ["common.viewBranch", g((d) => d.common.viewBranch)],
       ["signature.title", g((d) => d.signature.title)],
       ["signature.intro", g((d) => d.signature.intro)],
@@ -54,7 +52,7 @@ const GROUPS: { title: string; items: [string, Get][] }[] = [
     items: [
       ["branches.central-park.metaTitle", g((d) => cp(d).metaTitle)],
       ["branches.central-park.h1", g((d) => cp(d).h1)],
-      ["branches.central-park.district", g((d) => cp(d).district)],
+      ["branches.central-park.district", g((d) => cp(d).district ?? "")],
       ["branches.central-park.intro[0]", g((d) => cp(d).intro[0])],
       ["branches.central-park.intro[1]", g((d) => cp(d).intro[1])],
       ["branches.central-park.intro[2]", g((d) => cp(d).intro[2])],

@@ -1,9 +1,10 @@
+import { bookingHref } from "@/lib/booking";
 import Image from "next/image";
 import Link from "next/link";
 import type { Dict } from "@/content/dict";
 import type { Lang } from "@/content/types";
-import { bookingUrlFor, directionsUrl, type BranchConfig } from "@/config/site";
-import { openStatus } from "@/lib/format";
+import { directionsUrl, type BranchConfig } from "@/config/site";
+import { statusText } from "@/lib/format";
 import { pathFor } from "@/lib/routes";
 import { btnLight, btnPrimary } from "@/lib/ui";
 import Icon from "./Icon";
@@ -40,11 +41,13 @@ export default function BranchCard({
             {branch.name}
           </Link>
         </H>
-        <p className="mt-1 text-sm font-semibold">{t.mall} · {t.district}</p>
-        <p className="mt-2 flex items-center gap-2 text-sm">
-          <Icon name="clock" className="h-4 w-4" />
-          {openStatus(branch, d)}
-        </p>
+        <p className="mt-1 text-sm font-semibold">{t.district ? `${t.mall} · ${t.district}` : t.mall}</p>
+        {statusText(branch, d) && (
+          <p className="mt-2 flex items-center gap-2 text-sm">
+            <Icon name="clock" className="h-4 w-4" />
+            {statusText(branch, d)}
+          </p>
+        )}
         <div className="mt-auto grid grid-cols-2 gap-3 pt-5">
           <TrackedLink
             href={directionsUrl(branch)}
@@ -57,7 +60,7 @@ export default function BranchCard({
             {d.common.directions}
           </TrackedLink>
           <TrackedLink
-            href={bookingUrlFor(branch.slug)}
+            href={bookingHref(lang, branch.slug)}
             event="reservation_click"
             params={params}
             className={btnPrimary}

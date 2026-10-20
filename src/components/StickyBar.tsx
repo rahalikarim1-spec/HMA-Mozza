@@ -1,6 +1,7 @@
+import { bookingHref } from "@/lib/booking";
 import type { Dict } from "@/content/dict";
 import type { BranchSlug, Lang } from "@/content/types";
-import { bookingUrlFor, directionsUrl, getBranch, LINE_URL, whatsappUrl } from "@/config/site";
+import { directionsUrl, getBranch, LINE_URL, whatsappUrl } from "@/config/site";
 import { pathFor } from "@/lib/routes";
 import Icon from "./Icon";
 import TrackedLink from "./TrackedLink";
@@ -27,7 +28,7 @@ export default function StickyBar({
     reserve: (
       <TrackedLink
         key="reserve"
-        href={bookingUrlFor(branch)}
+        href={bookingHref(lang, branch)}
         event="reservation_click"
         params={params}
         className="bg-tomato text-cream"

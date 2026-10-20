@@ -1,7 +1,8 @@
+import { bookingHref } from "@/lib/booking";
 import Link from "next/link";
 import type { Dict } from "@/content/dict";
 import type { BranchSlug, Lang, Route } from "@/content/types";
-import { bookingUrlFor } from "@/config/site";
+import { } from "@/config/site";
 import { pathFor } from "@/lib/routes";
 import Logo from "./Logo";
 import LangSwitcher from "./LangSwitcher";
@@ -39,7 +40,7 @@ export default function Header({
             {d.nav.locations}
           </Link>
           <TrackedLink
-            href={bookingUrlFor(branch)}
+            href={bookingHref(lang, branch)}
             event="reservation_click"
             params={{ branch: branch ?? "any", language: lang }}
             className={link}

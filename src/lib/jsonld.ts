@@ -7,6 +7,7 @@ import {
   BRANCHES,
   PARENT_ORG_NAME,
   SITE_ORIGIN,
+  shown,
   type BranchConfig,
 } from "@/config/site";
 import { absoluteUrl } from "./routes";
@@ -26,7 +27,8 @@ export function organizationLd() {
 }
 
 export function restaurantLd(lang: Lang, b: BranchConfig) {
-  const route = `locations/${b.slug}` as const;
+  const route = `locations/${b.slug}`;
+  const street = shown(b, "street") ? [shown(b, "floor") ? b.floor : null, b.street].filter(Boolean).join(", ") : null;
   return {
     "@context": CTX,
     "@type": "Restaurant",
@@ -36,14 +38,14 @@ export function restaurantLd(lang: Lang, b: BranchConfig) {
     image: `${SITE_ORIGIN}${b.image}`,
     servesCuisine: ["Italian", "Pizza", "Pasta"],
     hasMenu: absoluteUrl(lang, "menu/food"),
-    // PLACEHOLDER hours - "TBC" is not valid schema.org until real times are filled in config.
-    openingHours: `Mo-Su ${b.opens}-${b.closes}`,
+    acceptsReservations: absoluteUrl(lang, "reserve"),
+    // Unconfirmed values (verify: true) are omitted. Opening hours stay out until real opening times are in config.
     address: {
       "@type": "PostalAddress",
-      ...(b.street !== "TBC" ? { streetAddress: b.street } : {}),
+      ...(street ? { streetAddress: street } : {}),
+      ...(shown(b, "area") && b.area ? { addressRegion: b.area } : {}),
       addressLocality: b.city,
-      addressRegion: b.area,
-      ...(b.postalCode ? { postalCode: b.postalCode } : {}),
+      ...(shown(b, "postalCode") && b.postalCode ? { postalCode: b.postalCode } : {}),
       addressCountry: "TH",
     },
     parentOrganization: { "@id": ORG_ID },

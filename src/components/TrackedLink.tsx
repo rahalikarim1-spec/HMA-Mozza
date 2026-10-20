@@ -16,6 +16,8 @@ interface Props {
   lang?: string;
   /** set false for links to other-language pages (different root layout => full page load anyway) */
   prefetch?: boolean;
+  /** marks a Reserve link so the reservation modal (Phase F) can intercept the click */
+  dataReserve?: boolean;
 }
 
 /** Anchor that pushes a demo dataLayer event on click. */
@@ -30,6 +32,7 @@ export default function TrackedLink({
   ariaCurrent,
   lang,
   prefetch,
+  dataReserve,
 }: Props) {
   const onClick = event && params ? () => track(event, params) : undefined;
   const common = {
@@ -39,6 +42,7 @@ export default function TrackedLink({
     "aria-current": ariaCurrent,
     lang,
     hrefLang: lang,
+    ...(dataReserve ? { "data-reserve": "true" } : {}),
   };
   if (external) {
     return (

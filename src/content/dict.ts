@@ -7,15 +7,17 @@ export interface FaqItem {
 
 export interface BranchText {
   mall: string;
-  district: string;
+  /** null = hidden (unconfirmed) */
+  district: string | null;
   /** H1 on the branch page */
   h1: string;
   metaTitle: string;
   metaDescription: string;
   imageAlt: string;
   intro: string[];
-  transit: string;
-  landmark: string;
+  /** null = hidden (unconfirmed) */
+  transit: string | null;
+  landmark: string | null;
   faq: FaqItem[]; // parking, groups, reservations
 }
 
@@ -30,8 +32,8 @@ export interface Dict {
     demoPrice: string;
     tbc: string;
     ratingOn: (source: string) => string;
-    openToday: (until: string) => string;
-    openTbc: string;
+    closesAt: (time: string) => string;
+    untilTime: (time: string) => string;
     hours: string;
     directions: string;
     reserve: string;
@@ -62,7 +64,7 @@ export interface Dict {
     disclaimer: string;
     photos: string;
   };
-  locationsPage: { h1: string; intro: string };
+  locationsPage: { h1: string; intro: string; mapLabel: string; mapCaption: string };
   branchPage: {
     reserve: string;
     directions: string;
@@ -72,6 +74,7 @@ export interface Dict {
     mapCaption: string;
     gettingHere: string;
     directionsFallback: string;
+    detailsPending: string;
     transitLabel: string;
     landmarkLabel: string;
     aboutTitle: string;

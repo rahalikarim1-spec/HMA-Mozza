@@ -1,8 +1,9 @@
+import { bookingHref } from "@/lib/booking";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDict } from "@/content";
 import type { Lang } from "@/content/types";
-import { BRANCHES, bookingUrlFor } from "@/config/site";
+import { BRANCHES, } from "@/config/site";
 import { HOME_SIGNATURE } from "@/config/signature";
 import { buildMetadata } from "@/lib/seo";
 import { faqLd, organizationLd } from "@/lib/jsonld";
@@ -55,7 +56,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <p className="mt-4 text-lg [text-shadow:0_1px_10px_rgb(0_0_0/0.45)]">{d.hero.sub}</p>
             <div className="mt-7 grid gap-3 sm:flex">
               <TrackedLink
-                href={bookingUrlFor()}
+                href={bookingHref(lang)}
                 event="reservation_click"
                 params={{ branch: "any", language: lang }}
                 className={btnPrimary}

@@ -7,7 +7,8 @@ export type BranchSlug =
   | "emquartier"
   | "siam-paragon"
   | "iconsiam"
-  | "central-chidlom";
+  | "central-chidlom"
+  | "central-world";
 
 
 /** A page inside the site, language-independent, e.g. "" (home), "menu/food", "locations/central-park". */
