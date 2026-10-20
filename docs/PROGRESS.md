@@ -67,7 +67,17 @@ The user said they already confirmed: **awards**, **social links**, **"brick-ove
 - Brand colours/logo are placeholders (`src/app/globals.css`, `Logo.tsx`).
 
 ## 9. Navigation/scroll test result (final)
-NAVTEST_RESULT_PLACEHOLDER
+Ad-hoc Playwright test (not in repo) run against the final build: scroll position after navigation must be 0 (except `#hash` targets), body scroll lock released, modal closes with Esc.
+Covered: every header nav link (dropdown items on desktop, drawer on mobile), every footer link, branch cards, breadcrumbs, language switches, signature-card `#hash` anchor, direct loads of `/reserve/`, `/menu/food/`, a branch page.
+
+| Language | Desktop 1440x900 | Mobile 360x800 |
+|---|---|---|
+| EN | 48 checks, 0 failures | 53 checks, 0 failures |
+| TH | 48 checks, 0 failures | 53 checks, 0 failures |
+| AR | 48 checks, 0 failures | 53 checks, 0 failures |
+
+Total 303 checks, 0 failures. Failures found and fixed along the way: (1) `scroll-behavior: smooth` animating Next's scroll-to-top and first-render focus on `/reserve/`; (2) a footer link to the page you are already on did not scroll to top (fixed with a capture-phase click handler in `ScrollToTop`, because Next `Link` calls `preventDefault` first). Two aborted runs were caused by the local test server dying, not by the site.
+
 
 ## 10. Non-negotiable rules
 1. **Never use the word "halal"** anywhere (code, content, docs shipped to the site). Label **pork** and **alcohol** clearly in all languages; dietary tags only if stated in the source menus.
