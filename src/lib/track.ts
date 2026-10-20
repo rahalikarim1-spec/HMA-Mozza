@@ -7,12 +7,18 @@ export type TrackName =
   | "directions_click"
   | "menu_view"
   | "pdf_download"
-  | "language_switch";
+  | "language_switch"
+  | "booking_start"
+  | "booking_step"
+  | "booking_zone_select"
+  | "booking_time_select"
+  | "booking_submit_demo";
 
 export type TrackParams =
   | { branch: BranchSlug | "any"; language: Lang }
   | { language: Lang }
-  | { from: Lang; to: Lang };
+  | { from: Lang; to: Lang }
+  | Record<string, string | number | boolean>;
 
 declare global {
   interface Window {

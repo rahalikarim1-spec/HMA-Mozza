@@ -1,22 +1,15 @@
+import { bookingHref } from "@/lib/booking";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDict } from "@/content";
 import type { BranchSlug, Lang } from "@/content/types";
-import {
-  BRANCHES,
-  RATING,
-  WEEKDAYS,
-  bookingUrlFor,
-  directionsUrl,
-  fullAddress,
-  getBranch,
-  hoursFor,
-} from "@/config/site";
-import { getDish } from "@/config/menu";
+import { BRANCHES, RATING, WEEKDAYS, directionsUrl, fullAddress, getBranch, shown } from "@/config/site";
+import { BRANCH_SIGNATURE } from "@/config/signature";
+import { menusUi } from "@/content/menus-ui";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbLd, faqLd, organizationLd, restaurantLd } from "@/lib/jsonld";
-import { hoursText, openStatus } from "@/lib/format";
+import { hoursCell, statusText } from "@/lib/format";
 import { absoluteUrl, pathFor } from "@/lib/routes";
 import { btnLight, btnPrimary, container } from "@/lib/ui";
 import PageShell from "@/components/PageShell";
@@ -35,14 +28,21 @@ export function branchMetadata(lang: Lang, slug: BranchSlug): Metadata {
 
 export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlug }) {
   const d = getDict(lang);
+  const mu = menusUi[lang];
   const b = getBranch(slug);
   const t = d.branches[slug];
   const params = { branch: slug, language: lang } as const;
   const hub = pathFor(lang, "locations");
+  const status = statusText(b, d);
+  const address = fullAddress(b) ?? (shown(b, "floor") ? `${b.floor}, ${t.mall}` : null);
+  const hoursRows = WEEKDAYS.map((day) => ({ day, cell: hoursCell(b, day, d) }));
+  const showHours = hoursRows.every((r) => r.cell !== null);
+  const showTransit = !b.verify.transit && !!t.transit;
+  const showLandmark = !b.verify.landmark && !!t.landmark;
+  const hasGettingHere = showTransit || showLandmark;
+  const showRating = slug === "central-park"; // the only rating in /context (Google Business Profile snapshot)
   const others = BRANCHES.filter((x) => x.slug !== slug);
-  const defaultHours = hoursText(b.opens, b.closes, d);
-  const showTransit = !b.transit.verify;
-  const showLandmark = !b.landmark.verify;
+  const pending = !address && !status;
 
   return (
     <PageShell lang={lang} route={`locations/${slug}`} branch={slug}>
@@ -57,7 +57,7 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
         ])}
       />
 
-      {/* First mobile viewport: H1, rating, open status + hours, 3 buttons */}
+      {/* First mobile viewport: H1, rating (if known), status + hours (if confirmed), 3 buttons */}
       <section className="bg-mustard">
         <div className={`${container} grid items-center gap-6 py-4 md:grid-cols-2 md:gap-10 md:py-12`}>
           <div>
@@ -71,39 +71,29 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
             />
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl">{t.h1}</h1>
             <ul className="mt-3 space-y-1 text-base">
-              <li className="flex items-center gap-2 font-semibold">
-                <Icon name="star" className="h-5 w-5 text-tomato" filled />
-                <span>
-                  {RATING.value} ★ {d.common.ratingOn(RATING.source)}
-                </span>
-                <span className="text-xs font-normal opacity-75">({d.common.demoNote})</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Icon name="clock" className="h-5 w-5" />
-                <strong>{openStatus(b, d)}</strong>
-              </li>
-              <li className="ps-7">
-                {d.common.hours}:{" "}
-                <span dir={defaultHours.ltr ? "ltr" : undefined}>{defaultHours.text}</span>
-              </li>
+              {showRating && (
+                <li className="flex items-center gap-2 font-semibold">
+                  <Icon name="star" className="h-5 w-5 text-tomato" filled />
+                  <span>
+                    {RATING.value} ★ {d.common.ratingOn(RATING.source)}
+                  </span>
+                  <span className="text-xs font-normal opacity-75">({d.common.demoNote})</span>
+                </li>
+              )}
+              {status && (
+                <li className="flex items-center gap-2">
+                  <Icon name="clock" className="h-5 w-5" />
+                  <strong>{status}</strong>
+                </li>
+              )}
+              {pending && <li>{d.branchPage.detailsPending}</li>}
             </ul>
             <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
-              <TrackedLink
-                href={bookingUrlFor(slug)}
-                event="reservation_click"
-                params={params}
-                className={`${btnPrimary} !px-2 sm:!px-5`}
-              >
+              <TrackedLink href={bookingHref(lang, slug)} event="reservation_click" params={params} className={`${btnPrimary} !px-2 sm:!px-5`} dataReserve>
                 <Icon name="calendar" className="hidden h-5 w-5 sm:block" />
                 {d.branchPage.reserve}
               </TrackedLink>
-              <TrackedLink
-                href={directionsUrl(b)}
-                external
-                event="directions_click"
-                params={params}
-                className={`${btnLight} !px-2 sm:!px-5`}
-              >
+              <TrackedLink href={directionsUrl(b)} external event="directions_click" params={params} className={`${btnLight} !px-2 sm:!px-5`}>
                 <Icon name="pin" className="hidden h-5 w-5 sm:block" />
                 {d.branchPage.directions}
               </TrackedLink>
@@ -126,21 +116,24 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
         </div>
       </section>
 
-      {/* Address + map placeholder */}
+      {/* Getting there (only confirmed facts) + address + static map placeholder */}
       <section className="bg-cream py-10" aria-labelledby="addr-h">
         <div className={`${container} grid gap-8 md:grid-cols-2`}>
           <div>
             <h2 id="addr-h" className="text-3xl">{d.branchPage.addressTitle}</h2>
             <address className="mt-3 text-lg not-italic">
               <strong>{b.name}</strong>
+              {address && (
+                <>
+                  <br />
+                  {address}
+                </>
+              )}
               <br />
-              {fullAddress(b) === "TBC" ? d.common.tbc : fullAddress(b)}
-              <br />
-              <span className="text-base">{t.mall} · {t.district}</span>
+              <span className="text-base">{t.district ? `${t.mall} · ${t.district}` : t.mall}</span>
             </address>
             <h3 className="mt-8 text-2xl">{d.branchPage.gettingHere}</h3>
-            {/* Unconfirmed transit/landmark text (verify: true in BRANCHES) is never rendered. */}
-            {showTransit || showLandmark ? (
+            {hasGettingHere && (
               <dl className="mt-3 space-y-3">
                 {showTransit && (
                   <div>
@@ -155,20 +148,13 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
                   </div>
                 )}
               </dl>
-            ) : (
-              <p className="mt-3">
-                <TrackedLink
-                  href={directionsUrl(b)}
-                  external
-                  event="directions_click"
-                  params={params}
-                  className="inline-flex min-h-11 items-center gap-2 font-semibold underline underline-offset-4"
-                >
-                  <Icon name="pin" className="h-5 w-5" />
-                  {d.branchPage.directionsFallback}
-                </TrackedLink>
-              </p>
             )}
+            <p className="mt-3">
+              <TrackedLink href={directionsUrl(b)} external event="directions_click" params={params} className="inline-flex min-h-11 items-center gap-2 font-semibold underline underline-offset-4">
+                <Icon name="pin" className="h-5 w-5" />
+                {d.branchPage.directionsFallback}
+              </TrackedLink>
+            </p>
           </div>
           <figure>
             <Image
@@ -185,7 +171,6 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
         </div>
       </section>
 
-      {/* Branch intro */}
       <section className="bg-mustard py-10" aria-labelledby="about-h">
         <div className={`${container} max-w-3xl`}>
           <h2 id="about-h" className="text-3xl">{d.branchPage.aboutTitle}</h2>
@@ -197,48 +182,55 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
         </div>
       </section>
 
-      {/* 3 signature dishes */}
       <section className="bg-cream py-10" aria-labelledby="sig-h">
         <div className={container}>
           <h2 id="sig-h" className="text-3xl">{d.branchPage.signatureTitle}</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {b.signature.map((id) => (
-              <SignatureCard key={id} dish={getDish(id)} d={d} lang={lang} />
+            {BRANCH_SIGNATURE[slug].map((id) => (
+              <SignatureCard key={id} id={id} lang={lang} />
             ))}
           </div>
+          <p className="mt-6 text-sm">{mu.ui.pricesNote}</p>
+          <ul className="mt-3 flex flex-wrap gap-3">
+            {(["food", "brunch", "aperitivo", "afternoon-tea"] as const)
+              .filter((m) => m !== "afternoon-tea" || slug === "central-chidlom")
+              .map((m) => (
+                <li key={m}>
+                  <Link href={pathFor(lang, `menu/${m}`)} className="inline-flex min-h-11 items-center rounded-sm border-2 border-ink bg-white px-4 font-semibold hover:bg-mustard">
+                    {mu.menus[m].name}
+                  </Link>
+                </li>
+              ))}
+          </ul>
         </div>
       </section>
 
-      {/* Hours table */}
-      <section className="bg-mustard py-10" aria-labelledby="hours-h">
-        <div className={`${container} max-w-3xl`}>
-          <h2 id="hours-h" className="text-3xl">{d.branchPage.hoursTitle}</h2>
-          <table className="mt-4 w-full border-2 border-ink bg-cream text-start">
-            <thead>
-              <tr className="bg-ink text-cream">
-                <th scope="col" className="px-4 py-2 text-start font-semibold">{d.branchPage.day}</th>
-                <th scope="col" className="px-4 py-2 text-start font-semibold">{d.branchPage.hoursCol}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {WEEKDAYS.map((day) => {
-                const h = hoursFor(b, day);
-                const txt = hoursText(h.opens, h.closes, d);
-                return (
+      {showHours && (
+        <section className="bg-mustard py-10" aria-labelledby="hours-h">
+          <div className={`${container} max-w-3xl`}>
+            <h2 id="hours-h" className="text-3xl">{d.branchPage.hoursTitle}</h2>
+            <table className="mt-4 w-full border-2 border-ink bg-cream text-start">
+              <thead>
+                <tr className="bg-ink text-cream">
+                  <th scope="col" className="px-4 py-2 text-start font-semibold">{d.branchPage.day}</th>
+                  <th scope="col" className="px-4 py-2 text-start font-semibold">{d.branchPage.hoursCol}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {hoursRows.map(({ day, cell }) => (
                   <tr key={day} className="border-t border-ink/25">
                     <th scope="row" className="px-4 py-3 text-start font-medium">{d.common.dayNames[day]}</th>
                     <td className="px-4 py-3">
-                      <span dir={txt.ltr ? "ltr" : undefined}>{txt.text}</span>
+                      <span dir={cell!.ltr ? "ltr" : undefined}>{cell!.text}</span>
                     </td>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </section>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
 
-      {/* Branch FAQ */}
       <section className="bg-cream py-10" aria-labelledby="faq-h">
         <div className={`${container} max-w-3xl`}>
           <h2 id="faq-h" className="text-3xl">{d.branchPage.faqTitle}</h2>
@@ -248,16 +240,11 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
         </div>
       </section>
 
-      {/* Other branches carousel (internal links) */}
       <section className="bg-mustard py-10" aria-labelledby="other-h">
         <div className={container}>
           <h2 id="other-h" className="text-3xl">{d.branchPage.otherTitle}</h2>
         </div>
-        <ul
-          tabIndex={0}
-          aria-labelledby="other-h"
-          className={`${container} mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4`}
-        >
+        <ul tabIndex={0} aria-labelledby="other-h" className={`${container} mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4`}>
           {others.map((o) => (
             <li key={o.slug} className="w-72 shrink-0 snap-start">
               <BranchCard branch={o} d={d} lang={lang} />

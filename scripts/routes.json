@@ -1,0 +1,95 @@
+[
+ {
+  "path": "menu",
+  "module": "@/pages-impl/MenuPages",
+  "component": "MenuHubPage",
+  "metadata": "menuHubMetadata"
+ },
+ {
+  "path": "menu/[menu]",
+  "module": "@/pages-impl/MenuPages",
+  "component": "MenuDetailPage",
+  "metadata": "menuMetadata",
+  "param": "menu",
+  "as_fn": "asMenuIdOr404",
+  "params_const": "MENU_PARAMS",
+  "params_mod": "@/lib/params",
+  "prop_name": "id"
+ },
+ {
+  "path": "neapolitan-pizza-bangkok",
+  "module": "@/pages-impl/LandingPage",
+  "component": "LandingPage",
+  "metadata": "landingMetadata",
+  "metaArgs": ", \"pizza\"",
+  "props": " id=\"pizza\""
+ },
+ {
+  "path": "pasta-bangkok",
+  "module": "@/pages-impl/LandingPage",
+  "component": "LandingPage",
+  "metadata": "landingMetadata",
+  "metaArgs": ", \"pasta\"",
+  "props": " id=\"pasta\""
+ },
+ {
+  "path": "celebrations",
+  "module": "@/pages-impl/LandingPage",
+  "component": "LandingPage",
+  "metadata": "landingMetadata",
+  "metaArgs": ", \"celebrations\"",
+  "props": " id=\"celebrations\""
+ },
+ {
+  "path": "about",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "AboutPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"about\""
+ },
+ {
+  "path": "hma-privilege",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "PrivilegePage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"hma-privilege\""
+ },
+ {
+  "path": "delivery",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "DeliveryPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"delivery\""
+ },
+ {
+  "path": "contact",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "ContactPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"contact\""
+ },
+ {
+  "path": "blog",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "BlogIndexPage",
+  "metadata": "companyMetadata",
+  "metaArgs": ", \"blog\""
+ },
+ {
+  "path": "blog/[slug]",
+  "module": "@/pages-impl/CompanyPages",
+  "component": "BlogPostPage",
+  "metadata": "blogPostMetadata",
+  "param": "slug",
+  "as_fn": "asBlogSlug",
+  "params_const": "BLOG_PARAMS",
+  "params_mod": "@/lib/params",
+  "prop_name": "slug"
+ },
+ {
+  "path": "reserve",
+  "module": "@/pages-impl/ReservePage",
+  "component": "ReservePage",
+  "metadata": "reserveMetadata"
+ }
+]

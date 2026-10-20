@@ -1,131 +1,93 @@
 /**
- * Writes NATIVE_REVIEW_PRIORITY.md: ONLY the Thai strings a visitor reads on
- *   banner, home (/th/), /th/locations/central-park, /th/menu.
- * Identical strings used in several places are listed once. Everything else is in NATIVE_REVIEW.md.
+ * NATIVE_REVIEW_PRIORITY.md — ONLY the Thai strings a visitor reads on: banner, home (/th/),
+ * /th/locations/central-park and /th/menu (hub + food page UI). Duplicates listed once.
  *   npm run review-priority
  */
 import { writeFileSync } from "node:fs";
 import { th } from "../src/content/th";
+import { menusUi } from "../src/content/menus-ui";
+import { reservationUi } from "../src/content/reservation-ui";
 
-type Get = (d: typeof th) => string;
-const g = (fn: Get) => fn;
-const cp = (d: typeof th) => d.branches["central-park"];
+type G = [string, string | undefined];
+const cp = th.branches["central-park"];
+const m = menusUi.th;
 
-const GROUPS: { title: string; items: [string, Get][] }[] = [
-  { title: "Banner (every page)", items: [["banner", g((d) => d.banner)]] },
+const GROUPS: { title: string; items: G[] }[] = [
+  { title: "Banner (every page)", items: [["banner", th.banner]] },
   {
     title: "Shared UI (header, sticky bar, footer — every page)",
     items: [
-      ["nav.locations", g((d) => d.nav.locations)],
-      ["nav.reserve / common.reserve / sticky.reserve", g((d) => d.nav.reserve)],
-      ["nav.menu / common.menu", g((d) => d.nav.menu)],
-      ["sticky.directions / common.directions", g((d) => d.sticky.directions)],
-      ["whatsappMessage (sample branch)", g((d) => d.whatsappMessage("Mozza Central Park"))],
-      ["footer.branches", g((d) => d.footer.branches)],
-      ["footer.part", g((d) => d.footer.part)],
+      ["nav.menu", th.nav.menu], ["nav.locations", th.nav.locations], ["nav.reserve", th.nav.reserve],
+      ["sticky.directions", th.sticky.directions], ["whatsappMessage", th.whatsappMessage("Mozza Central Park")],
+      ["footer.part", th.footer.part], ["footer.photos", th.footer.photos],
     ],
   },
   {
     title: "Home (/th/)",
     items: [
-      ["meta.home.title", g((d) => d.meta.home.title)],
-      ["hero.h1", g((d) => d.hero.h1)],
-      ["hero.sub", g((d) => d.hero.sub)],
-      ["hero.cta.menu", g((d) => d.hero.cta.menu)],
-      ["chooser.title", g((d) => d.chooser.title)],
-      ["chooser.intro", g((d) => d.chooser.intro)],
-      ["common.openToday", g((d) => d.common.openToday("22:00"))],
-      ["common.openTbc", g((d) => d.common.openTbc)],
-      ["common.viewBranch", g((d) => d.common.viewBranch)],
-      ["signature.title", g((d) => d.signature.title)],
-      ["signature.intro", g((d) => d.signature.intro)],
-      ["common.viewDish", g((d) => d.common.viewDish)],
-      ["tags.pork", g((d) => d.tags.pork)],
-      ["tags.alcohol", g((d) => d.tags.alcohol)],
-      ["tags.vegetarian", g((d) => d.tags.vegetarian)],
-      ["tags.toConfirm", g((d) => d.tags.toConfirm)],
-      ["awards.title", g((d) => d.awards.title)],
-      ["faq.title", g((d) => d.faq.title)],
-      ["faq.items[0].q", g((d) => d.faq.items[0].q)],
-      ["faq.items[1].q", g((d) => d.faq.items[1].q)],
-      ["faq.items[2].q", g((d) => d.faq.items[2].q)],
-      ["faq.items[3].q", g((d) => d.faq.items[3].q)],
-      ["branches.*.mall (Central Park)", g((d) => cp(d).mall)],
+      ["meta.home.title", th.meta.home.title], ["meta.home.description", th.meta.home.description],
+      ["hero.h1", th.hero.h1], ["hero.sub", th.hero.sub], ["hero.cta.menu", th.hero.cta.menu], ["hero.aiCaption", th.hero.aiCaption],
+      ["chooser.title", th.chooser.title], ["chooser.intro", th.chooser.intro],
+      ["common.closesAt", th.common.closesAt("22:00")], ["common.viewBranch", th.common.viewBranch],
+      ["signature.title", th.signature.title], ["signature.intro", th.signature.intro],
+      ["faq.title", th.faq.title], ["faq.items[0].q", th.faq.items[0].q], ["faq.items[1].q", th.faq.items[1].q], ["faq.items[2].q", th.faq.items[2].q], ["faq.items[3].q", th.faq.items[3].q],
+      ["branches.central-park.mall", cp.mall],
     ],
   },
   {
     title: "/th/locations/central-park",
     items: [
-      ["branches.central-park.metaTitle", g((d) => cp(d).metaTitle)],
-      ["branches.central-park.h1", g((d) => cp(d).h1)],
-      ["branches.central-park.district", g((d) => cp(d).district)],
-      ["branches.central-park.intro[0]", g((d) => cp(d).intro[0])],
-      ["branches.central-park.intro[1]", g((d) => cp(d).intro[1])],
-      ["branches.central-park.intro[2]", g((d) => cp(d).intro[2])],
-      ["common.ratingOn", g((d) => d.common.ratingOn("Google"))],
-      ["common.demoNote", g((d) => d.common.demoNote)],
-      ["common.hours", g((d) => d.common.hours)],
-      ["common.tbc", g((d) => d.common.tbc)],
-      ["branchPage.addressTitle", g((d) => d.branchPage.addressTitle)],
-      ["branchPage.gettingHere", g((d) => d.branchPage.gettingHere)],
-      ["branchPage.directionsFallback", g((d) => d.branchPage.directionsFallback)],
-      ["branchPage.aboutTitle", g((d) => d.branchPage.aboutTitle)],
-      ["branchPage.signatureTitle", g((d) => d.branchPage.signatureTitle)],
-      ["branchPage.hoursTitle", g((d) => d.branchPage.hoursTitle)],
-      ["branchPage.faqTitle", g((d) => d.branchPage.faqTitle)],
-      ["branchPage.otherTitle", g((d) => d.branchPage.otherTitle)],
+      ["metaTitle", cp.metaTitle], ["metaDescription", cp.metaDescription], ["h1", cp.h1], ["district", cp.district ?? undefined],
+      ["intro[0]", cp.intro[0]], ["intro[1]", cp.intro[1]], ["intro[2]", cp.intro[2]],
+      ["transit", cp.transit ?? undefined], ["landmark", cp.landmark ?? undefined],
+      ["common.ratingOn", th.common.ratingOn("Google")], ["common.demoNote", th.common.demoNote],
+      ["branchPage.addressTitle", th.branchPage.addressTitle], ["branchPage.gettingHere", th.branchPage.gettingHere],
+      ["branchPage.directionsFallback", th.branchPage.directionsFallback], ["branchPage.aboutTitle", th.branchPage.aboutTitle],
+      ["branchPage.signatureTitle", th.branchPage.signatureTitle], ["branchPage.hoursTitle", th.branchPage.hoursTitle],
+      ["branchPage.faqTitle", th.branchPage.faqTitle], ["branchPage.otherTitle", th.branchPage.otherTitle],
+      ["faq[0].q", cp.faq[0].q], ["faq[1].q", cp.faq[1].q], ["faq[2].q", cp.faq[2].q],
     ],
   },
   {
-    title: "/th/menu",
+    title: "/th/menu (hub + food menu UI; dish descriptions are in NATIVE_REVIEW.md)",
     items: [
-      ["menuPage.h1", g((d) => d.menuPage.h1)],
-      ["menuPage.intro", g((d) => d.menuPage.intro)],
-      ["menuPage.pdf", g((d) => d.menuPage.pdf)],
-      ["menuPage.categories.starters", g((d) => d.menuPage.categories.starters)],
-      ["menuPage.categories.pizza", g((d) => d.menuPage.categories.pizza)],
-      ["menuPage.categories.pasta", g((d) => d.menuPage.categories.pasta)],
-      ["menuPage.categories.desserts", g((d) => d.menuPage.categories.desserts)],
-      ["common.demoPrice", g((d) => d.common.demoPrice)],
-      ["menuPage.dietaryNote", g((d) => d.menuPage.dietaryNote)],
-      ["dishes.truffle-tagliolini.description", g((d) => d.dishes["truffle-tagliolini"].description)],
-      ["dishes.burrata.description", g((d) => d.dishes.burrata.description)],
-      ["dishes.carpi-salerno.description", g((d) => d.dishes["carpi-salerno"].description)],
-      ["dishes.truffle-risotto.description", g((d) => d.dishes["truffle-risotto"].description)],
-      ["dishes.lobster-spaghetti.description", g((d) => d.dishes["lobster-spaghetti"].description)],
-      ["dishes.tiramisu.description", g((d) => d.dishes.tiramisu.description)],
+      ["hub.title", m.hub.title], ["hub.h1", m.hub.h1], ["hub.intro", m.hub.intro], ["hub.open", m.hub.open],
+      ["menus.food.name", m.menus.food.name], ["menus.brunch.name", m.menus.brunch.name], ["menus.aperitivo.name", m.menus.aperitivo.name], ["menus.afternoon-tea.name", m.menus["afternoon-tea"].name],
+      ["menus.food.h1", m.menus.food.h1], ["menus.food.blurb", m.menus.food.blurb],
+      ["ui.search", m.ui.search], ["ui.searchPlaceholder", m.ui.searchPlaceholder], ["ui.vegetarian", m.ui.vegetarian], ["ui.pork", m.ui.pork], ["ui.alcohol", m.ui.alcohol],
+      ["ui.pricesNote", m.ui.pricesNote], ["ui.serviceNote", m.ui.serviceNote], ["ui.dietNote", m.ui.dietNote],
+      ["ui.tags.vegetarianOnRequest", m.ui.tags.vegetarianOnRequest], ["ui.tags.spicy", m.ui.tags.spicy], ["ui.pdf", m.ui.pdf],
+      ["categories.pizza", m.categories.pizza], ["categories.pasta-and-risotto", m.categories["pasta-and-risotto"]], ["categories.dolci", m.categories.dolci],
+    ],
+  },
+  {
+    title: "Reservation (every Reserve button)",
+    items: [
+      ["title", reservationUi.th.title], ["demoNote", reservationUi.th.demoNote], ["done.heading", reservationUi.th.done.heading], ["done.production", reservationUi.th.done.production],
     ],
   },
 ];
 
-const seen = new Map<string, string>();
+const seen = new Set<string>();
 let total = 0;
 let body = "";
-for (const grp of GROUPS) {
+for (const g of GROUPS) {
   const rows: string[] = [];
-  for (const [key, get] of grp.items) {
-    const text = get(th);
-    if (seen.has(text)) continue; // same Thai string already listed above
-    seen.set(text, key);
+  for (const [key, text] of g.items) {
+    if (!text || seen.has(text)) continue;
+    seen.add(text);
     rows.push(`| ${++total} | \`${key}\` | ${text.replace(/\|/g, "\\|")} |`);
   }
-  body += `## ${grp.title}\n\n| # | Key | Thai text |\n|---|---|---|\n${rows.join("\n")}\n\n`;
+  body += `## ${g.title}\n\n| # | Key | Thai text |\n|---|---|---|\n${rows.join("\n")}\n\n`;
 }
-
 writeFileSync(
   "NATIVE_REVIEW_PRIORITY.md",
   `# Thai strings — PRIORITY native review (${total} strings)
 
 <!-- NEEDS NATIVE REVIEW -->
 
-Only what a visitor reads on: **banner, home (/th/), /th/locations/central-park, /th/menu**.
-Identical strings used in several places appear once. Generated by \`npm run review-priority\`
-from \`src/content/th.ts\` — edit there, then re-run.
-
-Deliberately NOT in this list (see \`NATIVE_REVIEW.md\` for everything): meta descriptions, image alt text,
-aria-labels, weekday names, awards note, FAQ answers and Central Park FAQ questions (placeholder wording),
-the other four branches' mall names, footer follow/disclaimer lines, map caption,
-Latin brand/dish names, and transit/landmark text (hidden until confirmed).
+Only what a visitor reads on: **banner, home (/th/), /th/locations/central-park, /th/menu** (+ the four reservation headlines). Identical strings appear once.
+Generated by \`npm run review-priority\` — edit \`src/content/*.ts\`, then re-run. Everything else: \`NATIVE_REVIEW.md\`.
 
 ${body}`,
 );

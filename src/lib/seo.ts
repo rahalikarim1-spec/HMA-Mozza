@@ -33,7 +33,15 @@ export function buildMetadata(
       description: meta.description,
       url: absoluteUrl(lang, route),
       locale: OG_LOCALE[lang],
+      siteName: "Mozza (concept demo)",
       type: "website",
+      images: [{ url: `${SITE_ORIGIN}/images/hero-bg.jpg`, width: 1536, height: 1024, alt: "Mozza concept demo (AI illustration)" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: meta.description,
+      images: [`${SITE_ORIGIN}/images/hero-bg.jpg`],
     },
   };
 }

@@ -1,0 +1,224 @@
+{
+ "menu": "aperitivo",
+ "source": "source/menus/aperitivo.pdf",
+ "title": "Aperitivo",
+ "sourceNote": "Source: \"Aperitivo, Everyday from 4pm to 7pm\" (SEP 2025 print file).",
+ "currency": "THB",
+ "status": "transcribed — unverified",
+ "categories": [
+  {
+   "id": "aperitivo-board",
+   "name": "Aperitivo Board",
+   "items": [
+    {
+     "id": "aperitivo-board",
+     "name": "Aperitivo Board",
+     "description": "Homemade focaccia & pizza bread, prosciutto & mortadella, aged Grana Padano, moliterno & creamy stracciatella with sweet berry tomatoes, fritto misto & fried mozzarella bites, sundried tomato tapenade & aioli sauce",
+     "price": 990,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 1,
+     "verify": true,
+     "reviewNotes": [
+      "Menu has no dietary icons; pork tag derived from 'prosciutto & mortadella'. Confirm with Mozza."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "italian-cocktails",
+   "name": "Italian Cocktails",
+   "items": [
+    {
+     "id": "anguria-gelato",
+     "name": "Anguria Gelato",
+     "description": "Havana 3 Años Rum, Watermelon & Lime",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 each (stated once for the section)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "fiore-rosso",
+     "name": "Fiore Rosso",
+     "description": "Absolut Vodka, Hibiscus, Cranberry, Lime & Egg White",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 each (stated once for the section)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "il-sbagliato",
+     "name": "Il Sbagliato",
+     "description": "Campari, Cinzano Rosso & Spumante Ca'Stele Cuvée Blanche",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 each (stated once for the section)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "luna-dorata",
+     "name": "Luna Dorata",
+     "description": "Beefeater Dry Gin, Cointreau, Pineapple, Passion Fruit & Lime",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 each (stated once for the section)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "mocktails",
+   "name": "Mocktails",
+   "items": [
+    {
+     "id": "elixir",
+     "name": "Elixir",
+     "description": "Guava, Lime, Ginger",
+     "price": 150,
+     "sizes": null,
+     "priceNote": "150 each (stated once for the section)",
+     "tags": [],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "apple-garden",
+     "name": "Apple Garden",
+     "description": "Apple, Kiwi, Lime, Mint",
+     "price": 150,
+     "sizes": null,
+     "priceNote": "150 each (stated once for the section)",
+     "tags": [],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "fruity-berry",
+     "name": "Fruity Berry",
+     "description": "Mixed Berries, Lime, Grenadine, Soda Water",
+     "price": 150,
+     "sizes": null,
+     "priceNote": "150 each (stated once for the section)",
+     "tags": [],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "sparkling",
+   "name": "Sparkling",
+   "items": [
+    {
+     "id": "spumante-extra-dry-cuvee-blanche-ca-stele",
+     "name": "Spumante Extra Dry Cuvée Blanche Ca'stele",
+     "description": "Bottle",
+     "price": 990,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "wine-by-the-glass",
+   "name": "Wine by the Glass",
+   "items": [
+    {
+     "id": "red-wine-puglia-igt-primitivo",
+     "name": "Red Wine — Puglia IGT Primitivo",
+     "description": "La Marchesana 2023, Primitivo, Puglia, Italy",
+     "price": 199,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "white-wine-terre-di-chieti-igt",
+     "name": "White Wine — Terre di Chieti IGT",
+     "description": "Terre di Mario 2024, Pinot Grigio, Abruzzo, Italy",
+     "price": 199,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "draught-beer",
+   "name": "Draught Beer",
+   "items": [
+    {
+     "id": "peroni-half-pint",
+     "name": "Peroni (half pint)",
+     "description": null,
+     "price": 120,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "peroni-pint",
+     "name": "Peroni (pint)",
+     "description": null,
+     "price": 200,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 2,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  }
+ ]
+}

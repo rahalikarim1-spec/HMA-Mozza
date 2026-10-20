@@ -1,15 +1,19 @@
-import type { Dict, FaqItem } from "@/content/dict";
+import type { FaqItem } from "@/content/dict";
+import { menusUi, type MenuId } from "@/content/menus-ui";
+import { categoryName, describe, getMenu } from "./menus";
 import type { Lang } from "@/content/types";
 import {
   BRAND_NAME,
+  FACEBOOK_URL,
+  HMA_URL,
+  INSTAGRAM_URL,
+  ORG_NAME,
   BRANCHES,
-  CURRENCY,
   PARENT_ORG_NAME,
-  PRICES,
   SITE_ORIGIN,
+  shown,
   type BranchConfig,
 } from "@/config/site";
-import { CATEGORIES, DISHES } from "@/config/menu";
 import { absoluteUrl } from "./routes";
 
 const CTX = "https://schema.org";
@@ -20,14 +24,30 @@ export function organizationLd() {
     "@context": CTX,
     "@type": "Organization",
     "@id": ORG_ID,
-    name: `${BRAND_NAME} Trattoria Italiana`,
+    name: ORG_NAME,
+    alternateName: `${BRAND_NAME} Trattoria Italiana`,
     url: `${SITE_ORIGIN}/`,
-    parentOrganization: { "@type": "Organization", name: PARENT_ORG_NAME },
+    parentOrganization: { "@type": "Organization", name: PARENT_ORG_NAME, url: HMA_URL },
+    sameAs: [FACEBOOK_URL, INSTAGRAM_URL],
+  };
+}
+
+export function blogPostingLd(lang: Lang, slug: string, headline: string, description: string) {
+  return {
+    "@context": CTX,
+    "@type": "BlogPosting",
+    headline,
+    description,
+    inLanguage: lang,
+    mainEntityOfPage: absoluteUrl(lang, `blog/${slug}`),
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
   };
 }
 
 export function restaurantLd(lang: Lang, b: BranchConfig) {
-  const route = `locations/${b.slug}` as const;
+  const route = `locations/${b.slug}`;
+  const street = shown(b, "street") ? [shown(b, "floor") ? b.floor : null, b.street].filter(Boolean).join(", ") : null;
   return {
     "@context": CTX,
     "@type": "Restaurant",
@@ -36,15 +56,15 @@ export function restaurantLd(lang: Lang, b: BranchConfig) {
     url: absoluteUrl(lang, route),
     image: `${SITE_ORIGIN}${b.image}`,
     servesCuisine: ["Italian", "Pizza", "Pasta"],
-    hasMenu: absoluteUrl(lang, "menu"),
-    // PLACEHOLDER hours - "TBC" is not valid schema.org until real times are filled in config.
-    openingHours: `Mo-Su ${b.opens}-${b.closes}`,
+    hasMenu: absoluteUrl(lang, "menu/food"),
+    acceptsReservations: absoluteUrl(lang, "reserve"),
+    // Unconfirmed values (verify: true) are omitted. Opening hours stay out until real opening times are in config.
     address: {
       "@type": "PostalAddress",
-      ...(b.street !== "TBC" ? { streetAddress: b.street } : {}),
+      ...(street ? { streetAddress: street } : {}),
+      ...(shown(b, "area") && b.area ? { addressRegion: b.area } : {}),
       addressLocality: b.city,
-      addressRegion: b.area,
-      ...(b.postalCode ? { postalCode: b.postalCode } : {}),
+      ...(shown(b, "postalCode") && b.postalCode ? { postalCode: b.postalCode } : {}),
       addressCountry: "TH",
     },
     parentOrganization: { "@id": ORG_ID },
@@ -81,27 +101,27 @@ export function faqLd(items: FaqItem[]) {
   };
 }
 
-export function menuLd(lang: Lang, d: Dict) {
+export function menuLd(lang: Lang, menuId: MenuId) {
+  const data = getMenu(menuId);
+  const ui = menusUi[lang];
   return {
     "@context": CTX,
     "@type": "Menu",
-    name: d.menuPage.h1,
-    url: absoluteUrl(lang, "menu"),
+    name: ui.menus[menuId].h1,
+    url: absoluteUrl(lang, `menu/${menuId}`),
     inLanguage: lang,
-    hasMenuSection: CATEGORIES.map((c) => ({
+    hasMenuSection: data.categories.map((c) => ({
       "@type": "MenuSection",
-      name: d.menuPage.categories[c.id],
-      hasMenuItem: DISHES.filter((x) => x.category === c.id).map((dish) => {
-        const price = PRICES[dish.id];
+      name: categoryName(c.id, lang),
+      hasMenuItem: c.items.map((it) => {
+        const prices = it.sizes ? it.sizes.map((s) => s.price) : it.price !== null ? [it.price] : [];
         return {
           "@type": "MenuItem",
-          name: d.dishes[dish.id].name,
-          description: d.dishes[dish.id].description,
-          ...(dish.tags.some((t) => t.tag === "vegetarian" && !t.confirm)
-            ? { suitableForDiet: "https://schema.org/VegetarianDiet" }
-            : {}),
-          ...(price !== null
-            ? { offers: { "@type": "Offer", price: String(price), priceCurrency: CURRENCY } }
+          name: it.name,
+          ...(describe(it, lang) ? { description: describe(it, lang) } : {}),
+          ...(it.tags.includes("vegetarian") ? { suitableForDiet: "https://schema.org/VegetarianDiet" } : {}),
+          ...(prices.length
+            ? { offers: prices.map((p) => ({ "@type": "Offer", price: String(p), priceCurrency: "THB" })) }
             : {}),
         };
       }),

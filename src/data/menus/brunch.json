@@ -1,0 +1,704 @@
+{
+ "menu": "brunch",
+ "source": "source/menus/brunch.pdf",
+ "title": "Brunch & Breakfast",
+ "sourceNote": "Source title: \"Buongiorno! Breakfast, everyday until 12pm\".",
+ "currency": "THB",
+ "status": "transcribed — unverified",
+ "categories": [
+  {
+   "id": "on-the-go-breakfast",
+   "name": "On-the-go Breakfast",
+   "items": [
+    {
+     "id": "mozza-s-on-the-go-breakfast",
+     "name": "Mozza's On-the-go Breakfast",
+     "description": "Homemade bread & 100% Butter croissant. Served with jam, butter & honey. + 1 Coffee or tea of your choice, + 1 Orange juice, + 1 Greek yoghurt",
+     "price": 195,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-left",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "breakfast",
+   "name": "Breakfast",
+   "items": [
+    {
+     "id": "avocado-egg-toast",
+     "name": "Avocado Egg Toast",
+     "description": "Sourdough bread, creamy scrambled eggs, tomato & fresh avocado",
+     "price": 390,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "2-left",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pizza-breakfast-sandwich",
+     "name": "Pizza Breakfast Sandwich",
+     "description": "Homemade pizza bread, homemade bacon, fried egg, lettuce, tomatoes & roasted potatoes",
+     "price": 340,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": "2-left",
+     "verify": true,
+     "reviewNotes": [
+      "This menu has no dietary icons; pork tag derived from the ingredient name(s) in the description. Confirm with Mozza. (bacon)"
+     ]
+    },
+    {
+     "id": "italian-shakshuka",
+     "name": "Italian Shakshuka",
+     "description": "Nduja, ventriciana, bell pepper confit, egg & toasted ciabatta",
+     "price": 290,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": "2-left",
+     "verify": true,
+     "reviewNotes": [
+      "This menu has no dietary icons; pork tag derived from the ingredient name(s) in the description. Confirm with Mozza. ('nduja / ventricina are pork salami; the description does not say 'pork')"
+     ]
+    },
+    {
+     "id": "granola-bowl",
+     "name": "Granola Bowl",
+     "description": "Homemade granola, fresh fruits, yoghurt & honey",
+     "price": 290,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "2-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "benedict-carbonara",
+     "name": "Benedict Carbonara",
+     "description": "Brioche bun, poached egg, hollandaise sauce, homemade bacon & guanciale",
+     "price": 310,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": "2-right",
+     "verify": true,
+     "reviewNotes": [
+      "This menu has no dietary icons; pork tag derived from the ingredient name(s) in the description. Confirm with Mozza. (bacon, guanciale)"
+     ]
+    },
+    {
+     "id": "benedict-smoked-salmon",
+     "name": "Benedict Smoked Salmon",
+     "description": "Brioche bun, poached egg, hollandaise sauce & smoked Atlantic salmon",
+     "price": 340,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "2-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "italian-omelette-parma-ham-and-spinach",
+     "name": "Italian Omelette Parma Ham & Spinach",
+     "description": "Italian-style omelette, sautéed spinach, cherry tomatoes & Parma ham",
+     "price": 310,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": "2-right",
+     "verify": true,
+     "reviewNotes": [
+      "This menu has no dietary icons; pork tag derived from the ingredient name(s) in the description. Confirm with Mozza. (Parma ham)"
+     ]
+    },
+    {
+     "id": "italian-omelette-smoked-salmon-and-mascarpone",
+     "name": "Italian Omelette Smoked Salmon & Mascarpone",
+     "description": "Italian-style omelette, sautéed spinach, smoked Atlantic salmon & mascarpone cream",
+     "price": 340,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "2-right",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "bakery",
+   "name": "Bakery",
+   "items": [
+    {
+     "id": "homemade-bread",
+     "name": "Homemade Bread",
+     "description": "Served with jam, butter & honey",
+     "price": 90,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "2-left",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "100-butter-croissant",
+     "name": "100% Butter Croissant",
+     "description": null,
+     "price": 90,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "2-left",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cornetto-alla-crema",
+     "name": "Cornetto alla Crema",
+     "description": "Butter croissant filled with homemade vanilla cream",
+     "price": 130,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "2-left",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "signature-drinks",
+   "name": "Signature Drinks",
+   "items": [
+    {
+     "id": "affogato-vanilla",
+     "name": "Affogato Vanilla",
+     "description": "Vanilla gelato & espresso",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pineapple-espresso-tonic",
+     "name": "Pineapple Espresso Tonic",
+     "description": "Pineapple, espresso & tonic",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "matcha-vanilla",
+     "name": "Matcha Vanilla",
+     "description": "Matcha green tea, almond milk & vanilla",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cafe-con-panna-e-mandorla",
+     "name": "Cafe Con Panna e Mandorla",
+     "description": "Espresso, homemade whipped cream & almond",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cappuccino-caramelo",
+     "name": "Cappuccino Caramelo",
+     "description": "Cappuccino, caramel sauce & caramel tuile",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "nocciolato",
+     "name": "Nocciolato",
+     "description": "Dark cocoa, homemade whipped cream & hazelnut",
+     "price": 190,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "homemade-juice",
+   "name": "Homemade Juice",
+   "items": [
+    {
+     "id": "nectare",
+     "name": "Nectare",
+     "description": "Papaya, pear, red apple, passion fruit, orange",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "jardino",
+     "name": "Jardino",
+     "description": "Cucumber, green apple, guava, spinach",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "sole",
+     "name": "Sole",
+     "description": "Mango, pineapple, banana",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "rosso",
+     "name": "Rosso",
+     "description": "Green apple, beetroot, red dragon fruit, passion fruit",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "smoothie",
+   "name": "Smoothie",
+   "items": [
+    {
+     "id": "mango-passion-fruit-and-ginger",
+     "name": "Mango, Passion Fruit & Ginger",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "wild-berries",
+     "name": "Wild Berries",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "banana-strawberry-and-guava",
+     "name": "Banana, Strawberry & Guava",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "watermelon",
+     "name": "Watermelon",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "kiwi-pineapple-and-basil",
+     "name": "Kiwi, Pineapple & Basil",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tangerine-green-apple-and-lime",
+     "name": "Tangerine, Green Apple & Lime",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "coffee",
+   "name": "Coffee",
+   "items": [
+    {
+     "id": "espresso",
+     "name": "Espresso",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "lungo",
+     "name": "Lungo",
+     "description": null,
+     "price": 90,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "macchiato",
+     "name": "Macchiato",
+     "description": null,
+     "price": 90,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "americano",
+     "name": "Americano",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 90
+      },
+      {
+       "label": "Iced",
+       "price": 100
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "piccolo-latte",
+     "name": "Piccolo Latte",
+     "description": null,
+     "price": 100,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cappuccino",
+     "name": "Cappuccino",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 110
+      },
+      {
+       "label": "Iced",
+       "price": 120
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cafe-latte",
+     "name": "Cafe Latte",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 110
+      },
+      {
+       "label": "Iced",
+       "price": 120
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mocha",
+     "name": "Mocha",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 110
+      },
+      {
+       "label": "Iced",
+       "price": 120
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "flat-white",
+     "name": "Flat White",
+     "description": null,
+     "price": 120,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "tea",
+   "name": "Tea",
+   "items": [
+    {
+     "id": "english-breakfast-ceylon-tea",
+     "name": "English Breakfast Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "earl-grey-ceylon-tea",
+     "name": "Earl Grey Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "chamomille-herbal-infusion",
+     "name": "Chamomille Herbal Infusion",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pure-ceylon-green-tea",
+     "name": "Pure Ceylon Green Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "darjeeling-tea",
+     "name": "Darjeeling Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mint-ceylon-tea",
+     "name": "Mint Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "rose-ceylon-tea",
+     "name": "Rose Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "coffee-options-add",
+   "name": "Coffee options (add)",
+   "items": [
+    {
+     "id": "extra-shot",
+     "name": "Extra shot",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "decaf-blend",
+     "name": "Decaf blend",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "almond-milk",
+     "name": "Almond milk",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "soy-milk",
+     "name": "Soy milk",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "macadamia-milk",
+     "name": "Macadamia Milk",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": "1-right",
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  }
+ ]
+}

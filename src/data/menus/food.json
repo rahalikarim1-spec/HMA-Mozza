@@ -1,0 +1,2047 @@
+{
+ "menu": "food",
+ "source": "source/menus/food.pdf",
+ "title": "Food",
+ "sourceNote": "Main menu booklet. Pages 22-24 (brand promos for Cocotte etc.) are intentionally not ingested.",
+ "currency": "THB",
+ "status": "transcribed — unverified",
+ "categories": [
+  {
+   "id": "spritz",
+   "name": "Spritz",
+   "items": [
+    {
+     "id": "l-originale",
+     "name": "L'originale",
+     "description": "Aperol, Sparkling Water & Sparkling Wine",
+     "price": 320,
+     "sizes": null,
+     "priceNote": "320 per glass (stated once for the page)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 3,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "il-basilico",
+     "name": "Il Basilico",
+     "description": "Beefeater Dry Gin, Lime, Basil & Sparkling Wine",
+     "price": 320,
+     "sizes": null,
+     "priceNote": "320 per glass (stated once for the page)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 3,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "ispahan",
+     "name": "Ispahan",
+     "description": "Absolut Vodka, Rose, Lychee, Lime & Sparkling Wine",
+     "price": 320,
+     "sizes": null,
+     "priceNote": "320 per glass (stated once for the page)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 3,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "venitian-garden",
+     "name": "Venitian Garden",
+     "description": "Aperol, Lime, Strawberry, Thyme, Sparkling Water & Sparkling Wine",
+     "price": 320,
+     "sizes": null,
+     "priceNote": "320 per glass (stated once for the page)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 3,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "bellisimo-spritz",
+     "name": "Bellisimo Spritz",
+     "description": "St-Germain Liqueur, Peach, Ginger Cordial, Lime, Sparkling Water & Sparkling Wine",
+     "price": 320,
+     "sizes": null,
+     "priceNote": "320 per glass (stated once for the page)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 3,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "limoncello",
+     "name": "Limoncello",
+     "description": "Limoncello, Sparkling Water & Sparkling Wine",
+     "price": 320,
+     "sizes": null,
+     "priceNote": "320 per glass (stated once for the page)",
+     "tags": [
+      "alcohol"
+     ],
+     "page": 3,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "cheeses-and-cold-cuts",
+   "name": "Cheeses & Cold Cuts",
+   "items": [
+    {
+     "id": "italian-board",
+     "name": "Italian Board",
+     "description": "Selection of 3 cheeses & cold cuts",
+     "price": 590,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 4,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mozza-s-board",
+     "name": "Mozza's Board",
+     "description": "Selection of 6 cheeses & cold cuts",
+     "price": 980,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 4,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "truffle-board",
+     "name": "Truffle Board",
+     "description": "Truffle Parma Ham, Truffle Moliterno, Truffle Salami & Truffle Stracciatella",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 4,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "parma-ham-selection",
+     "name": "Parma Ham Selection",
+     "description": "Parma Ham (30 Months), Sauris Ham & Truffle Parma Ham",
+     "price": null,
+     "sizes": [
+      {
+       "label": "60g",
+       "price": 490
+      },
+      {
+       "label": "100g",
+       "price": 790
+      }
+     ],
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 4,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "burrata",
+   "name": "Burrata",
+   "items": [
+    {
+     "id": "tomato-confit-and-balsamic-caramel",
+     "name": "Tomato Confit & Balsamic Caramel",
+     "description": "150g Burrata with Tomato Confit & Balsamic Caramel",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 5,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mango-bell-pepper-and-parma-ham",
+     "name": "Mango, Bell Pepper & Parma Ham",
+     "description": "150g Burrata with Mango, Bell Pepper & Parma Ham",
+     "price": 640,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "pork"
+     ],
+     "page": 5,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pesto-and-sun-dried-cherry-tomatoes",
+     "name": "Pesto & Sun-Dried Cherry Tomatoes",
+     "description": "150g Burrata with Homemade Pesto & Sun-Dried Cherry Tomatoes",
+     "price": 620,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 5,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "starter",
+   "name": "Starter",
+   "items": [
+    {
+     "id": "truffle-arancini",
+     "name": "Truffle Arancini",
+     "description": "Golden-fried truffle risotto balls, mozzarella, Parmesan sauce & fresh truffle",
+     "price": 440,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 6,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "parmigiana-di-melanzane",
+     "name": "Parmigiana Di Melanzane",
+     "description": "Ovenbaked layered eggplant, tomato sauce, mozzarella, creamy stracciatella & Parmesan",
+     "price": 390,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 6,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "fritto-misto",
+     "name": "Fritto Misto",
+     "description": "Crispy fried calamari, prawns, fish & seasonal vegetables served with aioli sauce",
+     "price": 390,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 6,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "polpette-al-sugo",
+     "name": "Polpette Al Sugo",
+     "description": "Beef meatballs braised in tomato sauce, fresh basil, Parmesan & crostini",
+     "price": 390,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 6,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "carpaccio-di-polpo",
+     "name": "Carpaccio di Polpo",
+     "description": "Thinly sliced braised octopus with Mediterranean style lemon-herb dressing",
+     "price": 440,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 6,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "salmon-tartare",
+     "name": "Salmon Tartare",
+     "description": "Hand-cut Canadian salmon, diced shallots, Granny Smith apple, mustard cream & Ikura salmon roe",
+     "price": 440,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 6,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mozza-trio-bruschetta",
+     "name": "Mozza Trio Bruschetta",
+     "description": "1. Truffle Parma ham & apricot 2. Mortadella, crushed pistachios 3. Homemade pesto, sun-dried cherry tomatoes. Each topped with creamy stracciatella",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 6,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "salad",
+   "name": "Salad",
+   "items": [
+    {
+     "id": "nicoise-salad",
+     "name": "Niçoise Salad",
+     "description": "Seared rare tuna, green salad, tender potatoes, green beans, snap peas, Kalamata olives, capers, anchovies & Dijon mustard dressing",
+     "price": 390,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 7,
+     "verify": true,
+     "reviewNotes": [
+      "Source icon is the filled 'Vegetarian' symbol, but the ingredients list tuna and anchovies. Likely a source error: vegetarian tag WITHHELD. Confirm with Mozza."
+     ]
+    },
+    {
+     "id": "mozza-caesar-salad",
+     "name": "Mozza Caesar Salad",
+     "description": "Baby cos lettuce, grilled chicken, crispy guanciale, Parmesan & caesar dressing",
+     "price": 390,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "pork"
+     ],
+     "page": 7,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "crab-and-mango-salad",
+     "name": "Crab & Mango Salad",
+     "description": "Green salad, crab meat, cherry tomatoes, red onions, avocado, fresh mango & mango dressing",
+     "price": 430,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request"
+     ],
+     "page": 7,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "italian-sausage-salad",
+     "name": "Italian Sausage Salad",
+     "description": "Seasonal mixed greens, grilled Italian sausage, Gorgonzola crumbles, cherry tomatoes & balsamic dressing",
+     "price": 380,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "pork"
+     ],
+     "page": 7,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "insalata-di-mare",
+     "name": "Insalata di Mare",
+     "description": "Fresh seafood salad, cherry tomatoes, pickled onions, celery & lemon-herb dressing",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 7,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "caprese-mozza-salad",
+     "name": "Caprese Mozza Salad",
+     "description": "Tomato confit, creamy mozzarella di bufala, basil oil & fresh basil leaves",
+     "price": 460,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 7,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "pasta-and-risotto",
+   "name": "Pasta & Risotto",
+   "items": [
+    {
+     "id": "reginette-all-amatriciana",
+     "name": "Reginette all'Amatriciana",
+     "description": "Reginette pasta, slow-cooked pork cheek & tomato sauce, guanciale, black pepper & Pecorino Romano",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "pork"
+     ],
+     "page": 8,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "lasagna-della-nonna",
+     "name": "Lasagna della Nonna",
+     "description": "Traditional beef ragù, creamy béchamel, layered pasta & Parmesan",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 8,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "gnocchi-pesto",
+     "name": "Gnocchi Pesto",
+     "description": "Potato gnocchi, fresh basil pesto, sun-dried cherry tomatoes & creamy stracciatella",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 8,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tiger-prawns-aglio-olio",
+     "name": "Tiger Prawns Aglio Olio",
+     "description": "Grilled tiger prawns, extra virgin olive oil, fresh chili & garlic",
+     "price": 520,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "spicy"
+     ],
+     "page": 8,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "rigatoni-gratinati-alla-diavola",
+     "name": "Rigatoni Gratinati alla Diavola",
+     "description": "Baked rigatoni, spicy Calabrian 'nduja sauce, taleggio & Gorgonzola",
+     "price": 460,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "spicy",
+      "pork"
+     ],
+     "page": 8,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "linguine-alle-vongole",
+     "name": "Linguine alle Vongole",
+     "description": "Fresh clams, white wine sauce, garlic & Italian parsley",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 8,
+     "verify": true,
+     "reviewNotes": [
+      "'white wine sauce' named in the description; alcohol tag derived from that wording (not an icon)."
+     ]
+    },
+    {
+     "id": "risotto-frutti-di-mare",
+     "name": "Risotto Frutti Di Mare",
+     "description": "Carnaroli rice, grilled prawns, fresh clams, mussels, seafood bisque & parsley oil",
+     "price": 840,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 8,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "spaghetti-bolognese",
+     "name": "Spaghetti Bolognese",
+     "description": "Hand-cut beef ragù, San Marzano tomato sauce & Parmesan",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 9,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mushroom-risotto",
+     "name": "Mushroom Risotto",
+     "description": "Creamy carnaroli rice, sautéed mushrooms & Parmesan",
+     "price": 520,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 9,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "ravioli-spinach-and-ricotta",
+     "name": "Ravioli Spinach & Ricotta",
+     "description": "Homemade ravioli filled with spinach & ricotta, smoked San Marzano tomato sauce",
+     "price": 540,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 9,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "spaghetti-alla-carbonara",
+     "name": "Spaghetti alla Carbonara",
+     "description": "Traditional recipe with crispy guanciale, egg yolk, Parmesan & cracked black pepper",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "pork"
+     ],
+     "page": 9,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "spaghetti-gamberi-and-stracciatella",
+     "name": "Spaghetti Gamberi & Stracciatella",
+     "description": "Grilled Argentinian red prawns, prawn tartare, stracciatella, seafood bisque & lemon zest",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 9,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "truffle-tagliolini",
+     "name": "Truffle Tagliolini",
+     "description": "Homemade tagliolini, creamy truffle sauce & fresh truffle.",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 9,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "pizza",
+   "name": "Pizza",
+   "items": [
+    {
+     "id": "bufalina",
+     "name": "Bufalina",
+     "description": "San Marzano tomato sauce, mozzarella di bufala & fresh basil",
+     "price": 390,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 10,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "vesuvio",
+     "name": "Vesuvio",
+     "description": "San Marzano tomato sauce, stracciatella, eggplant caviar, bell pepper confit, fresh pesto, rocket salad & berry tomatoes",
+     "price": 540,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 10,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "quattro-formaggi",
+     "name": "Quattro Formaggi",
+     "description": "Gorgonzola, aged Grana Padano, Asiago & mozzarella",
+     "price": 620,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian"
+     ],
+     "page": 10,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "abruzzese",
+     "name": "Abruzzese",
+     "description": "Mozzarella, smoked scamorza & Calabrian spicy salami",
+     "price": 660,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork",
+      "spicy"
+     ],
+     "page": 10,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "schiacciata-mortadella-e-pistacchio",
+     "name": "Schiacciata Mortadella e Pistacchio",
+     "description": "Thin & crispy pizza dough sandwich, mortadella, stracciatella & crushed pistachios",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 10,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "rustica",
+     "name": "Rustica",
+     "description": "Seasoned Italian sausage, roasted potatoes, caramelized onions, Taleggio & mascarpone",
+     "price": 660,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 10,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "salmone",
+     "name": "Salmone",
+     "description": "Mascarpone, mozzarella, smoked salmon, dill & fresh rocket salad",
+     "price": 660,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 11,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mangia-fuoco",
+     "name": "Mangia Fuoco",
+     "description": "San Marzano tomato sauce, creamy burrata, spicy Calabrian 'nduja, chili, Ventricina salami & roasted garlic",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork",
+      "spicy"
+     ],
+     "page": 11,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "capricciosa",
+     "name": "Capricciosa",
+     "description": "San Marzano tomato sauce, artichoke hearts, black olives, mushroom confit & prosciutto cotto",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 11,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "carpi-salerno",
+     "name": "Carpi Salerno",
+     "description": "San Marzano tomato sauce, Parma ham, stracciatella, basil & cherry tomatoes",
+     "price": 760,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 11,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "boscaiola",
+     "name": "Boscaiola",
+     "description": "Porcini sauce, mushrooms, mozzarella, taleggio, dried cranberries & speck",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "vegetarian-on-request",
+      "pork"
+     ],
+     "page": 11,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tartufina",
+     "name": "Tartufina",
+     "description": "Asiago cheese, mushrooms, prosciutto cotto & fresh truffle",
+     "price": 890,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 11,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "main-course",
+   "name": "Main Course",
+   "items": [
+    {
+     "id": "chicken-milanese",
+     "name": "Chicken Milanese",
+     "description": "Milanese style deep-fried breaded chicken cutlet, fresh mixed salad & tomato sauce",
+     "price": 490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 12,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pollo-alle-mandorle",
+     "name": "Pollo alle Mandorle",
+     "description": "Chicken thigh, carrot purée, braised cabbage, almonds & raisins",
+     "price": 520,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 12,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "salmon-steak",
+     "name": "Salmon Steak",
+     "description": "Pan-seared salmon fillet, broccoli sauce, baby carrots, broccolini, zucchini, sweet bell peppers & eggplant",
+     "price": 590,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 12,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "italian-sea-bass",
+     "name": "Italian Sea Bass",
+     "description": "Pan-seared sea bass, spicy bell pepper sauce, grilled broccolini, walnut salsa & sun-dried cherry tomatoes",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "spicy"
+     ],
+     "page": 12,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "snow-fish-livornese",
+     "name": "Snow Fish Livornese",
+     "description": "Grilled snow fish fillet, Livornese sauce with tomatoes, olives, capers & olive oil mashed potatoes",
+     "price": 990,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 12,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mussels-and-tomato",
+     "name": "Mussels & Tomato",
+     "description": "Italian blue mussels, San Marzano tomato sauce, garlic bread, fresh chili & parsley oil",
+     "price": 580,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "spicy"
+     ],
+     "page": 13,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "filetto-di-maiale-alla-calabrese",
+     "name": "Filetto di Maiale alla Calabrese",
+     "description": "Slow-cooked pork tenderloin, cannellini beans, broccolini & spicy Calabrian 'nduja",
+     "price": 590,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork",
+      "spicy"
+     ],
+     "page": 13,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pork-and-mushrooms",
+     "name": "Pork & Mushrooms",
+     "description": "Kurobuta pork neck, garlic mashed potatoes, sautéed oyster mushrooms & Gorgonzola-porcini sauce",
+     "price": 680,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 13,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "beef-tartare",
+     "name": "Beef Tartare",
+     "description": "Handcut Black Angus beef tartare with pickles & quail egg, served with French fries",
+     "price": 690,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 13,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "beef-cheek-risotto",
+     "name": "Beef Cheek Risotto",
+     "description": "48-hour slow-cooked Black Angus beef cheek, saffron-infused carnaroli rice",
+     "price": 790,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 13,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "lamb-shank",
+     "name": "Lamb Shank",
+     "description": "48-hour slow-cooked tender lamb shank, fregola pasta, artichoke hearts, cherry tomatoes & lamb jus",
+     "price": 980,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 13,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "grill",
+   "name": "Grill",
+   "items": [
+    {
+     "id": "wagyu-flank-steak",
+     "name": "Wagyu Flank Steak",
+     "description": "Australian Wagyu flank steak (200g), fresh rocket salad, cherry tomatoes, shaved Parmesan & balsamic reduction",
+     "price": 1090,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 14,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tenderloin-rossini",
+     "name": "Tenderloin 'Rossini'",
+     "description": "Grilled Angus tenderloin (180g), pan-seared foie gras, roasted potatoes, spinach & truffle sauce",
+     "price": 1490,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 14,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tagliata-di-manzo",
+     "name": "Tagliata Di Manzo",
+     "description": "270-day aged Black Angus ribeye (500g), seasonal roasted vegetables, rosemary potatoes, Dijon mustard, garlic confit & Chimichurri sauce",
+     "price": 2590,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 14,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "wagyu-prime-rib",
+     "name": "Wagyu Prime Rib",
+     "description": "Marbling Score 5/6. Red wine, mushroom & Gorgonzola sauces, rosemary potatoes, spinach & Parmesan, and sautéed mushrooms",
+     "price": null,
+     "sizes": [
+      {
+       "label": "1kg",
+       "price": 4190
+      },
+      {
+       "label": "1.2kg",
+       "price": 4960
+      }
+     ],
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": [
+      "'Red wine' sauce named in the description; alcohol tag derived from that wording (not an icon)."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "side-dish",
+   "name": "Side dish",
+   "items": [
+    {
+     "id": "rosemary-potatoes",
+     "name": "Rosemary Potatoes",
+     "description": null,
+     "price": 140,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "french-fries",
+     "name": "French Fries",
+     "description": null,
+     "price": 140,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mashed-potatoes",
+     "name": "Mashed Potatoes",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "green-peas-and-guanciale",
+     "name": "Green Peas & Guanciale",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "pork"
+     ],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": [
+      "No pork icon in the source; pork tag derived from the ingredient name 'guanciale' (cured pork cheek). Confirm with Mozza."
+     ]
+    },
+    {
+     "id": "sauteed-mushrooms",
+     "name": "Sautéed Mushrooms",
+     "description": null,
+     "price": 180,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "spinach-and-parmesan",
+     "name": "Spinach & Parmesan",
+     "description": null,
+     "price": 190,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "parmesan-fries-and-truffle-mayo",
+     "name": "Parmesan Fries & Truffle Mayo",
+     "description": null,
+     "price": 190,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "truffle-mashed-potatoes",
+     "name": "Truffle Mashed Potatoes",
+     "description": null,
+     "price": 220,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 15,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "dolci",
+   "name": "Dolci",
+   "items": [
+    {
+     "id": "creme-caramel-all-arancia",
+     "name": "Creme Caramel All'arancia",
+     "description": "Classic baked caramel custard, fresh orange segments & vanilla tuile",
+     "price": 260,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 16,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tropical-panna-cotta",
+     "name": "Tropical Panna Cotta",
+     "description": "Coconut and pineapple infused panna cotta, mint oil, fresh pineapple salad & pineapple coulis",
+     "price": 280,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 16,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mozza-s-lava-cake",
+     "name": "Mozza's Lava Cake",
+     "description": "70% dark chocolate lava, vanilla ice cream & fruit salad",
+     "price": 320,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 16,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cocotte-s-tiramisu",
+     "name": "Cocotte's Tiramisu",
+     "description": "Mascarpone cream, coffee soaked ladyfinger biscuit, dulce de leche & coffee jelly",
+     "price": 320,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 16,
+     "verify": true,
+     "reviewNotes": [
+      "The description names no alcohol; no alcohol tag set. Ask Mozza whether the tiramisu contains alcohol (earlier demo copy assumed 'to confirm')."
+     ]
+    },
+    {
+     "id": "pasticceria-assortita",
+     "name": "Pasticceria Assortita",
+     "description": "Mini tiramisu, mini chocolate lava & homemade vanilla gelato. One regular coffee or tea included",
+     "price": 320,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 16,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cherry-and-amaretti-cheesecake",
+     "name": "Cherry & Amaretti Cheesecake",
+     "description": "Velvety vanilla cheesecake, amaretti biscuit crust, Fabbri cherries & cherry coulis",
+     "price": 320,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 17,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "banana-and-caramel-cookie",
+     "name": "Banana & Caramel Cookie",
+     "description": "Warm banana cookie, vanilla ice cream & butterscotch sauce",
+     "price": 320,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 17,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "profiterole-al-pistacchio",
+     "name": "Profiterole al Pistacchio",
+     "description": "Choux pastry, pistachio gelato, toasted crushed pistachios, homemade chantilly cream & chocolate fudge sauce",
+     "price": 340,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 17,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "100-homemade-gelato",
+     "name": "100% Homemade Gelato",
+     "description": "Flavours shown: Tahitian Vanilla, Valrhona Chocolate",
+     "price": null,
+     "sizes": [
+      {
+       "label": "Scoop",
+       "price": 160
+      },
+      {
+       "label": "Waffle Cone",
+       "price": 180
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": 17,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "signature-drinks",
+   "name": "Signature Drinks",
+   "items": [
+    {
+     "id": "affogato-vanilla",
+     "name": "Affogato Vanilla",
+     "description": "Vanilla gelato & espresso",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pineapple-espresso-tonic",
+     "name": "Pineapple Espresso Tonic",
+     "description": "Pineapple, espresso & tonic",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "matcha-vanilla",
+     "name": "Matcha Vanilla",
+     "description": "Matcha green tea, almond milk & vanilla",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cafe-con-panna-e-mandorla",
+     "name": "Cafe Con Panna e Mandorla",
+     "description": "Espresso, homemade whipped cream & almond",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cappuccino-caramelo",
+     "name": "Cappuccino Caramelo",
+     "description": "Cappuccino, caramel sauce & caramel tuile",
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "nocciolato",
+     "name": "Nocciolato",
+     "description": "Dark cocoa, homemade whipped cream & hazelnut",
+     "price": 190,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "homemade-juice",
+   "name": "Homemade Juice",
+   "items": [
+    {
+     "id": "nectare",
+     "name": "Nectare",
+     "description": "Papaya, pear, red apple, passion fruit, orange",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "jardino",
+     "name": "Jardino",
+     "description": "Cucumber, green apple, guava, spinach",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "sole",
+     "name": "Sole",
+     "description": "Mango, pineapple, banana",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "rosso",
+     "name": "Rosso",
+     "description": "Green apple, beetroot, red dragon fruit, passion fruit",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 18,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "smoothie",
+   "name": "Smoothie",
+   "items": [
+    {
+     "id": "mango-passion-fruit-and-ginger",
+     "name": "Mango, Passion Fruit & Ginger",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "wild-berries",
+     "name": "Wild Berries",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "banana-strawberry-and-guava",
+     "name": "Banana, Strawberry & Guava",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "watermelon",
+     "name": "Watermelon",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "kiwi-pineapple-and-basil",
+     "name": "Kiwi, Pineapple & Basil",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tangerine-green-apple-and-lime",
+     "name": "Tangerine, Green Apple & Lime",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": "160 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "milkshake",
+   "name": "Milkshake",
+   "items": [
+    {
+     "id": "tiramisu",
+     "name": "Tiramisu",
+     "description": "Homemade vanilla ice cream, chocolate sauce, milk, espresso & homemade whipped cream",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "choco-macadamia",
+     "name": "Choco Macadamia",
+     "description": "Homemade chocolate ice cream, macadamia milk & homemade whipped cream",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mango-sticky-rice",
+     "name": "Mango Sticky Rice",
+     "description": "Homemade mango ice cream, rice milk, fresh mango & coconut cream",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "banana-caramel",
+     "name": "Banana Caramel",
+     "description": "Homemade vanilla ice cream, banana, caramel brownie & homemade whipped cream",
+     "price": 220,
+     "sizes": null,
+     "priceNote": "220 per glass (stated once for the section)",
+     "tags": [],
+     "page": 19,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "italian-soda",
+   "name": "Italian Soda",
+   "items": [
+    {
+     "id": "mixed-berries-rosemary",
+     "name": "Mixed Berries Rosemary",
+     "description": "Mixed berries and rosemary syrup, lime juice & soda",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "apricot-basil",
+     "name": "Apricot Basil",
+     "description": "Apricot and basil syrup, lime juice & soda",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "blood-orange-and-mint",
+     "name": "Blood Orange & Mint",
+     "description": "Blood orange and mint syrup, lime juice & soda",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "lychee",
+     "name": "Lychee",
+     "description": "Lychee syrup, lime juice & soda",
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "homemade-iced-tea",
+   "name": "Homemade Iced Tea",
+   "items": [
+    {
+     "id": "passion-fruit-and-mango",
+     "name": "Passion Fruit & Mango",
+     "description": null,
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "peach-and-butterfly-pea",
+     "name": "Peach & Butterfly Pea",
+     "description": null,
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "lemongrass-mint-and-ginger",
+     "name": "Lemongrass, Mint & Ginger",
+     "description": null,
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "hibiscus-pineapple-and-kaffir",
+     "name": "Hibiscus, Pineapple & Kaffir",
+     "description": null,
+     "price": 140,
+     "sizes": null,
+     "priceNote": "140 per glass (stated once for the section)",
+     "tags": [],
+     "page": 20,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "water",
+   "name": "Water",
+   "items": [
+    {
+     "id": "mozza-water-50cl",
+     "name": "Mozza Water 50cl",
+     "description": null,
+     "price": 50,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "evian-water-50cl",
+     "name": "Evian Water 50cl",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "evian-water-75cl",
+     "name": "Evian Water 75cl",
+     "description": null,
+     "price": 145,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "evian-sparkling-water-75cl",
+     "name": "Evian Sparkling Water 75cl",
+     "description": null,
+     "price": 160,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "soft-drink",
+   "name": "Soft Drink",
+   "items": [
+    {
+     "id": "soda-water-33cl",
+     "name": "Soda Water 33cl",
+     "description": null,
+     "price": 50,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "coke-33cl",
+     "name": "Coke 33cl",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "coke-zero-33cl",
+     "name": "Coke Zero 33cl",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "diet-coke-33cl",
+     "name": "Diet Coke 33cl",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "tonic-water-schweppes-33cl",
+     "name": "Tonic Water Schweppes 33cl",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "sprite-33cl",
+     "name": "Sprite 33cl",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "ginger-ale-33cl",
+     "name": "Ginger Ale 33cl",
+     "description": null,
+     "price": 90,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "red-bull-25cl",
+     "name": "Red Bull 25cl",
+     "description": null,
+     "price": 120,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "coffee",
+   "name": "Coffee",
+   "items": [
+    {
+     "id": "espresso",
+     "name": "Espresso",
+     "description": null,
+     "price": 80,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "lungo",
+     "name": "Lungo",
+     "description": null,
+     "price": 90,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "macchiato",
+     "name": "Macchiato",
+     "description": null,
+     "price": 90,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "americano",
+     "name": "Americano",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 90
+      },
+      {
+       "label": "Iced",
+       "price": 100
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "piccolo-latte",
+     "name": "Piccolo Latte",
+     "description": null,
+     "price": 100,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cappuccino",
+     "name": "Cappuccino",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 110
+      },
+      {
+       "label": "Iced",
+       "price": 120
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "cafe-latte",
+     "name": "Cafe Latte",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 110
+      },
+      {
+       "label": "Iced",
+       "price": 120
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mocha",
+     "name": "Mocha",
+     "description": null,
+     "price": null,
+     "sizes": [
+      {
+       "label": "Hot",
+       "price": 110
+      },
+      {
+       "label": "Iced",
+       "price": 120
+      }
+     ],
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "flat-white",
+     "name": "Flat White",
+     "description": null,
+     "price": 120,
+     "sizes": null,
+     "priceNote": "hot only",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "tea",
+   "name": "Tea",
+   "items": [
+    {
+     "id": "english-breakfast-ceylon-tea",
+     "name": "English Breakfast Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "earl-grey-ceylon-tea",
+     "name": "Earl Grey Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "chamomille-herbal-infusion",
+     "name": "Chamomille Herbal Infusion",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "pure-ceylon-green-tea",
+     "name": "Pure Ceylon Green Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "darjeeling-tea",
+     "name": "Darjeeling Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "mint-ceylon-tea",
+     "name": "Mint Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "rose-ceylon-tea",
+     "name": "Rose Ceylon Tea",
+     "description": null,
+     "price": 110,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  },
+  {
+   "id": "coffee-options-add",
+   "name": "Coffee options (add)",
+   "items": [
+    {
+     "id": "extra-shot",
+     "name": "Extra shot",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "decaf-blend",
+     "name": "Decaf blend",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "almond-milk",
+     "name": "Almond milk",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "soy-milk",
+     "name": "Soy milk",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    },
+    {
+     "id": "macadamia-milk",
+     "name": "Macadamia Milk",
+     "description": null,
+     "price": 20,
+     "sizes": null,
+     "priceNote": "+20 add-on",
+     "tags": [],
+     "page": 21,
+     "verify": true,
+     "reviewNotes": []
+    }
+   ]
+  }
+ ]
+}

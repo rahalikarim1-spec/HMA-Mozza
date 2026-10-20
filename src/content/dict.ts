@@ -1,4 +1,4 @@
-import type { BranchSlug, CategoryId, DishId, Lang, TagId } from "./types";
+import type { BranchSlug, Lang } from "./types";
 
 export interface FaqItem {
   q: string;
@@ -7,15 +7,17 @@ export interface FaqItem {
 
 export interface BranchText {
   mall: string;
-  district: string;
+  /** null = hidden (unconfirmed) */
+  district: string | null;
   /** H1 on the branch page */
   h1: string;
   metaTitle: string;
   metaDescription: string;
   imageAlt: string;
   intro: string[];
-  transit: string;
-  landmark: string;
+  /** null = hidden (unconfirmed) */
+  transit: string | null;
+  landmark: string | null;
   faq: FaqItem[]; // parking, groups, reservations
 }
 
@@ -30,8 +32,8 @@ export interface Dict {
     demoPrice: string;
     tbc: string;
     ratingOn: (source: string) => string;
-    openToday: (until: string) => string;
-    openTbc: string;
+    closesAt: (time: string) => string;
+    untilTime: (time: string) => string;
     hours: string;
     directions: string;
     reserve: string;
@@ -45,10 +47,9 @@ export interface Dict {
   };
   meta: {
     home: { title: string; description: string };
-    menu: { title: string; description: string };
     locations: { title: string; description: string };
   };
-  hero: { h1: string; sub: string; imageAlt: string; cta: { reserve: string; menu: string } };
+  hero: { h1: string; sub: string; aiCaption: string; cta: { reserve: string; menu: string } };
   chooser: { title: string; intro: string };
   signature: { title: string; intro: string };
   awards: { title: string; note: string; items: string[] };
@@ -63,18 +64,7 @@ export interface Dict {
     disclaimer: string;
     photos: string;
   };
-  menuPage: {
-    h1: string;
-    intro: string;
-    pdf: string;
-    categories: Record<CategoryId, string>;
-    tabsLabel: string;
-    dietaryNote: string;
-    reserveSticky: string;
-  };
-  tags: Record<TagId, string> & { toConfirm: string };
-  dishes: Record<DishId, { name: string; description: string; alt: string }>;
-  locationsPage: { h1: string; intro: string };
+  locationsPage: { h1: string; intro: string; mapLabel: string; mapCaption: string };
   branchPage: {
     reserve: string;
     directions: string;
@@ -84,6 +74,7 @@ export interface Dict {
     mapCaption: string;
     gettingHere: string;
     directionsFallback: string;
+    detailsPending: string;
     transitLabel: string;
     landmarkLabel: string;
     aboutTitle: string;
