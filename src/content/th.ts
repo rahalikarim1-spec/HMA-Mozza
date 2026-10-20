@@ -114,6 +114,8 @@ export const th: Dict = {
     faqTitle: "คำถามเกี่ยวกับสาขา",
     otherTitle: "สาขา Mozza อื่น ๆ",
   },
+  // <!-- NEEDS NATIVE REVIEW -->
+  strategy: { button: "กลยุทธ์การเติบโตสำหรับร้านอาหารหลายสาขา", dialogTitle: "หน้ากลยุทธ์ส่วนตัว", passcodeLabel: "รหัสผ่าน", open: "เปิด", cancel: "ยกเลิก", wrong: "รหัสผ่านไม่ถูกต้อง โปรดลองอีกครั้ง", unavailable: "เนื้อหากลยุทธ์ไม่พร้อมใช้งานในเวอร์ชันนี้", checking: "กำลังตรวจสอบ…", hint: "กรอกรหัสผ่านที่คุณได้รับ", back: "← กลับไปที่เดโม" },
   sticky: { label: "ติดต่อด่วน", reserve: "จองโต๊ะ", whatsapp: "WhatsApp", line: "LINE", directions: "เส้นทาง" },
   whatsappMessage: (place) => `สวัสดีครับ/ค่ะ สอบถามเรื่องการจองโต๊ะที่ ${place}`,
   branches: branchTexts("th"),

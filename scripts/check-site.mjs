@@ -32,6 +32,13 @@ for (const [url, h] of Object.entries(html)) {
   }
 
   // --- links
+  if (url === "/strategy/") {
+    // private page: only noindex + single H1 + banner are required (no hreflang/canonical/sitemap/breadcrumbs)
+    if (!/<meta name="robots" content="noindex, nofollow"\/?>/.test(h)) errors.push(`${url}: missing noindex,nofollow`);
+    if ((body.match(/<h1[\s>]/g) || []).length !== 1) errors.push(`${url}: needs exactly one <h1>`);
+    if (!/Concept demo by Wadhah Belhassen/.test(body)) errors.push(`${url}: banner missing`);
+    continue;
+  }
   for (const m of body.matchAll(/<a [^>]*?href="([^"]+)"/g)) {
     let href = m[1].replace(/&amp;/g, "&");
     if (/^(https?:|mailto:|tel:|javascript:)/.test(href)) continue;
@@ -99,9 +106,25 @@ if (/Disallow:\s*\/\s*$/m.test(robots)) errors.push("robots.txt disallows everyt
 const sm = readFileSync(join(OUT, "sitemap.xml"), "utf8");
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
 for (const l of locs) if (!html[l]) errors.push(`sitemap lists ${l} which does not exist`);
-for (const u of Object.keys(html)) if (isCoreUrl(u) && !locs.includes(u)) errors.push(`page ${u} missing from sitemap`);
+if (locs.includes("/strategy/")) errors.push("sitemap must NOT list /strategy/");
+for (const u of Object.keys(html)) if (u !== "/strategy/" && isCoreUrl(u) && !locs.includes(u)) errors.push(`page ${u} missing from sitemap`);
 function isCoreUrl(u) { return u !== "/404/" && u !== "/404.html" && !u.startsWith("/_not-found"); }
 
+// --- strategy content must never appear in plain text anywhere in the export
+{
+  const { buildDoc } = await import("../strategy/doc.mjs");
+  const strings = [];
+  const walk = (x) => { if (typeof x === "string") { if (x.length >= 30) strings.push(x); } else if (Array.isArray(x)) x.forEach(walk); else if (x && typeof x === "object") Object.values(x).forEach(walk); };
+  // the button label (= document title) is intentionally public, so it is excluded from the leak scan
+  for (const L of ["en", "fr"]) { const d = buildDoc(L); const pub = d.ui.title; const clone = JSON.parse(JSON.stringify(d)); clone.ui.title = ""; walk(clone); void pub; }
+  const sample = strings.filter((_, i) => i % Math.max(1, Math.floor(strings.length / 120)) === 0);
+  const files = [];
+  (function w(d) { for (const f of readdirSync(d)) { const p = join(d, f); if (statSync(p).isDirectory()) w(p); else if (/\.(html|js|json|txt|css|xml)$/.test(f) && !p.includes("strategy-data")) files.push(p); } })(OUT);
+  let leaked = 0;
+  for (const f of files) { const c = readFileSync(f, "utf8"); for (const s of sample) if (c.includes(s)) { errors.push(`LEAK: strategy text found in plain text in ${f}: "${s.slice(0, 50)}…"`); leaked++; } }
+  const payload = join(OUT, "strategy-data", "payload.json");
+  console.log(existsSync(payload) ? `strategy payload present (encrypted); scanned ${files.length} files for ${sample.length} sample sentences: ${leaked} leaks` : "strategy payload NOT built (STRATEGY_PASSCODE unset)");
+}
 console.log(`checked ${Object.keys(html).length} pages, ${linkCount} internal links`);
 warn.forEach((w) => console.log("WARN", w));
 if (errors.length) {

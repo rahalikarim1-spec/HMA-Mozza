@@ -38,6 +38,7 @@
   "exclude": [
     "deploy",
     "node_modules",
-    "scripts/protect-hostinger.mjs"
+    "scripts/protect-hostinger.mjs",
+    "strategy"
   ]
 }

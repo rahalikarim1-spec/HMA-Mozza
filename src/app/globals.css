@@ -76,3 +76,14 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { line-height: 1.4; l
 summary { list-style: none; }
 summary::-webkit-details-marker { display: none; }
 
+
+/* Print (strategy page): clean PDF export */
+@media print {
+  body { background: #fff !important; padding: 0 !important; }
+  .strategy-doc { font-size: 11pt; }
+  .strategy-doc section { break-inside: auto; }
+  .strategy-doc h2, .strategy-doc h3, .strategy-doc h4 { break-after: avoid; }
+  .strategy-doc table, .strategy-doc li, .strategy-doc aside { break-inside: avoid; }
+  .strategy-doc a { text-decoration: none; }
+  nav[aria-label="Quick contact"], dialog, button.fixed { display: none !important; }
+}

@@ -115,6 +115,8 @@ export const ar: Dict = {
     faqTitle: "أسئلة عن الفرع",
     otherTitle: "فروع Mozza الأخرى",
   },
+  // <!-- NEEDS NATIVE REVIEW -->
+  strategy: { button: "استراتيجية النمو للمطاعم متعددة الفروع", dialogTitle: "صفحة الاستراتيجية الخاصة", passcodeLabel: "رمز الدخول", open: "فتح", cancel: "إلغاء", wrong: "رمز الدخول غير صحيح. يرجى المحاولة مرة أخرى.", unavailable: "محتوى الاستراتيجية غير متاح في هذه النسخة.", checking: "جارٍ التحقق…", hint: "أدخل رمز الدخول الذي حصلت عليه.", back: "← العودة إلى العرض التجريبي" },
   sticky: { label: "تواصل سريع", reserve: "احجز", whatsapp: "واتساب", line: "LINE", directions: "الاتجاهات" },
   whatsappMessage: (place) => `مرحبًا! أود الاستفسار عن حجز طاولة في ${place}.`,
   branches: branchTexts("ar"),
