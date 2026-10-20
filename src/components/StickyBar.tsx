@@ -32,6 +32,7 @@ export default function StickyBar({
         event="reservation_click"
         params={params}
         className="bg-tomato text-cream"
+        dataReserve
       >
         <Icon name="calendar" />
         {d.sticky.reserve}

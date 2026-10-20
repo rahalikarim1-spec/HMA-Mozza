@@ -64,6 +64,7 @@ export default function BranchCard({
             event="reservation_click"
             params={params}
             className={btnPrimary}
+            dataReserve
           >
             {d.common.reserve}
           </TrackedLink>

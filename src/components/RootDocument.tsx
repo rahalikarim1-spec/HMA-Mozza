@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Lang } from "@/content/types";
 import { getDict } from "@/content";
 import "@/app/globals.css";
+import ReservationLauncher from "./reservation/ReservationLauncher";
 
 /**
  * Shared <html>/<body>. Each route group (English "/" and "[lang]" for TH/AR)
@@ -31,7 +32,10 @@ export default function RootDocument({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ReservationLauncher lang={lang} />
+      </body>
     </html>
   );
 }

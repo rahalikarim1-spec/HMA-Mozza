@@ -188,6 +188,7 @@ export function MenuDetailPage({ lang, id }: { lang: Lang; id: MenuId }) {
           event="reservation_click"
           params={{ branch: "any", language: lang }}
           className={`${btnPrimary} shadow-[4px_4px_0_var(--ink)]`}
+          dataReserve
         >
           <Icon name="calendar" />
           {ui.ui.reserve}

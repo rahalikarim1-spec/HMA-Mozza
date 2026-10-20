@@ -85,5 +85,11 @@
   "params_const": "BLOG_PARAMS",
   "params_mod": "@/lib/params",
   "prop_name": "slug"
+ },
+ {
+  "path": "reserve",
+  "module": "@/pages-impl/ReservePage",
+  "component": "ReservePage",
+  "metadata": "reserveMetadata"
  }
 ]

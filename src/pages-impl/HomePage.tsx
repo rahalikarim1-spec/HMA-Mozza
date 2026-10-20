@@ -60,6 +60,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
                 event="reservation_click"
                 params={{ branch: "any", language: lang }}
                 className={btnPrimary}
+                dataReserve
               >
                 <Icon name="calendar" />
                 {d.hero.cta.reserve}

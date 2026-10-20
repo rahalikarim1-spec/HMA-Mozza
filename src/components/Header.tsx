@@ -44,6 +44,7 @@ export default function Header({
             event="reservation_click"
             params={{ branch: branch ?? "any", language: lang }}
             className={link}
+            dataReserve
           >
             {d.nav.reserve}
           </TrackedLink>
