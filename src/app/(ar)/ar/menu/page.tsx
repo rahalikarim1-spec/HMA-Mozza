@@ -1,6 +1,6 @@
-import MenuPage, { menuMetadata } from "@/pages-impl/MenuPage";
+import { MenuHubPage, menuHubMetadata } from "@/pages-impl/MenuPages";
 
-export const metadata = menuMetadata("ar");
+export const metadata = menuHubMetadata("ar");
 export default function Page() {
-  return <MenuPage lang="ar" />;
+  return <MenuHubPage lang="ar" />;
 }

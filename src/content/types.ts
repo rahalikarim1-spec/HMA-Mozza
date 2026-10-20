@@ -9,20 +9,6 @@ export type BranchSlug =
   | "iconsiam"
   | "central-chidlom";
 
-export type DishId =
-  | "truffle-tagliolini"
-  | "burrata"
-  | "carpi-salerno"
-  | "truffle-risotto"
-  | "lobster-spaghetti"
-  | "tiramisu";
 
-export type CategoryId = "starters" | "pizza" | "pasta" | "desserts";
-export type TagId = "vegetarian" | "pork" | "alcohol";
-
-/** A page inside the site, language-independent. "" = home. */
-export type Route =
-  | ""
-  | "menu"
-  | "locations"
-  | `locations/${BranchSlug}`;
+/** A page inside the site, language-independent, e.g. "" (home), "menu/food", "locations/central-park". */
+export type Route = string;

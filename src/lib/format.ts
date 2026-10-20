@@ -1,14 +1,5 @@
 import type { Dict } from "@/content/dict";
-import { CURRENCY, type BranchConfig } from "@/config/site";
-import type { DishId } from "@/content/types";
-import { PRICES } from "@/config/site";
-
-export function priceLabel(id: DishId, d: Dict): { text: string; ltr: boolean } {
-  const p = PRICES[id];
-  return p === null
-    ? { text: d.common.tbc, ltr: false }
-    : { text: `${p.toLocaleString("en-US")} ${CURRENCY}`, ltr: true };
-}
+import type { BranchConfig } from "@/config/site";
 
 export function openStatus(b: BranchConfig, d: Dict): string {
   return b.closes === "TBC" ? d.common.openTbc : d.common.openToday(b.closes);

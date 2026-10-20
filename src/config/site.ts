@@ -3,7 +3,7 @@
  * placeholder contact links, demo prices, rating text, branch data, social links.
  * No real phone numbers / WhatsApp / LINE IDs / booking systems live anywhere else.
  */
-import type { BranchSlug, DishId } from "@/content/types";
+import type { BranchSlug } from "@/content/types";
 
 /* ---------- Placeholder links (CTAs) ---------- */
 export const WHATSAPP_NUMBER = "66000000000"; // PLACEHOLDER - wa.me/<number>
@@ -39,17 +39,6 @@ export const RATING = {
   source: "Google",
 };
 
-/* ---------- Demo prices (THB). null = "TBC" ---------- */
-export const CURRENCY = "THB";
-export const PRICES: Record<DishId, number | null> = {
-  "truffle-tagliolini": null,
-  burrata: 620, // reference value only
-  "carpi-salerno": null,
-  "truffle-risotto": null,
-  "lobster-spaghetti": null,
-  tiramisu: null,
-};
-
 /* ---------- Branches ---------- */
 export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 export const WEEKDAYS: Weekday[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
@@ -78,8 +67,6 @@ export interface BranchConfig {
    */
   transit: { verify: boolean };
   landmark: { verify: boolean };
-  /** Three dishes highlighted on the branch page (ids from the menu). */
-  signature: [DishId, DishId, DishId];
 }
 
 export const BRANCHES: BranchConfig[] = [
@@ -97,7 +84,6 @@ export const BRANCHES: BranchConfig[] = [
     mapImage: "/images/map-placeholder.jpg",
     transit: { verify: true },
     landmark: { verify: true },
-    signature: ["burrata", "truffle-tagliolini", "carpi-salerno"],
   },
   {
     slug: "emquartier",
@@ -113,7 +99,6 @@ export const BRANCHES: BranchConfig[] = [
     mapImage: "/images/map-placeholder.jpg",
     transit: { verify: true },
     landmark: { verify: true },
-    signature: ["carpi-salerno", "truffle-risotto", "tiramisu"],
   },
   {
     slug: "siam-paragon",
@@ -129,7 +114,6 @@ export const BRANCHES: BranchConfig[] = [
     mapImage: "/images/map-placeholder.jpg",
     transit: { verify: true },
     landmark: { verify: true },
-    signature: ["burrata", "lobster-spaghetti", "tiramisu"],
   },
   {
     slug: "iconsiam",
@@ -145,7 +129,6 @@ export const BRANCHES: BranchConfig[] = [
     mapImage: "/images/map-placeholder.jpg",
     transit: { verify: true },
     landmark: { verify: true },
-    signature: ["truffle-tagliolini", "truffle-risotto", "tiramisu"],
   },
   {
     slug: "central-chidlom",
@@ -160,7 +143,6 @@ export const BRANCHES: BranchConfig[] = [
     mapImage: "/images/map-placeholder.jpg",
     transit: { verify: true },
     landmark: { verify: true },
-    signature: ["burrata", "carpi-salerno", "lobster-spaghetti"],
   },
 ];
 

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getDict } from "@/content";
 import type { Lang } from "@/content/types";
 import { BRANCHES, bookingUrlFor } from "@/config/site";
-import { SIGNATURE_ORDER, getDish } from "@/config/menu";
+import { HOME_SIGNATURE } from "@/config/signature";
 import { buildMetadata } from "@/lib/seo";
 import { faqLd, organizationLd } from "@/lib/jsonld";
 import { pathFor } from "@/lib/routes";
@@ -97,8 +97,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <h2 className="text-3xl sm:text-4xl">{d.signature.title}</h2>
           <p className="mt-2 max-w-prose">{d.signature.intro}</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {SIGNATURE_ORDER.map((id) => (
-              <SignatureCard key={id} dish={getDish(id)} d={d} lang={lang} />
+            {HOME_SIGNATURE.map((id) => (
+              <SignatureCard key={id} id={id} lang={lang} />
             ))}
           </div>
         </div>

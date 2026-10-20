@@ -1,15 +1,14 @@
-import type { Dict, FaqItem } from "@/content/dict";
+import type { FaqItem } from "@/content/dict";
+import { menusUi, type MenuId } from "@/content/menus-ui";
+import { categoryName, describe, getMenu } from "./menus";
 import type { Lang } from "@/content/types";
 import {
   BRAND_NAME,
   BRANCHES,
-  CURRENCY,
   PARENT_ORG_NAME,
-  PRICES,
   SITE_ORIGIN,
   type BranchConfig,
 } from "@/config/site";
-import { CATEGORIES, DISHES } from "@/config/menu";
 import { absoluteUrl } from "./routes";
 
 const CTX = "https://schema.org";
@@ -36,7 +35,7 @@ export function restaurantLd(lang: Lang, b: BranchConfig) {
     url: absoluteUrl(lang, route),
     image: `${SITE_ORIGIN}${b.image}`,
     servesCuisine: ["Italian", "Pizza", "Pasta"],
-    hasMenu: absoluteUrl(lang, "menu"),
+    hasMenu: absoluteUrl(lang, "menu/food"),
     // PLACEHOLDER hours - "TBC" is not valid schema.org until real times are filled in config.
     openingHours: `Mo-Su ${b.opens}-${b.closes}`,
     address: {
@@ -81,27 +80,27 @@ export function faqLd(items: FaqItem[]) {
   };
 }
 
-export function menuLd(lang: Lang, d: Dict) {
+export function menuLd(lang: Lang, menuId: MenuId) {
+  const data = getMenu(menuId);
+  const ui = menusUi[lang];
   return {
     "@context": CTX,
     "@type": "Menu",
-    name: d.menuPage.h1,
-    url: absoluteUrl(lang, "menu"),
+    name: ui.menus[menuId].h1,
+    url: absoluteUrl(lang, `menu/${menuId}`),
     inLanguage: lang,
-    hasMenuSection: CATEGORIES.map((c) => ({
+    hasMenuSection: data.categories.map((c) => ({
       "@type": "MenuSection",
-      name: d.menuPage.categories[c.id],
-      hasMenuItem: DISHES.filter((x) => x.category === c.id).map((dish) => {
-        const price = PRICES[dish.id];
+      name: categoryName(c.id, lang),
+      hasMenuItem: c.items.map((it) => {
+        const prices = it.sizes ? it.sizes.map((s) => s.price) : it.price !== null ? [it.price] : [];
         return {
           "@type": "MenuItem",
-          name: d.dishes[dish.id].name,
-          description: d.dishes[dish.id].description,
-          ...(dish.tags.some((t) => t.tag === "vegetarian" && !t.confirm)
-            ? { suitableForDiet: "https://schema.org/VegetarianDiet" }
-            : {}),
-          ...(price !== null
-            ? { offers: { "@type": "Offer", price: String(price), priceCurrency: CURRENCY } }
+          name: it.name,
+          ...(describe(it, lang) ? { description: describe(it, lang) } : {}),
+          ...(it.tags.includes("vegetarian") ? { suitableForDiet: "https://schema.org/VegetarianDiet" } : {}),
+          ...(prices.length
+            ? { offers: prices.map((p) => ({ "@type": "Offer", price: String(p), priceCurrency: "THB" })) }
             : {}),
         };
       }),

@@ -13,7 +13,7 @@ import {
   getBranch,
   hoursFor,
 } from "@/config/site";
-import { getDish } from "@/config/menu";
+import { BRANCH_SIGNATURE } from "@/config/signature";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbLd, faqLd, organizationLd, restaurantLd } from "@/lib/jsonld";
 import { hoursText, openStatus } from "@/lib/format";
@@ -202,8 +202,8 @@ export default function BranchPage({ lang, slug }: { lang: Lang; slug: BranchSlu
         <div className={container}>
           <h2 id="sig-h" className="text-3xl">{d.branchPage.signatureTitle}</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {b.signature.map((id) => (
-              <SignatureCard key={id} dish={getDish(id)} d={d} lang={lang} />
+            {BRANCH_SIGNATURE[slug].map((id) => (
+              <SignatureCard key={id} id={id} lang={lang} />
             ))}
           </div>
         </div>

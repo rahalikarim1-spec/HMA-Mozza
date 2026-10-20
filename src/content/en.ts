@@ -50,11 +50,6 @@ export const en: Dict = {
       description:
         "Concept demo: Italian trattoria in Bangkok with wood-fired pizza and handmade pasta. Choose your branch, see the menu, reserve a table.",
     },
-    menu: {
-      title: "Menu | Mozza Bangkok Italian Trattoria — Pasta, Pizza, Burrata",
-      description:
-        "Concept demo menu: truffle tagliolini, burrata, wood-fired pizza, risotto, lobster spaghetti and tiramisu, with clear pork and alcohol labels.",
-    },
     locations: {
       title: "Locations | Mozza Italian Restaurants in Bangkok",
       description:
@@ -110,59 +105,6 @@ export const en: Dict = {
     part: "Part of Hospitality Management Asia",
     disclaimer: "Private concept demo. Not the official Mozza website. Not indexed.",
     photos: "Demo photos — for concept demonstration only.",
-  },
-  menuPage: {
-    h1: "Mozza Menu — Italian Trattoria in Bangkok",
-    intro: "Pasta, pizza, burrata and dessert. Pork and alcohol are always labelled.",
-    pdf: "Download PDF menu",
-    categories: {
-      starters: "Starters & Burrata",
-      pizza: "Pizza",
-      pasta: "Pasta & Risotto",
-      desserts: "Desserts",
-    },
-    tabsLabel: "Menu categories",
-    dietaryNote:
-      "Dietary and allergen information marked “to confirm” must be verified with the restaurant. Ask the team about your needs.",
-    reserveSticky: "Reserve",
-  },
-  tags: {
-    vegetarian: "Vegetarian",
-    pork: "Contains pork",
-    alcohol: "May contain alcohol",
-    toConfirm: "to confirm",
-  },
-  dishes: {
-    "truffle-tagliolini": {
-      name: "Truffle Tagliolini",
-      description: "Fresh tagliolini with truffle.",
-      alt: "Placeholder photo of truffle tagliolini pasta",
-    },
-    burrata: {
-      name: "Tomato Confit & Balsamic Caramel Burrata",
-      description: "Creamy burrata, tomato confit, balsamic caramel.",
-      alt: "Placeholder photo of burrata with tomato confit and balsamic caramel",
-    },
-    "carpi-salerno": {
-      name: "Carpi Salerno",
-      description: "Thin wood-fired pizza with Parma ham, stracciatella, basil and tomato.",
-      alt: "Placeholder photo of the Carpi Salerno wood-fired pizza",
-    },
-    "truffle-risotto": {
-      name: "Parmesan Truffle Risotto",
-      description: "Carnaroli rice finished in a Parmesan wheel, with truffle.",
-      alt: "Placeholder photo of truffle risotto finished in a Parmesan wheel",
-    },
-    "lobster-spaghetti": {
-      name: "Lobster Spaghetti",
-      description: "Spaghetti with lobster.",
-      alt: "Placeholder photo of lobster spaghetti",
-    },
-    tiramisu: {
-      name: "Cocotte's Tiramisu",
-      description: "House tiramisu.",
-      alt: "Placeholder photo of the house tiramisu",
-    },
   },
   locationsPage: {
     h1: "Mozza Locations in Bangkok",

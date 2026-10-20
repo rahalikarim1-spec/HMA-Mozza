@@ -1,0 +1,470 @@
+{
+ "Aperol, Sparkling Water & Sparkling Wine": {
+  "th": "Aperol น้ำโซดา และสปาร์กลิงไวน์",
+  "ar": "Aperol وماء غازي ونبيذ فوّار"
+ },
+ "Beefeater Dry Gin, Lime, Basil & Sparkling Wine": {
+  "th": "Beefeater Dry Gin มะนาว โหระพา และสปาร์กลิงไวน์",
+  "ar": "Beefeater Dry Gin وليمون وريحان ونبيذ فوّار"
+ },
+ "Absolut Vodka, Rose, Lychee, Lime & Sparkling Wine": {
+  "th": "Absolut Vodka กุหลาบ ลิ้นจี่ มะนาว และสปาร์กลิงไวน์",
+  "ar": "Absolut Vodka وورد وليتشي وليمون ونبيذ فوّار"
+ },
+ "Aperol, Lime, Strawberry, Thyme, Sparkling Water & Sparkling Wine": {
+  "th": "Aperol มะนาว สตรอว์เบอร์รี ไทม์ น้ำโซดา และสปาร์กลิงไวน์",
+  "ar": "Aperol وليمون وفراولة وزعتر وماء غازي ونبيذ فوّار"
+ },
+ "St-Germain Liqueur, Peach, Ginger Cordial, Lime, Sparkling Water & Sparkling Wine": {
+  "th": "St-Germain Liqueur พีช ไซรัปขิง มะนาว น้ำโซดา และสปาร์กลิงไวน์",
+  "ar": "St-Germain Liqueur وخوخ وشراب زنجبيل وليمون وماء غازي ونبيذ فوّار"
+ },
+ "Limoncello, Sparkling Water & Sparkling Wine": {
+  "th": "Limoncello น้ำโซดา และสปาร์กลิงไวน์",
+  "ar": "Limoncello وماء غازي ونبيذ فوّار"
+ },
+ "Selection of 3 cheeses & cold cuts": {
+  "th": "ชีสและเนื้อเย็นคัดสรร 3 ชนิด",
+  "ar": "تشكيلة من 3 أنواع جبن ولحوم باردة"
+ },
+ "Selection of 6 cheeses & cold cuts": {
+  "th": "ชีสและเนื้อเย็นคัดสรร 6 ชนิด",
+  "ar": "تشكيلة من 6 أنواع جبن ولحوم باردة"
+ },
+ "Truffle Parma Ham, Truffle Moliterno, Truffle Salami & Truffle Stracciatella": {
+  "th": "ปาร์มาแฮมทรัฟเฟิล โมลิแตร์โนทรัฟเฟิล ซาลามีทรัฟเฟิล และสตรัชชาเตลลาทรัฟเฟิล",
+  "ar": "لحم بارما بالكمأة وجبن موليتيرنو بالكمأة وسلامي بالكمأة وستراتشياتيلا بالكمأة"
+ },
+ "Parma Ham (30 Months), Sauris Ham & Truffle Parma Ham": {
+  "th": "ปาร์มาแฮม (บ่ม 30 เดือน) เซารีสแฮม และปาร์มาแฮมทรัฟเฟิล",
+  "ar": "لحم بارما (معتّق 30 شهرًا) وجامبون ساوريس ولحم بارما بالكمأة"
+ },
+ "150g Burrata with Tomato Confit & Balsamic Caramel": {
+  "th": "บูร์ราต้า 150 กรัม กับมะเขือเทศคอนฟีต์และคาราเมลบัลซามิก",
+  "ar": "بوراتا 150 غ مع كونفي الطماطم وكراميل البلسمك"
+ },
+ "150g Burrata with Mango, Bell Pepper & Parma Ham": {
+  "th": "บูร์ราต้า 150 กรัม กับมะม่วง พริกหวาน และปาร์มาแฮม",
+  "ar": "بوراتا 150 غ مع المانجو والفلفل الحلو ولحم بارما"
+ },
+ "150g Burrata with Homemade Pesto & Sun-Dried Cherry Tomatoes": {
+  "th": "บูร์ราต้า 150 กรัม กับเพสโต้โฮมเมดและมะเขือเทศเชอร์รีตากแห้ง",
+  "ar": "بوراتا 150 غ مع بيستو منزلي وطماطم كرزية مجففة"
+ },
+ "Golden-fried truffle risotto balls, mozzarella, Parmesan sauce & fresh truffle": {
+  "th": "อารันชินีทรัฟเฟิลทอดกรอบสีทอง มอซซาเรลลา ซอสพาร์เมซาน และทรัฟเฟิลสด",
+  "ar": "كرات ريزوتو بالكمأة مقلية ذهبية مع موزاريلا وصلصة البارميزان وكمأة طازجة"
+ },
+ "Ovenbaked layered eggplant, tomato sauce, mozzarella, creamy stracciatella & Parmesan": {
+  "th": "มะเขือยาวอบเป็นชั้น ซอสมะเขือเทศ มอซซาเรลลา สตรัชชาเตลลาเนื้อครีม และพาร์เมซาน",
+  "ar": "باذنجان مخبوز على طبقات مع صلصة الطماطم والموزاريلا وستراتشياتيلا كريمية وبارميزان"
+ },
+ "Crispy fried calamari, prawns, fish & seasonal vegetables served with aioli sauce": {
+  "th": "ปลาหมึกกรอบทอด กุ้ง ปลา และผักตามฤดูกาล เสิร์ฟพร้อมซอสไอโอลี",
+  "ar": "كاليماري مقرمش مقلي وجمبري وسمك وخضار موسمية تُقدَّم مع صلصة الآيولي"
+ },
+ "Beef meatballs braised in tomato sauce, fresh basil, Parmesan & crostini": {
+  "th": "มีทบอลเนื้อวัวตุ๋นในซอสมะเขือเทศ โหระพาสด พาร์เมซาน และครอสตินี",
+  "ar": "كرات لحم بقري مطهوة في صلصة الطماطم مع ريحان طازج وبارميزان وكروستيني"
+ },
+ "Thinly sliced braised octopus with Mediterranean style lemon-herb dressing": {
+  "th": "ปลาหมึกยักษ์ตุ๋นหั่นบาง ราดน้ำสลัดมะนาวและสมุนไพรสไตล์เมดิเตอร์เรเนียน",
+  "ar": "أخطبوط مطهو مقطّع شرائح رقيقة مع تتبيلة الليمون والأعشاب على الطريقة المتوسطية"
+ },
+ "Hand-cut Canadian salmon, diced shallots, Granny Smith apple, mustard cream & Ikura salmon roe": {
+  "th": "แซลมอนแคนาดาหั่นมือ หอมแดงเต๋า แอปเปิลกรานนีสมิธ ครีมมัสตาร์ด และไข่แซลมอนอิคุระ",
+  "ar": "سلمون كندي مفروم يدويًا مع كراث مقطّع وتفاح غراني سميث وكريمة الخردل وبيض سلمون إيكورا"
+ },
+ "1. Truffle Parma ham & apricot 2. Mortadella, crushed pistachios 3. Homemade pesto, sun-dried cherry tomatoes. Each topped with creamy stracciatella": {
+  "th": "1. ปาร์มาแฮมทรัฟเฟิลและแอปริคอต 2. มอร์ตาเดลลา พิสตาชิโอบด 3. เพสโต้โฮมเมด มะเขือเทศเชอร์รีตากแห้ง ทุกชนิดราดด้วยสตรัชชาเตลลาเนื้อครีม",
+  "ar": "1. لحم بارما بالكمأة والمشمش 2. مورتديلا وفستق مطحون 3. بيستو منزلي وطماطم كرزية مجففة. كل قطعة مغطاة بستراتشياتيلا كريمية"
+ },
+ "Seared rare tuna, green salad, tender potatoes, green beans, snap peas, Kalamata olives, capers, anchovies & Dijon mustard dressing": {
+  "th": "ทูน่าย่างสุกน้อย สลัดผักใบเขียว มันฝรั่งนุ่ม ถั่วเขียว ถั่วลันเตา มะกอกคาลามาตา คาเปอร์ แอนโชวี และน้ำสลัดมัสตาร์ดดีฌง",
+  "ar": "تونة مشوية نصف ناضجة وسلطة خضراء وبطاطا طرية وفاصوليا خضراء وبازلاء سكر وزيتون كالاماتا وكبر وأنشوجة وتتبيلة الخردل ديجون"
+ },
+ "Baby cos lettuce, grilled chicken, crispy guanciale, Parmesan & caesar dressing": {
+  "th": "ผักคอสเบบี้ อกไก่ย่าง กวนชาเลกรอบ พาร์เมซาน และน้ำสลัดซีซาร์",
+  "ar": "خس كوس صغير ودجاج مشوي وغوانشيالي مقرمش وبارميزان وتتبيلة السيزر"
+ },
+ "Green salad, crab meat, cherry tomatoes, red onions, avocado, fresh mango & mango dressing": {
+  "th": "สลัดผักใบเขียว เนื้อปู มะเขือเทศเชอร์รี หอมแดง อะโวคาโด มะม่วงสด และน้ำสลัดมะม่วง",
+  "ar": "سلطة خضراء ولحم السلطعون وطماطم كرزية وبصل أحمر وأفوكادو ومانجو طازجة وتتبيلة المانجو"
+ },
+ "Seasonal mixed greens, grilled Italian sausage, Gorgonzola crumbles, cherry tomatoes & balsamic dressing": {
+  "th": "สลัดผักใบเขียวตามฤดูกาล ไส้กรอกอิตาเลียนย่าง กอร์กอนโซลาป่น มะเขือเทศเชอร์รี และน้ำสลัดบัลซามิก",
+  "ar": "خضار ورقية موسمية ونقانق إيطالية مشوية وفتات جبن غورغونزولا وطماطم كرزية وتتبيلة البلسمك"
+ },
+ "Fresh seafood salad, cherry tomatoes, pickled onions, celery & lemon-herb dressing": {
+  "th": "สลัดซีฟู้ดสด มะเขือเทศเชอร์รี หอมดองเปรี้ยว คื่นช่าย และน้ำสลัดมะนาวและสมุนไพร",
+  "ar": "سلطة مأكولات بحرية طازجة وطماطم كرزية وبصل مخلل وكرفس وتتبيلة الليمون والأعشاب"
+ },
+ "Tomato confit, creamy mozzarella di bufala, basil oil & fresh basil leaves": {
+  "th": "มะเขือเทศคอนฟีต์ มอซซาเรลลาดิบูฟาลาเนื้อครีม น้ำมันโหระพา และใบโหระพาสด",
+  "ar": "كونفي الطماطم وموزاريلا دي بوفالا كريمية وزيت الريحان وأوراق ريحان طازجة"
+ },
+ "Reginette pasta, slow-cooked pork cheek & tomato sauce, guanciale, black pepper & Pecorino Romano": {
+  "th": "พาสต้าเรจิเนตตา แก้มหมูตุ๋นช้า ซอสมะเขือเทศ กวนชาเล พริกไทยดำ และเปโกริโนโรมาโน",
+  "ar": "معكرونة ريجينيتي مع خد خنزير مطهو ببطء وصلصة الطماطم وغوانشيالي وفلفل أسود وجبن بيكورينو رومانو"
+ },
+ "Traditional beef ragù, creamy béchamel, layered pasta & Parmesan": {
+  "th": "ซอสเนื้อรากูแบบดั้งเดิม เบชาเมลครีมนุ่ม แผ่นพาสต้าเป็นชั้น และพาร์เมซาน",
+  "ar": "راغو لحم بقري تقليدي وبشاميل كريمي وطبقات معكرونة وبارميزان"
+ },
+ "Potato gnocchi, fresh basil pesto, sun-dried cherry tomatoes & creamy stracciatella": {
+  "th": "นิยอกกีมันฝรั่ง เพสโต้โหระพาสด มะเขือเทศเชอร์รีตากแห้ง และสตรัชชาเตลลาเนื้อครีม",
+  "ar": "نوكي البطاطا مع بيستو الريحان الطازج وطماطم كرزية مجففة وستراتشياتيلا كريمية"
+ },
+ "Grilled tiger prawns, extra virgin olive oil, fresh chili & garlic": {
+  "th": "กุ้งลายเสือย่าง น้ำมันมะกอกเอ็กซ์ตราเวอร์จิน พริกสด และกระเทียม",
+  "ar": "جمبري النمر المشوي وزيت زيتون بكر ممتاز وفلفل حار طازج وثوم"
+ },
+ "Baked rigatoni, spicy Calabrian 'nduja sauce, taleggio & Gorgonzola": {
+  "th": "ริกาโตนีอบ ซอสนดูยาคาลาเบรียรสเผ็ด ทาเลจโจ และกอร์กอนโซลา",
+  "ar": "ريجاتوني مخبوز مع صلصة نودجا الكالابرية الحارة وتاليجو وغورغونزولا"
+ },
+ "Fresh clams, white wine sauce, garlic & Italian parsley": {
+  "th": "หอยลายสด ซอสไวน์ขาว กระเทียม และพาร์สลีย์อิตาเลียน",
+  "ar": "محار طازج وصلصة النبيذ الأبيض وثوم وبقدونس إيطالي"
+ },
+ "Carnaroli rice, grilled prawns, fresh clams, mussels, seafood bisque & parsley oil": {
+  "th": "ข้าวคาร์นาโรลี กุ้งย่าง หอยลายสด หอยแมลงภู่ ซอสบิสก์อาหารทะเล และน้ำมันพาร์สลีย์",
+  "ar": "أرز كارنارولي وجمبري مشوي ومحار طازج وبلح البحر وبيسك المأكولات البحرية وزيت البقدونس"
+ },
+ "Hand-cut beef ragù, San Marzano tomato sauce & Parmesan": {
+  "th": "ซอสเนื้อรากูหั่นมือ ซอสมะเขือเทศซานมาร์ซาโน และพาร์เมซาน",
+  "ar": "راغو لحم بقري مفروم يدويًا وصلصة الطماطم سان مارزانو وبارميزان"
+ },
+ "Creamy carnaroli rice, sautéed mushrooms & Parmesan": {
+  "th": "ข้าวคาร์นาโรลีเนื้อครีม เห็ดผัด และพาร์เมซาน",
+  "ar": "أرز كارنارولي كريمي وفطر مقلي وبارميزان"
+ },
+ "Homemade ravioli filled with spinach & ricotta, smoked San Marzano tomato sauce": {
+  "th": "ราวีโอลี่โฮมเมดไส้ผักโขมและริคอตต้า ซอสมะเขือเทศซานมาร์ซาโนรมควัน",
+  "ar": "رافيولي منزلي محشو بالسبانخ والريكوتا مع صلصة طماطم سان مارزانو مدخنة"
+ },
+ "Traditional recipe with crispy guanciale, egg yolk, Parmesan & cracked black pepper": {
+  "th": "สูตรดั้งเดิมกับกวนชาเลกรอบ ไข่แดง พาร์เมซาน และพริกไทยดำบดหยาบ",
+  "ar": "وصفة تقليدية مع غوانشيالي مقرمش وصفار البيض وبارميزان وفلفل أسود مجروش"
+ },
+ "Grilled Argentinian red prawns, prawn tartare, stracciatella, seafood bisque & lemon zest": {
+  "th": "กุ้งแดงอาร์เจนตินาย่าง ทาร์ทาร์กุ้ง สตรัชชาเตลลา ซอสบิสก์อาหารทะเล และเปลือกมะนาวขูด",
+  "ar": "جمبري أحمر أرجنتيني مشوي وتارتار الجمبري وستراتشياتيلا وبيسك المأكولات البحرية وقشر الليمون"
+ },
+ "Homemade tagliolini, creamy truffle sauce & fresh truffle.": {
+  "th": "ตาลิโอลินีโฮมเมด ซอสทรัฟเฟิลครีม และทรัฟเฟิลสด",
+  "ar": "تاغليوليني منزلي وصلصة الكمأة الكريمية وكمأة طازجة"
+ },
+ "San Marzano tomato sauce, mozzarella di bufala & fresh basil": {
+  "th": "ซอสมะเขือเทศซานมาร์ซาโน มอซซาเรลลาดิบูฟาลา และโหระพาสด",
+  "ar": "صلصة الطماطم سان مارزانو وموزاريلا دي بوفالا وريحان طازج"
+ },
+ "San Marzano tomato sauce, stracciatella, eggplant caviar, bell pepper confit, fresh pesto, rocket salad & berry tomatoes": {
+  "th": "ซอสมะเขือเทศซานมาร์ซาโน สตรัชชาเตลลา คาเวียร์มะเขือยาว พริกหวานคอนฟีต์ เพสโต้สด ผักร็อกเก็ต และมะเขือเทศเบอร์รี",
+  "ar": "صلصة الطماطم سان مارزانو وستراتشياتيلا وكافيار الباذنجان وكونفي الفلفل الحلو وبيستو طازج وجرجير وطماطم التوت"
+ },
+ "Gorgonzola, aged Grana Padano, Asiago & mozzarella": {
+  "th": "กอร์กอนโซลา กราน่าปาดาโนบ่ม อาเซียโก และมอซซาเรลลา",
+  "ar": "غورغونزولا وغرانا بادانو معتّق وأسياغو وموزاريلا"
+ },
+ "Mozzarella, smoked scamorza & Calabrian spicy salami": {
+  "th": "มอซซาเรลลา สกาโมร์ซารมควัน และซาลามีคาลาเบรียรสเผ็ด",
+  "ar": "موزاريلا وسكاموردسا مدخن وسلامي كالابري حار"
+ },
+ "Thin & crispy pizza dough sandwich, mortadella, stracciatella & crushed pistachios": {
+  "th": "แซนด์วิชแป้งพิซซ่าบางกรอบ มอร์ตาเดลลา สตรัชชาเตลลา และพิสตาชิโอบด",
+  "ar": "ساندويتش من عجينة البيتزا الرقيقة المقرمشة مع مورتديلا وستراتشياتيلا وفستق مطحون"
+ },
+ "Seasoned Italian sausage, roasted potatoes, caramelized onions, Taleggio & mascarpone": {
+  "th": "ไส้กรอกอิตาเลียนปรุงรส มันฝรั่งอบ หอมใหญ่คาราเมล ทาเลจโจ และมาสคาร์โปเน",
+  "ar": "نقانق إيطالية متبّلة وبطاطا محمّصة وبصل مكرمل وتاليجو ومسكاربوني"
+ },
+ "Mascarpone, mozzarella, smoked salmon, dill & fresh rocket salad": {
+  "th": "มาสคาร์โปเน มอซซาเรลลา แซลมอนรมควัน ผักชีลาว และผักร็อกเก็ตสด",
+  "ar": "مسكاربوني وموزاريلا وسلمون مدخن وشبت وجرجير طازج"
+ },
+ "San Marzano tomato sauce, creamy burrata, spicy Calabrian 'nduja, chili, Ventricina salami & roasted garlic": {
+  "th": "ซอสมะเขือเทศซานมาร์ซาโน เบอร์ราต้าเนื้อครีม นดูยาคาลาเบรียรสเผ็ด พริก ซาลามีเวนทริชินา และกระเทียมอบ",
+  "ar": "صلصة الطماطم سان مارزانو وبوراتا كريمية ونودجا كالابرية حارة وفلفل حار وسلامي فنتريتشينا وثوم محمّص"
+ },
+ "San Marzano tomato sauce, artichoke hearts, black olives, mushroom confit & prosciutto cotto": {
+  "th": "ซอสมะเขือเทศซานมาร์ซาโน หัวใจอาร์ติโช้ก มะกอกดำ เห็ดคอนฟีต์ และโปรชุตโตคอตโต",
+  "ar": "صلصة الطماطم سان مارزانو وقلوب الخرشوف وزيتون أسود وكونفي الفطر وبروشوتو كوتو"
+ },
+ "San Marzano tomato sauce, Parma ham, stracciatella, basil & cherry tomatoes": {
+  "th": "ซอสมะเขือเทศซานมาร์ซาโน ปาร์มาแฮม สตรัชชาเตลลา โหระพา และมะเขือเทศเชอร์รี",
+  "ar": "صلصة الطماطم سان مارزانو ولحم بارما وستراتشياتيلا وريحان وطماطم كرزية"
+ },
+ "Porcini sauce, mushrooms, mozzarella, taleggio, dried cranberries & speck": {
+  "th": "ซอสพอร์ชินี เห็ด มอซซาเรลลา ทาเลจโจ แครนเบอร์รีแห้ง และสเปก",
+  "ar": "صلصة البورشيني وفطر وموزاريلا وتاليجو وتوت بري مجفف وسبيك"
+ },
+ "Asiago cheese, mushrooms, prosciutto cotto & fresh truffle": {
+  "th": "ชีสอาเซียโก เห็ด โปรชุตโตคอตโต และทรัฟเฟิลสด",
+  "ar": "جبن أسياغو وفطر وبروشوتو كوتو وكمأة طازجة"
+ },
+ "Milanese style deep-fried breaded chicken cutlet, fresh mixed salad & tomato sauce": {
+  "th": "อกไก่ชุบเกล็ดขนมปังทอดกรอบสไตล์มิลาเนเซ สลัดผักรวมสด และซอสมะเขือเทศ",
+  "ar": "شريحة دجاج مغطاة بالبقسماط ومقلية على الطريقة الميلانية مع سلطة مشكلة طازجة وصلصة الطماطم"
+ },
+ "Chicken thigh, carrot purée, braised cabbage, almonds & raisins": {
+  "th": "น่องสะโพกไก่ ครีมแครอท กะหล่ำปลีตุ๋น อัลมอนด์ และลูกเกด",
+  "ar": "فخذ دجاج وهريس الجزر وملفوف مطهو ولوز وزبيب"
+ },
+ "Pan-seared salmon fillet, broccoli sauce, baby carrots, broccolini, zucchini, sweet bell peppers & eggplant": {
+  "th": "ปลาแซลมอนฟิเลย์ย่างหน้าเกรียม ซอสบรอกโคลี แครอทเบบี้ บรอกโคลินี บวบ พริกหวาน และมะเขือยาว",
+  "ar": "فيليه سلمون مشوي مع صلصة البروكلي وجزر صغير وبروكوليني وكوسا وفلفل حلو وباذنجان"
+ },
+ "Pan-seared sea bass, spicy bell pepper sauce, grilled broccolini, walnut salsa & sun-dried cherry tomatoes": {
+  "th": "ปลาซีบาสย่างหน้าเกรียม ซอสพริกหวานรสเผ็ด บรอกโคลินีย่าง ซัลซ่าวอลนัท และมะเขือเทศเชอร์รีตากแห้ง",
+  "ar": "سمك القاروص المشوي مع صلصة الفلفل الحلو الحارة وبروكوليني مشوي وسالسا الجوز وطماطم كرزية مجففة"
+ },
+ "Grilled snow fish fillet, Livornese sauce with tomatoes, olives, capers & olive oil mashed potatoes": {
+  "th": "ปลาสโนว์ฟิชฟิเลย์ย่าง ซอสลิวอร์เนเซกับมะเขือเทศ มะกอก คาเปอร์ และมันฝรั่งบดน้ำมันมะกอก",
+  "ar": "فيليه سمك سنو فيش مشوي مع صلصة ليفورنيزي بالطماطم والزيتون والكبر وهريس بطاطا بزيت الزيتون"
+ },
+ "Italian blue mussels, San Marzano tomato sauce, garlic bread, fresh chili & parsley oil": {
+  "th": "หอยแมลงภู่สีน้ำเงินอิตาเลียน ซอสมะเขือเทศซานมาร์ซาโน ขนมปังกระเทียม พริกสด และน้ำมันพาร์สลีย์",
+  "ar": "بلح بحر أزرق إيطالي وصلصة الطماطم سان مارزانو وخبز بالثوم وفلفل حار طازج وزيت البقدونس"
+ },
+ "Slow-cooked pork tenderloin, cannellini beans, broccolini & spicy Calabrian 'nduja": {
+  "th": "เนื้อสันในหมูตุ๋นช้า ถั่วคันเนลลินี บรอกโคลินี และนดูยาคาลาเบรียรสเผ็ด",
+  "ar": "شريحة لحم خنزير مطهوة ببطء مع فاصوليا كانيليني وبروكوليني ونودجا كالابرية حارة"
+ },
+ "Kurobuta pork neck, garlic mashed potatoes, sautéed oyster mushrooms & Gorgonzola-porcini sauce": {
+  "th": "คอหมูคุโรบูตะ มันฝรั่งบดกระเทียม เห็ดนางรมผัด และซอสกอร์กอนโซลา-พอร์ชินี",
+  "ar": "رقبة خنزير كوروبوتا مع هريس البطاطا بالثوم وفطر المحار المقلي وصلصة الغورغونزولا والبورشيني"
+ },
+ "Handcut Black Angus beef tartare with pickles & quail egg, served with French fries": {
+  "th": "ทาร์ทาร์เนื้อวัวแบล็กแองกัสหั่นมือ กับผักดองและไข่นกกระทา เสิร์ฟพร้อมเฟรนช์ฟรายส์",
+  "ar": "تارتار لحم بقر بلاك أنغوس مفروم يدويًا مع مخلل وبيض السمان ويُقدَّم مع بطاطا مقلية"
+ },
+ "48-hour slow-cooked Black Angus beef cheek, saffron-infused carnaroli rice": {
+  "th": "แก้มวัวแบล็กแองกัสตุ๋นช้า 48 ชั่วโมง ข้าวคาร์นาโรลีหอมกลิ่นหญ้าฝรั่น",
+  "ar": "خد بقر بلاك أنغوس مطهو ببطء 48 ساعة مع أرز كارنارولي منقوع بالزعفران"
+ },
+ "48-hour slow-cooked tender lamb shank, fregola pasta, artichoke hearts, cherry tomatoes & lamb jus": {
+  "th": "เนื้อขาแกะนุ่มตุ๋นช้า 48 ชั่วโมง พาสต้าเฟรโกลา หัวใจอาร์ติโช้ก มะเขือเทศเชอร์รี และน้ำเกรวี่แกะ",
+  "ar": "ساق ضأن طرية مطهوة ببطء 48 ساعة مع معكرونة فريغولا وقلوب الخرشوف وطماطم كرزية ومرق الضأن"
+ },
+ "Australian Wagyu flank steak (200g), fresh rocket salad, cherry tomatoes, shaved Parmesan & balsamic reduction": {
+  "th": "สเต็กเนื้อวากิวส่วนแฟลงก์ออสเตรเลีย (200 กรัม) ผักร็อกเก็ตสด มะเขือเทศเชอร์รี พาร์เมซานเกล็ด และบัลซามิกรีดักชัน",
+  "ar": "ستيك فلانك واغيو أسترالي (200 غ) مع جرجير طازج وطماطم كرزية وبارميزان مبشور وتركيز البلسمك"
+ },
+ "Grilled Angus tenderloin (180g), pan-seared foie gras, roasted potatoes, spinach & truffle sauce": {
+  "th": "เนื้อสันในแองกัสย่าง (180 กรัม) ฟัวกราส์ย่างหน้าเกรียม มันฝรั่งอบ ผักโขม และซอสทรัฟเฟิล",
+  "ar": "فيليه أنغوس مشوي (180 غ) مع فواغرا مقلية وبطاطا محمّصة وسبانخ وصلصة الكمأة"
+ },
+ "270-day aged Black Angus ribeye (500g), seasonal roasted vegetables, rosemary potatoes, Dijon mustard, garlic confit & Chimichurri sauce": {
+  "th": "ริบอายแบล็กแองกัสบ่ม 270 วัน (500 กรัม) ผักอบตามฤดูกาล มันฝรั่งโรสแมรี มัสตาร์ดดีฌง กระเทียมคอนฟีต์ และซอสชิมิชูร์รี",
+  "ar": "ريب آي بلاك أنغوس معتّق 270 يومًا (500 غ) مع خضار مشوية موسمية وبطاطا بالروزماري وخردل ديجون وكونفي الثوم وصلصة تشيميتشوري"
+ },
+ "Marbling Score 5/6. Red wine, mushroom & Gorgonzola sauces, rosemary potatoes, spinach & Parmesan, and sautéed mushrooms": {
+  "th": "คะแนนมาร์บลิง 5/6 ซอสไวน์แดง ซอสเห็ด และซอสกอร์กอนโซลา มันฝรั่งโรสแมรี ผักโขมกับพาร์เมซาน และเห็ดผัด",
+  "ar": "درجة التعرّق 5/6. صلصات النبيذ الأحمر والفطر والغورغونزولا وبطاطا بالروزماري وسبانخ وبارميزان وفطر مقلي"
+ },
+ "Classic baked caramel custard, fresh orange segments & vanilla tuile": {
+  "th": "คัสตาร์ดคาราเมลอบแบบคลาสสิก ส้มสดแกะเป็นกลีบ และทูอิลวานิลลา",
+  "ar": "كاسترد كراميل مخبوز كلاسيكي مع شرائح برتقال طازجة وتويل الفانيليا"
+ },
+ "Coconut and pineapple infused panna cotta, mint oil, fresh pineapple salad & pineapple coulis": {
+  "th": "พานาคอตต้าหอมกลิ่นมะพร้าวและสับปะรด น้ำมันมินต์ สลัดสับปะรดสด และคูลิสสับปะรด",
+  "ar": "بانا كوتا منقوعة بجوز الهند والأناناس مع زيت النعناع وسلطة أناناس طازجة وكولي الأناناس"
+ },
+ "70% dark chocolate lava, vanilla ice cream & fruit salad": {
+  "th": "ลาวาช็อกโกแลตดาร์ก 70% ไอศกรีมวานิลลา และสลัดผลไม้",
+  "ar": "حمم الشوكولاتة الداكنة 70% مع آيس كريم الفانيليا وسلطة فواكه"
+ },
+ "Mascarpone cream, coffee soaked ladyfinger biscuit, dulce de leche & coffee jelly": {
+  "th": "ครีมมาสคาร์โปเน ขนมเลดี้ฟิงเกอร์ชุบกาแฟ ดูลเซ่เดเลเช่ และเยลลี่กาแฟ",
+  "ar": "كريمة مسكاربوني وبسكويت سافوياردي منقوع بالقهوة ودولسي دي ليتشي وجيلي القهوة"
+ },
+ "Mini tiramisu, mini chocolate lava & homemade vanilla gelato. One regular coffee or tea included": {
+  "th": "ทีรามิสุขนาดเล็ก ลาวาช็อกโกแลตขนาดเล็ก และเจลาโต้วานิลลาโฮมเมด พร้อมกาแฟหรือชาธรรมดา 1 แก้ว",
+  "ar": "تيراميسو صغير وحمم شوكولاتة صغيرة وجيلاتو فانيليا منزلي. يشمل قهوة أو شايًا عاديًا واحدًا"
+ },
+ "Velvety vanilla cheesecake, amaretti biscuit crust, Fabbri cherries & cherry coulis": {
+  "th": "ชีสเค้กวานิลลาเนื้อเนียน ฐานบิสกิตอมาเรตตี เชอร์รีฟาบบรี และคูลิสเชอร์รี",
+  "ar": "تشيز كيك فانيليا ناعم بقاعدة بسكويت أماريتي وكرز فابري وكولي الكرز"
+ },
+ "Warm banana cookie, vanilla ice cream & butterscotch sauce": {
+  "th": "คุกกี้กล้วยอุ่น ไอศกรีมวานิลลา และซอสบัตเตอร์สก็อตช์",
+  "ar": "كوكيز الموز الدافئ مع آيس كريم الفانيليا وصلصة البتر سكوتش"
+ },
+ "Choux pastry, pistachio gelato, toasted crushed pistachios, homemade chantilly cream & chocolate fudge sauce": {
+  "th": "ชูครีม เจลาโต้พิสตาชิโอ พิสตาชิโอบดคั่ว ครีมชองติลลีโฮมเมด และซอสช็อกโกแลตฟัดจ์",
+  "ar": "عجينة شو وجيلاتو الفستق وفستق مطحون محمّص وكريمة شانتيلي منزلية وصلصة فادج الشوكولاتة"
+ },
+ "Flavours shown: Tahitian Vanilla, Valrhona Chocolate": {
+  "th": "รสชาติที่แสดงในเมนู: ทาฮิเตียนวานิลลา และวาลโรนาช็อกโกแลต",
+  "ar": "النكهات الظاهرة في القائمة: فانيليا تاهيتي وشوكولاتة فالرونا"
+ },
+ "Vanilla gelato & espresso": {
+  "th": "เจลาโต้วานิลลาและเอสเพรสโซ",
+  "ar": "جيلاتو فانيليا وإسبريسو"
+ },
+ "Pineapple, espresso & tonic": {
+  "th": "สับปะรด เอสเพรสโซ และโทนิก",
+  "ar": "أناناس وإسبريسو وتونيك"
+ },
+ "Matcha green tea, almond milk & vanilla": {
+  "th": "ชาเขียวมัทฉะ นมอัลมอนด์ และวานิลลา",
+  "ar": "شاي ماتشا أخضر وحليب اللوز وفانيليا"
+ },
+ "Espresso, homemade whipped cream & almond": {
+  "th": "เอสเพรสโซ วิปครีมโฮมเมด และอัลมอนด์",
+  "ar": "إسبريسو وكريمة مخفوقة منزلية ولوز"
+ },
+ "Cappuccino, caramel sauce & caramel tuile": {
+  "th": "คาปูชิโน ซอสคาราเมล และทูอิลคาราเมล",
+  "ar": "كابتشينو وصلصة الكراميل وتويل الكراميل"
+ },
+ "Dark cocoa, homemade whipped cream & hazelnut": {
+  "th": "โกโก้เข้มข้น วิปครีมโฮมเมด และเฮเซลนัต",
+  "ar": "كاكاو داكن وكريمة مخفوقة منزلية وبندق"
+ },
+ "Papaya, pear, red apple, passion fruit, orange": {
+  "th": "มะละกอ ลูกแพร์ แอปเปิลแดง เสาวรส ส้ม",
+  "ar": "بابايا وكمثرى وتفاح أحمر وفاكهة العاطفة وبرتقال"
+ },
+ "Cucumber, green apple, guava, spinach": {
+  "th": "แตงกวา แอปเปิลเขียว ฝรั่ง ผักโขม",
+  "ar": "خيار وتفاح أخضر وجوافة وسبانخ"
+ },
+ "Mango, pineapple, banana": {
+  "th": "มะม่วง สับปะรด กล้วย",
+  "ar": "مانجو وأناناس وموز"
+ },
+ "Green apple, beetroot, red dragon fruit, passion fruit": {
+  "th": "แอปเปิลเขียว บีตรูต แก้วมังกรแดง เสาวรส",
+  "ar": "تفاح أخضر وشمندر وفاكهة التنين الحمراء وفاكهة العاطفة"
+ },
+ "Homemade vanilla ice cream, chocolate sauce, milk, espresso & homemade whipped cream": {
+  "th": "ไอศกรีมวานิลลาโฮมเมด ซอสช็อกโกแลต นม เอสเพรสโซ และวิปครีมโฮมเมด",
+  "ar": "آيس كريم فانيليا منزلي وصلصة الشوكولاتة وحليب وإسبريسو وكريمة مخفوقة منزلية"
+ },
+ "Homemade chocolate ice cream, macadamia milk & homemade whipped cream": {
+  "th": "ไอศกรีมช็อกโกแลตโฮมเมด นมแมคคาเดเมีย และวิปครีมโฮมเมด",
+  "ar": "آيس كريم شوكولاتة منزلي وحليب المكاديميا وكريمة مخفوقة منزلية"
+ },
+ "Homemade mango ice cream, rice milk, fresh mango & coconut cream": {
+  "th": "ไอศกรีมมะม่วงโฮมเมด นมข้าว มะม่วงสด และกะทิครีม",
+  "ar": "آيس كريم مانجو منزلي وحليب الأرز ومانجو طازجة وكريمة جوز الهند"
+ },
+ "Homemade vanilla ice cream, banana, caramel brownie & homemade whipped cream": {
+  "th": "ไอศกรีมวานิลลาโฮมเมด กล้วย บราวนี่คาราเมล และวิปครีมโฮมเมด",
+  "ar": "آيس كريم فانيليا منزلي وموز وبراوني الكراميل وكريمة مخفوقة منزلية"
+ },
+ "Mixed berries and rosemary syrup, lime juice & soda": {
+  "th": "ไซรัปมิกซ์เบอร์รีและโรสแมรี น้ำมะนาว และโซดา",
+  "ar": "شراب التوت المشكل والروزماري وعصير الليمون وصودا"
+ },
+ "Apricot and basil syrup, lime juice & soda": {
+  "th": "ไซรัปแอปริคอตและโหระพา น้ำมะนาว และโซดา",
+  "ar": "شراب المشمش والريحان وعصير الليمون وصودا"
+ },
+ "Blood orange and mint syrup, lime juice & soda": {
+  "th": "ไซรัปส้มบลัดออเรนจ์และมินต์ น้ำมะนาว และโซดา",
+  "ar": "شراب البرتقال الدموي والنعناع وعصير الليمون وصودا"
+ },
+ "Lychee syrup, lime juice & soda": {
+  "th": "ไซรัปลิ้นจี่ น้ำมะนาว และโซดา",
+  "ar": "شراب الليتشي وعصير الليمون وصودا"
+ },
+ "Homemade bread & 100% Butter croissant. Served with jam, butter & honey. + 1 Coffee or tea of your choice, + 1 Orange juice, + 1 Greek yoghurt": {
+  "th": "ขนมปังโฮมเมดและครัวซองต์เนยแท้ 100% เสิร์ฟพร้อมแยม เนย และน้ำผึ้ง + กาแฟหรือชา 1 แก้วตามชอบ + น้ำส้ม 1 แก้ว + กรีกโยเกิร์ต 1 ถ้วย",
+  "ar": "خبز منزلي وكرواسان بالزبدة 100%. يُقدَّم مع مربى وزبدة وعسل. + قهوة أو شاي من اختيارك + عصير برتقال + زبادي يوناني"
+ },
+ "Sourdough bread, creamy scrambled eggs, tomato & fresh avocado": {
+  "th": "ขนมปังซาวร์โดว์ ไข่คนครีมมี่ มะเขือเทศ และอะโวคาโดสด",
+  "ar": "خبز العجين المخمّر وبيض مخفوق كريمي وطماطم وأفوكادو طازج"
+ },
+ "Homemade pizza bread, homemade bacon, fried egg, lettuce, tomatoes & roasted potatoes": {
+  "th": "ขนมปังพิซซ่าโฮมเมด เบคอนโฮมเมด ไข่ดาว ผักกาดหอม มะเขือเทศ และมันฝรั่งอบ",
+  "ar": "خبز البيتزا المنزلي ولحم مقدد منزلي وبيض مقلي وخس وطماطم وبطاطا محمّصة"
+ },
+ "Nduja, ventriciana, bell pepper confit, egg & toasted ciabatta": {
+  "th": "นดูยา เวนทริชินา พริกหวานคอนฟีต์ ไข่ และเชียบัตต้าปิ้ง",
+  "ar": "نودجا وفنتريتشينا وكونفي الفلفل الحلو وبيض وخبز تشياباتا محمّص"
+ },
+ "Homemade granola, fresh fruits, yoghurt & honey": {
+  "th": "กราโนล่าโฮมเมด ผลไม้สด โยเกิร์ต และน้ำผึ้ง",
+  "ar": "غرانولا منزلية وفواكه طازجة وزبادي وعسل"
+ },
+ "Brioche bun, poached egg, hollandaise sauce, homemade bacon & guanciale": {
+  "th": "บริออชบัน ไข่ต้มลวก ซอสฮอลแลนเดส เบคอนโฮมเมด และกวนชาเล",
+  "ar": "خبز بريوش وبيض مسلوق وصلصة هولنديز ولحم مقدد منزلي وغوانشيالي"
+ },
+ "Brioche bun, poached egg, hollandaise sauce & smoked Atlantic salmon": {
+  "th": "บริออชบัน ไข่ต้มลวก ซอสฮอลแลนเดส และแซลมอนแอตแลนติกรมควัน",
+  "ar": "خبز بريوش وبيض مسلوق وصلصة هولنديز وسلمون أطلسي مدخن"
+ },
+ "Italian-style omelette, sautéed spinach, cherry tomatoes & Parma ham": {
+  "th": "ไข่เจียวสไตล์อิตาเลียน ผักโขมผัด มะเขือเทศเชอร์รี และปาร์มาแฮม",
+  "ar": "عجة على الطريقة الإيطالية مع سبانخ مقلية وطماطم كرزية ولحم بارما"
+ },
+ "Italian-style omelette, sautéed spinach, smoked Atlantic salmon & mascarpone cream": {
+  "th": "ไข่เจียวสไตล์อิตาเลียน ผักโขมผัด แซลมอนแอตแลนติกรมควัน และครีมมาสคาร์โปเน",
+  "ar": "عجة على الطريقة الإيطالية مع سبانخ مقلية وسلمون أطلسي مدخن وكريمة المسكاربوني"
+ },
+ "Served with jam, butter & honey": {
+  "th": "เสิร์ฟพร้อมแยม เนย และน้ำผึ้ง",
+  "ar": "يُقدَّم مع مربى وزبدة وعسل"
+ },
+ "Butter croissant filled with homemade vanilla cream": {
+  "th": "ครัวซองต์เนยสอดไส้ครีมวานิลลาโฮมเมด",
+  "ar": "كرواسان بالزبدة محشو بكريمة الفانيليا المنزلية"
+ },
+ "Homemade focaccia & pizza bread, prosciutto & mortadella, aged Grana Padano, moliterno & creamy stracciatella with sweet berry tomatoes, fritto misto & fried mozzarella bites, sundried tomato tapenade & aioli sauce": {
+  "th": "ฟอกัชเชียและขนมปังพิซซ่าโฮมเมด โปรชุตโตและมอร์ตาเดลลา กราน่าปาดาโนบ่ม โมลิแตร์โนและสตรัชชาเตลลาเนื้อครีมกับมะเขือเทศเบอร์รีหวาน ฟริตโตมิสโตและมอซซาเรลลาทอดชิ้นพอดีคำ ทาเพนาดมะเขือเทศตากแห้งและซอสไอโอลี",
+  "ar": "فوكاتشيا وخبز بيتزا منزلي وبروشوتو ومورتديلا وغرانا بادانو معتّق وموليتيرنو وستراتشياتيلا كريمية مع طماطم التوت الحلوة وفريتو ميستو وقطع موزاريلا مقلية وتابيناد الطماطم المجففة وصلصة الآيولي"
+ },
+ "Havana 3 Años Rum, Watermelon & Lime": {
+  "th": "Havana 3 Años Rum แตงโม และมะนาว",
+  "ar": "Havana 3 Años Rum وبطيخ وليمون"
+ },
+ "Absolut Vodka, Hibiscus, Cranberry, Lime & Egg White": {
+  "th": "Absolut Vodka ชบา แครนเบอร์รี มะนาว และไข่ขาว",
+  "ar": "Absolut Vodka وكركديه وكرانبيري وليمون وبياض البيض"
+ },
+ "Campari, Cinzano Rosso & Spumante Ca'Stele Cuvée Blanche": {
+  "th": "Campari, Cinzano Rosso และ Spumante Ca'Stele Cuvée Blanche",
+  "ar": "Campari وCinzano Rosso وSpumante Ca'Stele Cuvée Blanche"
+ },
+ "Beefeater Dry Gin, Cointreau, Pineapple, Passion Fruit & Lime": {
+  "th": "Beefeater Dry Gin, Cointreau สับปะรด เสาวรส และมะนาว",
+  "ar": "Beefeater Dry Gin وCointreau وأناناس وفاكهة العاطفة وليمون"
+ },
+ "Guava, Lime, Ginger": {
+  "th": "ฝรั่ง มะนาว ขิง",
+  "ar": "جوافة وليمون وزنجبيل"
+ },
+ "Apple, Kiwi, Lime, Mint": {
+  "th": "แอปเปิล กีวี มะนาว มินต์",
+  "ar": "تفاح وكيوي وليمون ونعناع"
+ },
+ "Mixed Berries, Lime, Grenadine, Soda Water": {
+  "th": "มิกซ์เบอร์รี มะนาว กรีนาดีน โซดา",
+  "ar": "توت مشكل وليمون وغرينادين وماء صودا"
+ },
+ "Bottle": {
+  "th": "ขวด",
+  "ar": "زجاجة"
+ },
+ "La Marchesana 2023, Primitivo, Puglia, Italy": {
+  "th": "La Marchesana 2023, Primitivo, Puglia, Italy",
+  "ar": "La Marchesana 2023, Primitivo, Puglia, Italy"
+ },
+ "Terre di Mario 2024, Pinot Grigio, Abruzzo, Italy": {
+  "th": "Terre di Mario 2024, Pinot Grigio, Abruzzo, Italy",
+  "ar": "Terre di Mario 2024, Pinot Grigio, Abruzzo, Italy"
+ },
+ "Served with Tea or Coffee. Everyday from 2–5 pm. Available exclusively at Mozza Chidlom": {
+  "th": "เสิร์ฟพร้อมชาหรือกาแฟ ทุกวัน 14.00–17.00 น. มีเฉพาะที่ Mozza Chidlom",
+  "ar": "يُقدَّم مع شاي أو قهوة. يوميًا من 2 إلى 5 مساءً. متوفر حصريًا في Mozza Chidlom"
+ },
+ "Served with 1 Bottle of Prosecco. Everyday from 2–5 pm. Available exclusively at Mozza Chidlom": {
+  "th": "เสิร์ฟพร้อมโพรเซกโก้ 1 ขวด ทุกวัน 14.00–17.00 น. มีเฉพาะที่ Mozza Chidlom",
+  "ar": "يُقدَّم مع زجاجة بروسيكو واحدة. يوميًا من 2 إلى 5 مساءً. متوفر حصريًا في Mozza Chidlom"
+ }
+}

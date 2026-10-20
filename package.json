@@ -4,8 +4,8 @@
   "private": true,
   "description": "PRIVATE concept demo - not the official Mozza website",
   "scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "dev": "node scripts/copy-menus.mjs && next dev --webpack",
+    "build": "node scripts/copy-menus.mjs && next build --webpack",
     "start": "npx serve out",
     "build:protected": "npm run build && node scripts/protect-hostinger.mjs",
     "typecheck": "tsc --noEmit",

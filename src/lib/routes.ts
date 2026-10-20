@@ -13,6 +13,6 @@ export function absoluteUrl(lang: Lang, route: Route = ""): string {
   return `${SITE_ORIGIN}${pathFor(lang, route)}`;
 }
 
-export function menuAnchor(lang: Lang, id: string): string {
-  return `${pathFor(lang, "menu")}#${id}`;
+export function menuAnchor(lang: Lang, id: string, menu = "food"): string {
+  return `${pathFor(lang, `menu/${menu}` as Route)}#${id}`;
 }

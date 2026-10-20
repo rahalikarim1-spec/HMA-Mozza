@@ -1,0 +1,46 @@
+{
+ "menu": "afternoon-tea",
+ "source": "source/menus/afternoon-tea.pdf",
+ "title": "Afternoon Tea",
+ "sourceNote": "Source: \"Afternoon Tea, everyday from 2-5 pm, available exclusively at MOZZA Chidlom\".",
+ "currency": "THB",
+ "status": "transcribed — unverified",
+ "categories": [
+  {
+   "id": "afternoon-tea-set",
+   "name": "Afternoon Tea Set",
+   "items": [
+    {
+     "id": "afternoon-tea-set-with-tea-or-coffee",
+     "name": "Afternoon Tea Set — with Tea or Coffee",
+     "description": "Served with Tea or Coffee. Everyday from 2–5 pm. Available exclusively at Mozza Chidlom",
+     "price": 990,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [],
+     "page": 1,
+     "verify": true,
+     "reviewNotes": [
+      "The PDF lists NO individual items for the set (only a photo of a tiered stand). Contents not transcribed; do not invent."
+     ]
+    },
+    {
+     "id": "afternoon-tea-set-with-prosecco",
+     "name": "Afternoon Tea Set — with Prosecco",
+     "description": "Served with 1 Bottle of Prosecco. Everyday from 2–5 pm. Available exclusively at Mozza Chidlom",
+     "price": 1990,
+     "sizes": null,
+     "priceNote": null,
+     "tags": [
+      "alcohol"
+     ],
+     "page": 1,
+     "verify": true,
+     "reviewNotes": [
+      "The PDF lists NO individual items for the set. Alcohol tag from 'Prosecco' (named in the source)."
+     ]
+    }
+   ]
+  }
+ ]
+}

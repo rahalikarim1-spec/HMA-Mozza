@@ -1,4 +1,4 @@
-import type { BranchSlug, CategoryId, DishId, Lang, TagId } from "./types";
+import type { BranchSlug, Lang } from "./types";
 
 export interface FaqItem {
   q: string;
@@ -45,7 +45,6 @@ export interface Dict {
   };
   meta: {
     home: { title: string; description: string };
-    menu: { title: string; description: string };
     locations: { title: string; description: string };
   };
   hero: { h1: string; sub: string; aiCaption: string; cta: { reserve: string; menu: string } };
@@ -63,17 +62,6 @@ export interface Dict {
     disclaimer: string;
     photos: string;
   };
-  menuPage: {
-    h1: string;
-    intro: string;
-    pdf: string;
-    categories: Record<CategoryId, string>;
-    tabsLabel: string;
-    dietaryNote: string;
-    reserveSticky: string;
-  };
-  tags: Record<TagId, string> & { toConfirm: string };
-  dishes: Record<DishId, { name: string; description: string; alt: string }>;
   locationsPage: { h1: string; intro: string };
   branchPage: {
     reserve: string;

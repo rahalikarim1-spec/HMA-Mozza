@@ -1,0 +1,4 @@
+[
+ {"path": "menu", "module": "@/pages-impl/MenuPages", "component": "MenuHubPage", "metadata": "menuHubMetadata"},
+ {"path": "menu/[menu]", "module": "@/pages-impl/MenuPages", "component": "MenuDetailPage", "metadata": "menuMetadata", "param": "menu", "as_fn": "asMenuIdOr404", "params_const": "MENU_PARAMS", "params_mod": "@/lib/params", "prop_name": "id"}
+]
