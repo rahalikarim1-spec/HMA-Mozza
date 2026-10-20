@@ -32,6 +32,7 @@ const GROUPS: { title: string; items: [string, Get][] }[] = [
       ["hero.h1", g((d) => d.hero.h1)],
       ["hero.sub", g((d) => d.hero.sub)],
       ["hero.cta.menu", g((d) => d.hero.cta.menu)],
+      ["hero.aiCaption", g((d) => d.hero.aiCaption)],
       ["chooser.title", g((d) => d.chooser.title)],
       ["chooser.intro", g((d) => d.chooser.intro)],
       ["common.openToday", g((d) => d.common.openToday("22:00"))],

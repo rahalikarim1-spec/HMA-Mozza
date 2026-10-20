@@ -1,4 +1,4 @@
-# Thai strings — PRIORITY native review (61 strings)
+# Thai strings — PRIORITY native review (62 strings)
 
 <!-- NEEDS NATIVE REVIEW -->
 
@@ -36,64 +36,65 @@ Latin brand/dish names, and transit/landmark text (hidden until confirmed).
 | 9 | `hero.h1` | ร้านอาหารอิตาเลียนแท้ในกรุงเทพฯ |
 | 10 | `hero.sub` | พิซซ่าเตาฟืนและพาสต้าทำมือ La Cucina di Mamma |
 | 11 | `hero.cta.menu` | ดูเมนู |
-| 12 | `chooser.title` | เลือกสาขา Mozza ของคุณ |
-| 13 | `chooser.intro` | 5 สาขาทั่วกรุงเทพฯ เลือกสาขาที่ใกล้คุณที่สุด |
-| 14 | `common.openToday` | เปิดวันนี้ถึง 22:00 น. |
-| 15 | `common.openTbc` | เวลาเปิดทำการ รอยืนยัน |
-| 16 | `common.viewBranch` | ดูรายละเอียดสาขา |
-| 17 | `signature.title` | เมนูแนะนำ |
-| 18 | `signature.intro` | 6 เมนูเริ่มต้น แตะเพื่อดูในหน้าเมนู |
-| 19 | `common.viewDish` | ดูในเมนู |
-| 20 | `tags.pork` | มีส่วนผสมของหมู |
-| 21 | `tags.alcohol` | อาจมีส่วนผสมของแอลกอฮอล์ |
-| 22 | `tags.vegetarian` | มังสวิรัติ |
-| 23 | `tags.toConfirm` | รอยืนยัน |
-| 24 | `awards.title` | การยอมรับ |
-| 25 | `faq.title` | คำถามที่พบบ่อย |
-| 26 | `faq.items[0].q` | จองโต๊ะได้อย่างไร |
-| 27 | `faq.items[1].q` | มีบริการจัดส่งไหม |
-| 28 | `faq.items[2].q` | จองโต๊ะสำหรับกลุ่มใหญ่ได้ไหม |
-| 29 | `faq.items[3].q` | เวลาเปิดทำการคือเมื่อไร |
-| 30 | `branches.*.mall (Central Park)` | ดุสิต เซ็นทรัล พาร์ค |
+| 12 | `hero.aiCaption` | ภาพประกอบจาก AI |
+| 13 | `chooser.title` | เลือกสาขา Mozza ของคุณ |
+| 14 | `chooser.intro` | 5 สาขาทั่วกรุงเทพฯ เลือกสาขาที่ใกล้คุณที่สุด |
+| 15 | `common.openToday` | เปิดวันนี้ถึง 22:00 น. |
+| 16 | `common.openTbc` | เวลาเปิดทำการ รอยืนยัน |
+| 17 | `common.viewBranch` | ดูรายละเอียดสาขา |
+| 18 | `signature.title` | เมนูแนะนำ |
+| 19 | `signature.intro` | 6 เมนูเริ่มต้น แตะเพื่อดูในหน้าเมนู |
+| 20 | `common.viewDish` | ดูในเมนู |
+| 21 | `tags.pork` | มีส่วนผสมของหมู |
+| 22 | `tags.alcohol` | อาจมีส่วนผสมของแอลกอฮอล์ |
+| 23 | `tags.vegetarian` | มังสวิรัติ |
+| 24 | `tags.toConfirm` | รอยืนยัน |
+| 25 | `awards.title` | การยอมรับ |
+| 26 | `faq.title` | คำถามที่พบบ่อย |
+| 27 | `faq.items[0].q` | จองโต๊ะได้อย่างไร |
+| 28 | `faq.items[1].q` | มีบริการจัดส่งไหม |
+| 29 | `faq.items[2].q` | จองโต๊ะสำหรับกลุ่มใหญ่ได้ไหม |
+| 30 | `faq.items[3].q` | เวลาเปิดทำการคือเมื่อไร |
+| 31 | `branches.*.mall (Central Park)` | ดุสิต เซ็นทรัล พาร์ค |
 
 ## /th/locations/central-park
 
 | # | Key | Thai text |
 |---|---|---|
-| 31 | `branches.central-park.metaTitle` | Mozza Central Park \| ร้านอาหารอิตาเลียน ดุสิต เซ็นทรัล พาร์ค |
-| 32 | `branches.central-park.h1` | Mozza Central Park — ร้านอาหารอิตาเลียน ที่ ดุสิต เซ็นทรัล พาร์ค |
-| 33 | `branches.central-park.district` | สีลม · บางรัก |
-| 34 | `branches.central-park.intro[0]` | Mozza Central Park ตั้งอยู่ชั้นล่างของดุสิต เซ็นทรัล พาร์ค บนถนนพระราม 4 ตรงจุดที่สีลมบรรจบกับย่านสวนลุมพินี เป็นจุดแวะที่เหมาะสำหรับผู้ที่ทำงานในย่านธุรกิจสีลม สาทร และลุมพินี |
-| 35 | `branches.central-park.intro[1]` | มื้อกลางวันวันธรรมดาเหมาะกับพาสต้าทำมือหรือพิซซ่าแป้งบางอบเตาฟืนระหว่างช่วงพักประชุม ส่วนมื้อเย็นเมนูเดียวกันเหมาะกับการนั่งผ่อนคลายหลังเลิกงาน หรือโต๊ะอาหารกับเพื่อนและครอบครัว |
-| 36 | `branches.central-park.intro[2]` | โปรดดูป้ายระบุส่วนผสมของหมูและแอลกอฮอล์ในเมนูก่อนจอง แล้วกดปุ่มจองโต๊ะเพื่อเลือกโต๊ะของคุณ เวลาทำการและข้อมูลที่จอดรถในหน้านี้เป็นข้อความตัวอย่าง |
-| 37 | `common.ratingOn` | บน Google |
-| 38 | `common.demoNote` | เนื้อหาตัวอย่าง |
-| 39 | `common.hours` | เวลาทำการ |
-| 40 | `branchPage.addressTitle` | ที่อยู่ |
-| 41 | `branchPage.gettingHere` | การเดินทาง |
-| 42 | `branchPage.directionsFallback` | เส้นทางบน Google Maps |
-| 43 | `branchPage.aboutTitle` | เกี่ยวกับสาขานี้ |
-| 44 | `branchPage.signatureTitle` | เมนูแนะนำของสาขานี้ |
-| 45 | `branchPage.faqTitle` | คำถามเกี่ยวกับสาขา |
-| 46 | `branchPage.otherTitle` | สาขา Mozza อื่น ๆ |
+| 32 | `branches.central-park.metaTitle` | Mozza Central Park \| ร้านอาหารอิตาเลียน ดุสิต เซ็นทรัล พาร์ค |
+| 33 | `branches.central-park.h1` | Mozza Central Park — ร้านอาหารอิตาเลียน ที่ ดุสิต เซ็นทรัล พาร์ค |
+| 34 | `branches.central-park.district` | สีลม · บางรัก |
+| 35 | `branches.central-park.intro[0]` | Mozza Central Park ตั้งอยู่ชั้นล่างของดุสิต เซ็นทรัล พาร์ค บนถนนพระราม 4 ตรงจุดที่สีลมบรรจบกับย่านสวนลุมพินี เป็นจุดแวะที่เหมาะสำหรับผู้ที่ทำงานในย่านธุรกิจสีลม สาทร และลุมพินี |
+| 36 | `branches.central-park.intro[1]` | มื้อกลางวันวันธรรมดาเหมาะกับพาสต้าทำมือหรือพิซซ่าแป้งบางอบเตาฟืนระหว่างช่วงพักประชุม ส่วนมื้อเย็นเมนูเดียวกันเหมาะกับการนั่งผ่อนคลายหลังเลิกงาน หรือโต๊ะอาหารกับเพื่อนและครอบครัว |
+| 37 | `branches.central-park.intro[2]` | โปรดดูป้ายระบุส่วนผสมของหมูและแอลกอฮอล์ในเมนูก่อนจอง แล้วกดปุ่มจองโต๊ะเพื่อเลือกโต๊ะของคุณ เวลาทำการและข้อมูลที่จอดรถในหน้านี้เป็นข้อความตัวอย่าง |
+| 38 | `common.ratingOn` | บน Google |
+| 39 | `common.demoNote` | เนื้อหาตัวอย่าง |
+| 40 | `common.hours` | เวลาทำการ |
+| 41 | `branchPage.addressTitle` | ที่อยู่ |
+| 42 | `branchPage.gettingHere` | การเดินทาง |
+| 43 | `branchPage.directionsFallback` | เส้นทางบน Google Maps |
+| 44 | `branchPage.aboutTitle` | เกี่ยวกับสาขานี้ |
+| 45 | `branchPage.signatureTitle` | เมนูแนะนำของสาขานี้ |
+| 46 | `branchPage.faqTitle` | คำถามเกี่ยวกับสาขา |
+| 47 | `branchPage.otherTitle` | สาขา Mozza อื่น ๆ |
 
 ## /th/menu
 
 | # | Key | Thai text |
 |---|---|---|
-| 47 | `menuPage.h1` | เมนู Mozza — ร้านอาหารอิตาเลียนในกรุงเทพฯ |
-| 48 | `menuPage.intro` | พาสต้า พิซซ่า บูร์ราต้า และของหวาน ระบุส่วนผสมของหมูและแอลกอฮอล์ทุกครั้ง |
-| 49 | `menuPage.pdf` | ดาวน์โหลดเมนู PDF |
-| 50 | `menuPage.categories.starters` | อาหารเรียกน้ำย่อยและบูร์ราต้า |
-| 51 | `menuPage.categories.pizza` | พิซซ่า |
-| 52 | `menuPage.categories.pasta` | พาสต้าและริซอตโต้ |
-| 53 | `menuPage.categories.desserts` | ของหวาน |
-| 54 | `common.demoPrice` | ราคาตัวอย่าง |
-| 55 | `menuPage.dietaryNote` | ข้อมูลด้านอาหารและสารก่อภูมิแพ้ที่ระบุว่า “รอยืนยัน” ต้องตรวจสอบกับทางร้าน โปรดสอบถามทีมงานตามความต้องการของคุณ |
-| 56 | `dishes.truffle-tagliolini.description` | ตาลิโอลินีสดกับทรัฟเฟิล |
-| 57 | `dishes.burrata.description` | บูร์ราต้าเนื้อนุ่ม มะเขือเทศคอนฟีต์ และคาราเมลบัลซามิก |
-| 58 | `dishes.carpi-salerno.description` | พิซซ่าแป้งบางอบเตาฟืน หน้าแฮมปาร์มา สตรัชชาเตลลา โหระพา และมะเขือเทศ |
-| 59 | `dishes.truffle-risotto.description` | ข้าวคาร์นาโรลีเคล้าในก้อนพาร์เมซานทั้งวง กับทรัฟเฟิล |
-| 60 | `dishes.lobster-spaghetti.description` | สปาเกตตีกับล็อบสเตอร์ |
-| 61 | `dishes.tiramisu.description` | ทีรามิสุสูตรของร้าน |
+| 48 | `menuPage.h1` | เมนู Mozza — ร้านอาหารอิตาเลียนในกรุงเทพฯ |
+| 49 | `menuPage.intro` | พาสต้า พิซซ่า บูร์ราต้า และของหวาน ระบุส่วนผสมของหมูและแอลกอฮอล์ทุกครั้ง |
+| 50 | `menuPage.pdf` | ดาวน์โหลดเมนู PDF |
+| 51 | `menuPage.categories.starters` | อาหารเรียกน้ำย่อยและบูร์ราต้า |
+| 52 | `menuPage.categories.pizza` | พิซซ่า |
+| 53 | `menuPage.categories.pasta` | พาสต้าและริซอตโต้ |
+| 54 | `menuPage.categories.desserts` | ของหวาน |
+| 55 | `common.demoPrice` | ราคาตัวอย่าง |
+| 56 | `menuPage.dietaryNote` | ข้อมูลด้านอาหารและสารก่อภูมิแพ้ที่ระบุว่า “รอยืนยัน” ต้องตรวจสอบกับทางร้าน โปรดสอบถามทีมงานตามความต้องการของคุณ |
+| 57 | `dishes.truffle-tagliolini.description` | ตาลิโอลินีสดกับทรัฟเฟิล |
+| 58 | `dishes.burrata.description` | บูร์ราต้าเนื้อนุ่ม มะเขือเทศคอนฟีต์ และคาราเมลบัลซามิก |
+| 59 | `dishes.carpi-salerno.description` | พิซซ่าแป้งบางอบเตาฟืน หน้าแฮมปาร์มา สตรัชชาเตลลา โหระพา และมะเขือเทศ |
+| 60 | `dishes.truffle-risotto.description` | ข้าวคาร์นาโรลีเคล้าในก้อนพาร์เมซานทั้งวง กับทรัฟเฟิล |
+| 61 | `dishes.lobster-spaghetti.description` | สปาเกตตีกับล็อบสเตอร์ |
+| 62 | `dishes.tiramisu.description` | ทีรามิสุสูตรของร้าน |
 

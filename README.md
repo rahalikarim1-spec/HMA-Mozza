@@ -103,16 +103,25 @@ The site is a static export, so there is no server code to gate it; protection c
 
 | File | Content (cropped from the supplied collage) | Source / licence |
 |---|---|---|
-| `hero.jpg` | chef ladling sauce at a table of Italian dishes | Mozza / HMA brand photography, supplied by the demo author. **Not free-licence.** Original URL and permission to be confirmed. |
 | `branch-central-park.jpg` | storefront with open entrance and diners | same |
 | `branch-emquartier.jpg` | dining room with lit MOZZA sign | same |
 | `branch-siam-paragon.jpg` | arched wooden front with pizza oven inside | same |
-| `branch-iconsiam.jpg` | table of dishes, guest smiling at the chef | same (second crop of the hero photo) |
+| `branch-iconsiam.jpg` | chef ladling sauce at a table of dishes, guest smiling | same |
 
 Notes: the photo-to-branch assignment is **arbitrary** (the collage does not say which branch each shows), and alt texts describe
 the picture without naming a branch. The photos contain identifiable guests and staff. They are low resolution (440–690 px wide,
 cropped from a collage), so they look soft on retina screens. These are brand-owner assets: fine for a private pitch to the brand,
 but do not publish them or call them free-licence.
+**AI-generated images (home hero background, decorative, `alt=""`):**
+
+| File | What | Origin |
+|---|---|---|
+| `hero-bg.webp` / `hero-bg.jpg` | 1536×1024 landscape flat-lay of the six menu dishes on dark wood (desktop, ≈235 / 240 KB) | **AI-generated** (supplied by the demo author; tool/prompt to be recorded). Illustration only — not photos of Mozza's real dishes. |
+| `hero-bg-mobile.webp` / `hero-bg-mobile.jpg` | 600×900 portrait version (mobile, ≈82 / 96 KB) | **AI-generated**, resized/compressed from the supplied 1024×1536 file |
+
+The hero shows a small "AI illustration" caption (TH "ภาพประกอบจาก AI", AR "صورة توضيحية بالذكاء الاصطناعي"). The AI dishes only approximate
+the real ones (e.g. plating, toppings) — do not present them as the actual menu. `hero.jpg` (the old hero box) was removed.
+
 Still grey placeholders: `branch-central-chidlom.jpg` (no fifth photo), the six dish photos, and `map-placeholder.jpg`.
 The footer shows a "Demo photos" caption. When more photos are added, list each file's source URL and licence in this table.
 
@@ -121,7 +130,7 @@ The footer shows a "Demo photos" caption. When more photos are added, list each 
 All TH/AR copy is marked `<!-- NEEDS NATIVE REVIEW -->` in `src/content/th.ts` and `src/content/ar.ts`.
 **The complete string list is in [`NATIVE_REVIEW.md`](./NATIVE_REVIEW.md)** (generated; ~200 strings per language),
 ready to forward to reviewers.
-**Shortlist for a first pass: [`NATIVE_REVIEW_PRIORITY.md`](./NATIVE_REVIEW_PRIORITY.md)** — 61 Thai strings for the banner, home, `/th/locations/central-park` and `/th/menu` (`npm run review-priority`). Highest-risk items to look at first: the top banner, hero H1/sub, the pork / alcohol / vegetarian
+**Shortlist for a first pass: [`NATIVE_REVIEW_PRIORITY.md`](./NATIVE_REVIEW_PRIORITY.md)** — 62 Thai strings for the banner, home, `/th/locations/central-park` and `/th/menu` (`npm run review-priority`). Highest-risk items to look at first: the top banner, hero H1/sub, the pork / alcohol / vegetarian
 labels, "Demo price", the "to confirm" / TBC wording, the Arabic register (MSA vs Gulf), and the Thai/Arabic mall names.
 Dish names are intentionally kept in their original Latin form in all languages.
 

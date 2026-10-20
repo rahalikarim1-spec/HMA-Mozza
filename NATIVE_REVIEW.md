@@ -49,7 +49,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `meta.locations.description` | เดโมแนวคิด: Mozza 5 สาขาในกรุงเทพฯ ได้แก่ เซ็นทรัล พาร์ค เอ็มควอเทียร์ สยามพารากอน ไอคอนสยาม และเซ็นทรัล ชิดลม |
 | `hero.h1` | ร้านอาหารอิตาเลียนแท้ในกรุงเทพฯ |
 | `hero.sub` | พิซซ่าเตาฟืนและพาสต้าทำมือ La Cucina di Mamma |
-| `hero.imageAlt` | เชฟกำลังราดซอสลงในชามที่โต๊ะอาหารอิตาเลียน โดยมีแขกนั่งมองอยู่ (ภาพตัวอย่าง) |
+| `hero.aiCaption` | ภาพประกอบจาก AI |
 | `hero.cta.reserve` | จองโต๊ะ |
 | `hero.cta.menu` | ดูเมนู |
 | `chooser.title` | เลือกสาขา Mozza ของคุณ |
@@ -262,7 +262,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `meta.locations.description` | عرض تجريبي: خمسة فروع لـ Mozza في بانكوك — سنترال بارك، إم كوارتيير، سيام باراغون، آيكون سيام وسنترال شيدلوم. |
 | `hero.h1` | مطعم إيطالي أصيل في بانكوك |
 | `hero.sub` | بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا، La Cucina di Mamma |
-| `hero.imageAlt` | طاهٍ يسكب الصلصة في وعاء على طاولة أطباق إيطالية بينما تنظر إليه ضيفة (صورة تجريبية) |
+| `hero.aiCaption` | صورة توضيحية بالذكاء الاصطناعي |
 | `hero.cta.reserve` | احجز طاولة |
 | `hero.cta.menu` | اطلع على القائمة |
 | `chooser.title` | اختر فرع Mozza الخاص بك |
