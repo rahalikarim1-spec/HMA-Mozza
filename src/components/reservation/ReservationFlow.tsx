@@ -69,6 +69,7 @@ export default function ReservationFlow({
   const [icsUrl, setIcsUrl] = useState("");
   const headingRef = useRef<HTMLHeadingElement>(null);
   const started = useRef(false);
+  const mounted = useRef(false);
   const set = <K extends keyof State>(k: K, v: State[K]) => setS((p) => ({ ...p, [k]: v }));
 
   useEffect(() => {
@@ -86,7 +87,10 @@ export default function ReservationFlow({
   useEffect(() => {
     if (!started.current) return;
     if (!done) track("booking_step", { step, branch: s.branch ?? "none" });
-    headingRef.current?.focus();
+    // Move focus to the step heading only AFTER the user has navigated between steps: never on first render
+    // (focusing on load scrolled /reserve/ down to the form).
+    if (mounted.current) headingRef.current?.focus({ preventScroll: false });
+    mounted.current = true;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, done]);
 

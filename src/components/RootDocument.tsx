@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Lang } from "@/content/types";
 import { getDict } from "@/content";
 import "@/app/globals.css";
+import ScrollToTop from "./ScrollToTop";
 import ReservationLauncher from "./reservation/ReservationLauncher";
 
 /**
@@ -34,6 +35,7 @@ export default function RootDocument({
       </head>
       <body>
         {children}
+        <ScrollToTop />
         <ReservationLauncher lang={lang} />
       </body>
     </html>

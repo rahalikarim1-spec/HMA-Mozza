@@ -32,7 +32,7 @@ html {
   --font-body: var(--f-inter), system-ui, sans-serif;
   --font-heading: var(--f-display), Georgia, serif;
   scroll-padding-top: calc(var(--banner-h) + 4.5rem);
-  scroll-behavior: smooth;
+  /* No global smooth scrolling: it animated Next.js's scroll-to-top on navigation (page appeared mid-scroll). */
 }
 html[lang="th"] {
   --font-body: var(--f-inter), var(--f-thai), system-ui, sans-serif;
@@ -76,6 +76,3 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { line-height: 1.4; l
 summary { list-style: none; }
 summary::-webkit-details-marker { display: none; }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
