@@ -85,7 +85,7 @@ export interface Dict {
     faqTitle: string;
     otherTitle: string;
   };
-  strategy: { button: string; dialogTitle: string; passcodeLabel: string; open: string; cancel: string; wrong: string; unavailable: string; checking: string; hint: string; back: string };
+  strategy: { button: string; back: string };
   sticky: { label: string; reserve: string; whatsapp: string; line: string; directions: string };
   whatsappMessage: (place: string) => string;
   branches: Record<BranchSlug, BranchText>;

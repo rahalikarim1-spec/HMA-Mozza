@@ -118,7 +118,7 @@ export const en: Dict = {
     faqTitle: "Branch FAQ",
     otherTitle: "Other Mozza branches",
   },
-  strategy: { button: "Growth strategy for multi-location restaurants", dialogTitle: "Private strategy page", passcodeLabel: "Passcode", open: "Open", cancel: "Cancel", wrong: "Incorrect passcode. Please try again.", unavailable: "Strategy content is not available in this build.", checking: "Checking…", hint: "Enter the passcode you were given.", back: "← Back to the demo" },
+  strategy: { button: "Growth strategy for multi-location restaurants", back: "← Back to the demo" },
   sticky: { label: "Quick contact", reserve: "Reserve", whatsapp: "WhatsApp", line: "LINE", directions: "Directions" },
   whatsappMessage: (place) => `Hello! I'd like to ask about a table at ${place}.`,
   branches: branchTexts("en"),
