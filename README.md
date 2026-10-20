@@ -98,8 +98,23 @@ The site is a static export, so there is no server code to gate it; protection c
 
 ## Photos
 
-Currently the 13 images in `public/images/` are still grey placeholders (photo replacement pending). The footer already shows a
-"Demo photos" caption. When real photos are added, list each photo's source URL and licence in this section.
+**Status: partly replaced.** Free-licence stock photos (Unsplash/Pexels) could not be downloaded from the build environment
+(hosts blocked), so these images come from a collage supplied by the demo author instead:
+
+| File | Content (cropped from the supplied collage) | Source / licence |
+|---|---|---|
+| `hero.jpg` | chef ladling sauce at a table of Italian dishes | Mozza / HMA brand photography, supplied by the demo author. **Not free-licence.** Original URL and permission to be confirmed. |
+| `branch-central-park.jpg` | storefront with open entrance and diners | same |
+| `branch-emquartier.jpg` | dining room with lit MOZZA sign | same |
+| `branch-siam-paragon.jpg` | arched wooden front with pizza oven inside | same |
+| `branch-iconsiam.jpg` | table of dishes, guest smiling at the chef | same (second crop of the hero photo) |
+
+Notes: the photo-to-branch assignment is **arbitrary** (the collage does not say which branch each shows), and alt texts describe
+the picture without naming a branch. The photos contain identifiable guests and staff. They are low resolution (440–690 px wide,
+cropped from a collage), so they look soft on retina screens. These are brand-owner assets: fine for a private pitch to the brand,
+but do not publish them or call them free-licence.
+Still grey placeholders: `branch-central-chidlom.jpg` (no fifth photo), the six dish photos, and `map-placeholder.jpg`.
+The footer shows a "Demo photos" caption. When more photos are added, list each file's source URL and licence in this table.
 
 ## Thai and Arabic — NEEDS NATIVE REVIEW
 

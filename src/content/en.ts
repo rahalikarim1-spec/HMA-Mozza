@@ -64,7 +64,7 @@ export const en: Dict = {
   hero: {
     h1: "Authentic Italian Trattoria in Bangkok",
     sub: "Wood-fired pizza and handmade pasta, La Cucina di Mamma",
-    imageAlt: "Placeholder photo: a table of pizza and pasta in a warm Italian trattoria",
+    imageAlt: "Chef ladling sauce into a bowl at a table of Italian dishes while a guest looks on (demo photo)",
     cta: { reserve: "Reserve a table", menu: "See the menu" },
   },
   chooser: {
@@ -197,7 +197,7 @@ export const en: Dict = {
       metaTitle: "Mozza Central Park | Italian Restaurant at Dusit Central Park, Bangkok",
       metaDescription:
         "Concept demo: Mozza at Dusit Central Park, Rama IV Rd. Wood-fired pizza and handmade pasta for weekday lunch and dinner near Silom, Sathorn and Lumphini.",
-      imageAlt: "Placeholder photo of the Mozza Central Park dining room",
+      imageAlt: "Mozza storefront with open entrance and diners at outdoor-style tables (demo photo)",
       intro: [
         "Mozza Central Park sits on the ground floor of Dusit Central Park, on Rama IV Road where Silom meets the edge of Lumphini. It is a natural stop for people working in the Silom, Sathorn and Lumphini business district.",
         "Weekday lunch suits a quick plate of handmade pasta or a thin wood-fired pizza between meetings. In the evening the same menu works for a relaxed dinner after work, or a table with friends and family.",
@@ -227,7 +227,7 @@ export const en: Dict = {
       metaTitle: "Mozza EmQuartier | Italian Restaurant on Sukhumvit Rd, Bangkok",
       metaDescription:
         "Concept demo: Mozza at EmQuartier, Sukhumvit Rd. Wood-fired pizza, handmade pasta, opening hours, directions and reservations.",
-      imageAlt: "Placeholder photo of the Mozza EmQuartier dining room",
+      imageAlt: "Mozza dining room with a lit MOZZA sign, wood panelling, hanging plants and set tables (demo photo)",
       intro: [
         "Mozza EmQuartier serves Italian trattoria dishes in the Phrom Phong area of Sukhumvit Road, in the heart of one of Bangkok's busiest shopping and dining districts.",
         "Opening hours, the exact address number and transit details are demo placeholders to be verified.",
@@ -243,7 +243,7 @@ export const en: Dict = {
       metaTitle: "Mozza Siam Paragon | Italian Restaurant at Siam Paragon, Bangkok",
       metaDescription:
         "Concept demo: Mozza at Siam Paragon, Rama I Rd. Wood-fired pizza, handmade pasta, opening hours, directions and reservations.",
-      imageAlt: "Placeholder photo of the Mozza Siam Paragon dining room",
+      imageAlt: "Mozza restaurant front with arched wooden windows and a pizza oven visible inside (demo photo)",
       intro: [
         "Mozza Siam Paragon is on the ground floor of Siam Paragon on Rama I Road, in the Siam shopping district.",
         "Opening hours and transit details are demo placeholders to be verified.",
@@ -259,7 +259,7 @@ export const en: Dict = {
       metaTitle: "Mozza ICONSIAM | Italian Restaurant at ICONSIAM, Bangkok",
       metaDescription:
         "Concept demo: Mozza at ICONSIAM, Charoen Nakhon Rd. Wood-fired pizza, handmade pasta, opening hours, directions and reservations.",
-      imageAlt: "Placeholder photo of the Mozza ICONSIAM dining room",
+      imageAlt: "Table of Italian dishes and cocktails with a guest smiling at the chef (demo photo)",
       intro: [
         "Mozza ICONSIAM is on the ground floor of ICONSIAM on Charoen Nakhon Road, in the Khlong San district on the Chao Phraya riverside.",
         "Opening hours and transit details are demo placeholders to be verified.",

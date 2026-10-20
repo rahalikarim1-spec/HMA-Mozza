@@ -49,7 +49,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `meta.locations.description` | เดโมแนวคิด: Mozza 5 สาขาในกรุงเทพฯ ได้แก่ เซ็นทรัล พาร์ค เอ็มควอเทียร์ สยามพารากอน ไอคอนสยาม และเซ็นทรัล ชิดลม |
 | `hero.h1` | ร้านอาหารอิตาเลียนแท้ในกรุงเทพฯ |
 | `hero.sub` | พิซซ่าเตาฟืนและพาสต้าทำมือ La Cucina di Mamma |
-| `hero.imageAlt` | ภาพตัวอย่าง: โต๊ะพิซซ่าและพาสต้าในร้านอิตาเลียนบรรยากาศอบอุ่น |
+| `hero.imageAlt` | เชฟกำลังราดซอสลงในชามที่โต๊ะอาหารอิตาเลียน โดยมีแขกนั่งมองอยู่ (ภาพตัวอย่าง) |
 | `hero.cta.reserve` | จองโต๊ะ |
 | `hero.cta.menu` | ดูเมนู |
 | `chooser.title` | เลือกสาขา Mozza ของคุณ |
@@ -140,7 +140,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.central-park.h1` | Mozza Central Park — ร้านอาหารอิตาเลียน ที่ ดุสิต เซ็นทรัล พาร์ค |
 | `branches.central-park.metaTitle` | Mozza Central Park \| ร้านอาหารอิตาเลียน ดุสิต เซ็นทรัล พาร์ค |
 | `branches.central-park.metaDescription` | เดโมแนวคิด: Mozza ที่ดุสิต เซ็นทรัล พาร์ค ถนนพระราม 4 พิซซ่าเตาฟืนและพาสต้าทำมือ สำหรับมื้อกลางวันวันธรรมดาและมื้อเย็น ใกล้สีลม สาทร และลุมพินี |
-| `branches.central-park.imageAlt` | ภาพตัวอย่างห้องอาหาร Mozza Central Park |
+| `branches.central-park.imageAlt` | หน้าร้าน Mozza ทางเข้าเปิดโล่ง และแขกที่นั่งโต๊ะอาหารด้านหน้า (ภาพตัวอย่าง) |
 | `branches.central-park.intro[0]` | Mozza Central Park ตั้งอยู่ชั้นล่างของดุสิต เซ็นทรัล พาร์ค บนถนนพระราม 4 ตรงจุดที่สีลมบรรจบกับย่านสวนลุมพินี เป็นจุดแวะที่เหมาะสำหรับผู้ที่ทำงานในย่านธุรกิจสีลม สาทร และลุมพินี |
 | `branches.central-park.intro[1]` | มื้อกลางวันวันธรรมดาเหมาะกับพาสต้าทำมือหรือพิซซ่าแป้งบางอบเตาฟืนระหว่างช่วงพักประชุม ส่วนมื้อเย็นเมนูเดียวกันเหมาะกับการนั่งผ่อนคลายหลังเลิกงาน หรือโต๊ะอาหารกับเพื่อนและครอบครัว |
 | `branches.central-park.intro[2]` | โปรดดูป้ายระบุส่วนผสมของหมูและแอลกอฮอล์ในเมนูก่อนจอง แล้วกดปุ่มจองโต๊ะเพื่อเลือกโต๊ะของคุณ เวลาทำการและข้อมูลที่จอดรถในหน้านี้เป็นข้อความตัวอย่าง |
@@ -157,7 +157,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.emquartier.h1` | Mozza EmQuartier — ร้านอาหารอิตาเลียน บนถนนสุขุมวิท |
 | `branches.emquartier.metaTitle` | Mozza EmQuartier \| ร้านอาหารอิตาเลียน ถนนสุขุมวิท กรุงเทพฯ |
 | `branches.emquartier.metaDescription` | เดโมแนวคิด: Mozza ที่เอ็มควอเทียร์ ถนนสุขุมวิท พิซซ่าเตาฟืน พาสต้าทำมือ เวลาทำการ เส้นทาง และการจองโต๊ะ |
-| `branches.emquartier.imageAlt` | ภาพตัวอย่างห้องอาหาร Mozza EmQuartier |
+| `branches.emquartier.imageAlt` | ห้องอาหาร Mozza ป้ายไฟ MOZZA ผนังไม้ ต้นไม้แขวน และโต๊ะอาหารที่จัดเตรียมไว้ (ภาพตัวอย่าง) |
 | `branches.emquartier.intro[0]` | Mozza EmQuartier เสิร์ฟอาหารสไตล์อิตาเลียนทราตตอเรียในย่านพร้อมพงษ์ บนถนนสุขุมวิท ใจกลางย่านช้อปปิ้งและร้านอาหารที่คึกคักที่สุดแห่งหนึ่งของกรุงเทพฯ |
 | `branches.emquartier.intro[1]` | เวลาทำการ เลขที่ที่อยู่ และข้อมูลการเดินทางเป็นข้อความตัวอย่างที่รอตรวจสอบ |
 | `branches.emquartier.transit` | BTS พร้อมพงษ์ |
@@ -173,7 +173,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.siam-paragon.h1` | Mozza Siam Paragon — ร้านอาหารอิตาเลียน ที่ สยามพารากอน |
 | `branches.siam-paragon.metaTitle` | Mozza Siam Paragon \| ร้านอาหารอิตาเลียน สยามพารากอน กรุงเทพฯ |
 | `branches.siam-paragon.metaDescription` | เดโมแนวคิด: Mozza ที่สยามพารากอน ถนนพระราม 1 พิซซ่าเตาฟืน พาสต้าทำมือ เวลาทำการ เส้นทาง และการจองโต๊ะ |
-| `branches.siam-paragon.imageAlt` | ภาพตัวอย่างห้องอาหาร Mozza Siam Paragon |
+| `branches.siam-paragon.imageAlt` | หน้าร้าน Mozza หน้าต่างไม้โค้ง และเตาพิซซ่าที่มองเห็นจากด้านใน (ภาพตัวอย่าง) |
 | `branches.siam-paragon.intro[0]` | Mozza Siam Paragon ตั้งอยู่ชั้นล่างของสยามพารากอน บนถนนพระราม 1 ในย่านช้อปปิ้งสยาม |
 | `branches.siam-paragon.intro[1]` | เวลาทำการและข้อมูลการเดินทางเป็นข้อความตัวอย่างที่รอตรวจสอบ |
 | `branches.siam-paragon.transit` | BTS สยาม |
@@ -189,7 +189,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.iconsiam.h1` | Mozza ICONSIAM — ร้านอาหารอิตาเลียน ที่ ไอคอนสยาม |
 | `branches.iconsiam.metaTitle` | Mozza ICONSIAM \| ร้านอาหารอิตาเลียน ไอคอนสยาม กรุงเทพฯ |
 | `branches.iconsiam.metaDescription` | เดโมแนวคิด: Mozza ที่ไอคอนสยาม ถนนเจริญนคร พิซซ่าเตาฟืน พาสต้าทำมือ เวลาทำการ เส้นทาง และการจองโต๊ะ |
-| `branches.iconsiam.imageAlt` | ภาพตัวอย่างห้องอาหาร Mozza ICONSIAM |
+| `branches.iconsiam.imageAlt` | โต๊ะอาหารอิตาเลียนและค็อกเทล โดยมีแขกยิ้มให้เชฟ (ภาพตัวอย่าง) |
 | `branches.iconsiam.intro[0]` | Mozza ICONSIAM ตั้งอยู่ชั้นล่างของไอคอนสยาม บนถนนเจริญนคร ในเขตคลองสานริมแม่น้ำเจ้าพระยา |
 | `branches.iconsiam.intro[1]` | เวลาทำการและข้อมูลการเดินทางเป็นข้อความตัวอย่างที่รอตรวจสอบ |
 | `branches.iconsiam.transit` | สายสีทอง / BTS กรุงธนบุรี |
@@ -262,7 +262,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `meta.locations.description` | عرض تجريبي: خمسة فروع لـ Mozza في بانكوك — سنترال بارك، إم كوارتيير، سيام باراغون، آيكون سيام وسنترال شيدلوم. |
 | `hero.h1` | مطعم إيطالي أصيل في بانكوك |
 | `hero.sub` | بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا، La Cucina di Mamma |
-| `hero.imageAlt` | صورة نائبة: طاولة عليها بيتزا ومعكرونة في مطعم إيطالي دافئ |
+| `hero.imageAlt` | طاهٍ يسكب الصلصة في وعاء على طاولة أطباق إيطالية بينما تنظر إليه ضيفة (صورة تجريبية) |
 | `hero.cta.reserve` | احجز طاولة |
 | `hero.cta.menu` | اطلع على القائمة |
 | `chooser.title` | اختر فرع Mozza الخاص بك |
@@ -353,7 +353,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.central-park.h1` | Mozza Central Park — مطعم إيطالي في دوسيت سنترال بارك |
 | `branches.central-park.metaTitle` | Mozza Central Park \| مطعم إيطالي في دوسيت سنترال بارك، بانكوك |
 | `branches.central-park.metaDescription` | عرض تجريبي: Mozza في دوسيت سنترال بارك، شارع راما 4. بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا للغداء في أيام الأسبوع والعشاء قرب سيلوم وساثورن ولومبيني. |
-| `branches.central-park.imageAlt` | صورة نائبة لقاعة الطعام في Mozza Central Park |
+| `branches.central-park.imageAlt` | واجهة مطعم Mozza بمدخل مفتوح وزبائن يجلسون على طاولات أمام المطعم (صورة تجريبية) |
 | `branches.central-park.intro[0]` | يقع Mozza Central Park في الطابق الأرضي من دوسيت سنترال بارك على شارع راما 4، حيث تلتقي منطقة سيلوم بحافة حديقة لومبيني. وهو محطة مناسبة للعاملين في الحي التجاري في سيلوم وساثورن ولومبيني. |
 | `branches.central-park.intro[1]` | يناسب غداء أيام الأسبوع طبق معكرونة مصنوعة يدويًا أو بيتزا رقيقة بفرن الحطب بين الاجتماعات. وفي المساء تصلح القائمة نفسها لعشاء هادئ بعد العمل، أو لطاولة مع الأصدقاء والعائلة. |
 | `branches.central-park.intro[2]` | يرجى الاطلاع على إشارات لحم الخنزير والكحول في القائمة قبل الحجز، ثم استخدم زر الحجز لاختيار طاولتك. ساعات العمل ومعلومات المواقف في هذه الصفحة نصوص تجريبية. |
@@ -370,7 +370,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.emquartier.h1` | Mozza EmQuartier — مطعم إيطالي على شارع سوخومفيت |
 | `branches.emquartier.metaTitle` | Mozza EmQuartier \| مطعم إيطالي على شارع سوخومفيت، بانكوك |
 | `branches.emquartier.metaDescription` | عرض تجريبي: Mozza في إم كوارتيير، شارع سوخومفيت. بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا وساعات العمل والاتجاهات والحجز. |
-| `branches.emquartier.imageAlt` | صورة نائبة لقاعة الطعام في Mozza EmQuartier |
+| `branches.emquartier.imageAlt` | قاعة طعام Mozza بلافتة MOZZA مضاءة وجدران خشبية ونباتات معلقة وطاولات مجهزة (صورة تجريبية) |
 | `branches.emquartier.intro[0]` | يقدم Mozza EmQuartier أطباق التراتوريا الإيطالية في منطقة فروم فونغ على شارع سوخومفيت، في قلب أحد أكثر أحياء التسوق والمطاعم حيوية في بانكوك. |
 | `branches.emquartier.intro[1]` | ساعات العمل ورقم العنوان الدقيق ومعلومات المواصلات نصوص تجريبية بانتظار التحقق. |
 | `branches.emquartier.transit` | BTS فروم فونغ |
@@ -386,7 +386,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.siam-paragon.h1` | Mozza Siam Paragon — مطعم إيطالي في سيام باراغون |
 | `branches.siam-paragon.metaTitle` | Mozza Siam Paragon \| مطعم إيطالي في سيام باراغون، بانكوك |
 | `branches.siam-paragon.metaDescription` | عرض تجريبي: Mozza في سيام باراغون، شارع راما 1. بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا وساعات العمل والاتجاهات والحجز. |
-| `branches.siam-paragon.imageAlt` | صورة نائبة لقاعة الطعام في Mozza Siam Paragon |
+| `branches.siam-paragon.imageAlt` | واجهة مطعم Mozza بنوافذ خشبية مقوسة وفرن بيتزا ظاهر في الداخل (صورة تجريبية) |
 | `branches.siam-paragon.intro[0]` | يقع Mozza Siam Paragon في الطابق الأرضي من سيام باراغون على شارع راما 1، في منطقة سيام للتسوق. |
 | `branches.siam-paragon.intro[1]` | ساعات العمل ومعلومات المواصلات نصوص تجريبية بانتظار التحقق. |
 | `branches.siam-paragon.transit` | BTS سيام |
@@ -402,7 +402,7 @@ Do not edit by hand - edit the dictionaries and re-run.
 | `branches.iconsiam.h1` | Mozza ICONSIAM — مطعم إيطالي في آيكون سيام |
 | `branches.iconsiam.metaTitle` | Mozza ICONSIAM \| مطعم إيطالي في آيكون سيام، بانكوك |
 | `branches.iconsiam.metaDescription` | عرض تجريبي: Mozza في آيكون سيام، شارع تشاروين ناكون. بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا وساعات العمل والاتجاهات والحجز. |
-| `branches.iconsiam.imageAlt` | صورة نائبة لقاعة الطعام في Mozza ICONSIAM |
+| `branches.iconsiam.imageAlt` | طاولة عليها أطباق إيطالية ومشروبات وضيفة تبتسم للطاهي (صورة تجريبية) |
 | `branches.iconsiam.intro[0]` | يقع Mozza ICONSIAM في الطابق الأرضي من آيكون سيام على شارع تشاروين ناكون، في منطقة خلونغ سان على ضفة نهر تشاو فرايا. |
 | `branches.iconsiam.intro[1]` | ساعات العمل ومعلومات المواصلات نصوص تجريبية بانتظار التحقق. |
 | `branches.iconsiam.transit` | الخط الذهبي / BTS كرونغ ثون بوري |
