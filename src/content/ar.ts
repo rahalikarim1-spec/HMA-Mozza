@@ -51,7 +51,7 @@ export const ar: Dict = {
   hero: {
     h1: "مطعم إيطالي أصيل في بانكوك",
     sub: "بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا، La Cucina di Mamma",
-    aiCaption: "صورة توضيحية بالذكاء الاصطناعي",
+    photoCaption: "الصور: Mozza By Cocotte",
     cta: { reserve: "احجز طاولة", menu: "اطلع على القائمة" },
   },
   chooser: { title: "اختر فرع Mozza الخاص بك", intro: "ستة فروع في أنحاء بانكوك. اختر الأقرب إليك." },

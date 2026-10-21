@@ -26,7 +26,7 @@ const GROUPS: { title: string; items: G[] }[] = [
     title: "Home (/th/)",
     items: [
       ["meta.home.title", th.meta.home.title], ["meta.home.description", th.meta.home.description],
-      ["hero.h1", th.hero.h1], ["hero.sub", th.hero.sub], ["hero.cta.menu", th.hero.cta.menu], ["hero.aiCaption", th.hero.aiCaption],
+      ["hero.h1", th.hero.h1], ["hero.sub", th.hero.sub], ["hero.cta.menu", th.hero.cta.menu], ["hero.photoCaption", th.hero.photoCaption],
       ["chooser.title", th.chooser.title], ["chooser.intro", th.chooser.intro],
       ["common.closesAt", th.common.closesAt("22:00")], ["common.viewBranch", th.common.viewBranch],
       ["signature.title", th.signature.title], ["signature.intro", th.signature.intro],

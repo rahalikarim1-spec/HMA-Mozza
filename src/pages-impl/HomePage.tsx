@@ -28,7 +28,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <JsonLd data={organizationLd()} />
       <JsonLd data={faqLd(d.faq.items)} />
 
-      {/* Hero: full-bleed AI-generated background (decorative), dark gradient for legibility */}
+      {/* Hero: full-bleed background from real Mozza photos (decorative), dark gradient for legibility */}
       <section className="relative isolate flex min-h-[90vh] min-h-[90svh] items-start overflow-hidden bg-ink md:min-h-[85vh] md:items-center">
         <picture aria-hidden="true">
           <source media="(min-width: 768px)" srcSet="/images/hero-bg.webp" type="image/webp" width={1536} height={1024} />
@@ -42,16 +42,16 @@ export default function HomePage({ lang }: { lang: Lang }) {
             height={900}
             fetchPriority="high"
             decoding="async"
-            className="absolute inset-0 -z-20 h-full w-full object-cover object-bottom md:object-right md:rtl:-scale-x-100"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-bottom md:object-right"
           />
         </picture>
-        {/* Overlay: top->bottom on mobile; start->end on desktop (mirrors in RTL) */}
+        {/* Overlay: top->bottom on mobile; left->right on desktop. Not mirrored in RTL: the photos contain the Mozza sign, so the text block moves to the left instead */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgb(0_0_0/0.8),rgb(0_0_0/0.65)_55%,transparent_100%)] md:bg-[linear-gradient(to_right,rgb(0_0_0/0.78),rgb(0_0_0/0.6)_40%,transparent_85%)] md:rtl:bg-[linear-gradient(to_left,rgb(0_0_0/0.78),rgb(0_0_0/0.6)_40%,transparent_85%)]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgb(0_0_0/0.8),rgb(0_0_0/0.65)_55%,transparent_100%)] md:bg-[linear-gradient(to_right,rgb(0_0_0/0.78),rgb(0_0_0/0.6)_40%,transparent_85%)]"
         />
-        <div className={`${container} py-10 md:py-16`}>
-          <div className="max-w-md text-start text-cream md:max-w-lg">
+        <div className={`${container} py-10 md:py-16 md:rtl:flex md:rtl:justify-end`}>
+          <div className="w-full max-w-md text-start text-cream md:max-w-lg">
             <h1 className="text-4xl [text-shadow:0_1px_14px_rgb(0_0_0/0.45)] sm:text-5xl lg:text-6xl">{d.hero.h1}</h1>
             <p className="mt-4 text-lg [text-shadow:0_1px_10px_rgb(0_0_0/0.45)]">{d.hero.sub}</p>
             <div className="mt-7 grid gap-3 sm:flex">
@@ -67,7 +67,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               </TrackedLink>
               <Link
                 href={pathFor(lang, "menu")}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border-2 border-cream bg-black/40 px-5 py-2 text-center text-base font-semibold leading-tight text-cream transition-colors hover:bg-black/60"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border-2 border-cream bg-black/65 px-5 py-2 text-center text-base font-semibold leading-tight text-cream transition-colors hover:bg-black/80"
               >
                 <Icon name="menu" />
                 {d.hero.cta.menu}
@@ -75,8 +75,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </div>
           </div>
         </div>
-        <p className="absolute bottom-2 end-3 rounded-sm bg-black/65 px-2 py-0.5 text-[10px] leading-4 text-cream">
-          {d.hero.aiCaption}
+        <p className="absolute bottom-2 start-3 rounded-sm bg-black/65 px-2 py-0.5 text-[10px] leading-4 text-cream">
+          {d.hero.photoCaption}
         </p>
       </section>
 

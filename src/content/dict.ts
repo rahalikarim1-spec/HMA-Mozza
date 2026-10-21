@@ -49,7 +49,7 @@ export interface Dict {
     home: { title: string; description: string };
     locations: { title: string; description: string };
   };
-  hero: { h1: string; sub: string; aiCaption: string; cta: { reserve: string; menu: string } };
+  hero: { h1: string; sub: string; photoCaption: string; cta: { reserve: string; menu: string } };
   chooser: { title: string; intro: string };
   signature: { title: string; intro: string };
   awards: { title: string; note: string; items: string[] };

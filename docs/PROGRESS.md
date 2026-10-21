@@ -28,7 +28,7 @@ Route files in `src/app/(en|th|ar)/` are **generated**: edit `scripts/routes.jso
 | Initial build | Home, menu, locations, 5 branch pages, sticky mobile bar (WhatsApp/LINE first per language), tracking, SEO, banner, fonts (DM Serif Display, Inter, Noto Sans Thai, IBM Plex Sans Arabic) | `src/app/`, `src/components/`, `src/config/site.ts` |
 | Follow-ups | robots allow + noindex; unverified transit hidden; optional password protection; Thai priority review list | `deploy/`, `scripts/protect-hostinger.mjs` |
 | Photos | 4 brand photos from a collage the user supplied (branch assignment arbitrary, **not free-licence**); stock photos impossible (blocked hosts) | `public/images/`, README "Photos" |
-| Hero redesign | Full-bleed AI hero (`hero-bg*.webp/jpg`), AA-checked overlay, RTL mirrored, "AI illustration" caption | `src/pages-impl/HomePage.tsx` |
+| Hero redesign | Full-bleed hero from real Mozza photos (`hero-bg*.webp/jpg`), AA-checked overlay, not mirrored in RTL (text block moves left), caption "Photos: Mozza By Cocotte" | `src/pages-impl/HomePage.tsx` |
 | **A — Menus** | 4 menus transcribed from the PDFs (144 food, 49 brunch, 13 aperitivo, 2 afternoon-tea); `/menu` hub + 4 pages with search, filters, schema, PDF link; TH/AR descriptions | `src/data/menus/*.json`, `descriptions.i18n.json`, `src/lib/menus.ts`, `src/content/menus-ui.ts`, `src/components/MenuExplorer.tsx`, `docs/MENU_REVIEW.md` |
 | **B — Locations** | Hub with schematic map + 6 branches (incl. **central-world, everything unconfirmed**); verify-flag gating; Restaurant schema | `src/config/site.ts` (`BRANCHES`, `shown()`), `src/content/branches.ts`, `src/components/StylisedMap.tsx` |
 | **C — SEO pages** | `/neapolitan-pizza-bangkok`, `/pasta-bangkok`, `/celebrations`, `docs/SEO_PLAN.md` | `src/content/landing.ts`, `src/pages-impl/LandingPage.tsx` |
@@ -63,7 +63,7 @@ The user said they already confirmed: **awards**, **social links**, **"brick-ove
 ## 8. Known limits
 - Lighthouse mobile (throttled, ±4 variance): home 86–92, Central Park 95, /menu/food 94, /reserve 89–94; Accessibility 100, Best Practices 100, CLS 0. **SEO ≈ 66–69 is expected** (mandatory `noindex` fails `is-crawlable`).
 - Demo mechanics: availability/zones/hours range are simulated and labelled; nothing is sent or stored; calendar `.ics` has no personal data; `data-reserve` modal needs JS (falls back to `/reserve/`).
-- Images: hero background is **AI-generated** (captioned); branch photos are brand photos from a collage, low-res, arbitrarily assigned; Chidlom/CentralWorld/map are grey placeholders; dish cards are text-only.
+- Images: hero background is a collage of real Mozza photos (captioned "Photos: Mozza By Cocotte"); branch photos are brand photos from a collage, low-res, arbitrarily assigned; Chidlom/CentralWorld/map are grey placeholders; dish cards are text-only.
 - Brand colours/logo are placeholders (`src/app/globals.css`, `Logo.tsx`).
 
 ## 9. Navigation/scroll test result (final)
