@@ -50,7 +50,7 @@ A shorter first-pass list for Thai is in `NATIVE_REVIEW_PRIORITY.md`.
 | `meta.locations.description` | Mozza 6 สาขาในกรุงเทพฯ: เซ็นทรัล พาร์ค เอ็มควอเทียร์ สยามพารากอน ไอคอนสยาม เซ็นทรัล ชิดลม และเซ็นทรัลเวิลด์ เส้นทางและการจอง (เดโม) |
 | `hero.h1` | ร้านอาหารอิตาเลียนแท้ในกรุงเทพฯ |
 | `hero.sub` | พิซซ่าเตาฟืนและพาสต้าทำมือ La Cucina di Mamma |
-| `hero.aiCaption` | ภาพประกอบจาก AI |
+| `hero.photoCaption` | ภาพ: Mozza By Cocotte |
 | `hero.cta.reserve` | จองโต๊ะ |
 | `hero.cta.menu` | ดูเมนู |
 | `chooser.title` | เลือกสาขา Mozza ของคุณ |
@@ -756,7 +756,7 @@ A shorter first-pass list for Thai is in `NATIVE_REVIEW_PRIORITY.md`.
 | `meta.locations.description` | ستة فروع من Mozza في بانكوك: سنترال بارك وإم كوارتيير وسيام باراغون وآيكون سيام وسنترال شيدلوم وسنترال وورلد. الاتجاهات والحجز (تجريبي). |
 | `hero.h1` | مطعم إيطالي أصيل في بانكوك |
 | `hero.sub` | بيتزا بفرن الحطب ومعكرونة مصنوعة يدويًا، La Cucina di Mamma |
-| `hero.aiCaption` | صورة توضيحية بالذكاء الاصطناعي |
+| `hero.photoCaption` | الصور: Mozza By Cocotte |
 | `hero.cta.reserve` | احجز طاولة |
 | `hero.cta.menu` | اطلع على القائمة |
 | `chooser.title` | اختر فرع Mozza الخاص بك |

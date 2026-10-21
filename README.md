@@ -109,15 +109,14 @@ Notes: the photo-to-branch assignment is **arbitrary** (the collage does not say
 the picture without naming a branch. The photos contain identifiable guests and staff. They are low resolution (440–690 px wide,
 cropped from a collage), so they look soft on retina screens. These are brand-owner assets: fine for a private pitch to the brand,
 but do not publish them or call them free-licence.
-**AI-generated images (home hero background, decorative, `alt=""`):**
+**Home hero background (decorative, `alt=""`) — real Mozza photos, no longer AI-generated:**
 
 | File | What | Origin |
 |---|---|---|
-| `hero-bg.webp` / `hero-bg.jpg` | 1536×1024 landscape flat-lay of the six menu dishes on dark wood (desktop, ≈235 / 240 KB) | **AI-generated** (supplied by the demo author; tool/prompt to be recorded). Illustration only — not photos of Mozza's real dishes. |
-| `hero-bg-mobile.webp` / `hero-bg-mobile.jpg` | 600×900 portrait version (mobile, ≈82 / 96 KB) | **AI-generated**, resized/compressed from the supplied 1024×1536 file |
+| `hero-bg.webp` / `hero-bg.jpg` | 1536×1024 landscape collage (food and restaurant on the right, dark area on the left for text; desktop, ≈244 / 239 KB) | Composite made from real Mozza By Cocotte photos, supplied by the demo author |
+| `hero-bg-mobile.webp` / `hero-bg-mobile.jpg` | 600×900 portrait version (dark area on top for text, photos at the bottom; mobile, ≈165 / 167 KB) | Same, resized/compressed from the supplied 1024×1536 file |
 
-The hero shows a small "AI illustration" caption (TH "ภาพประกอบจาก AI", AR "صورة توضيحية بالذكاء الاصطناعي"). The AI dishes only approximate
-the real ones (e.g. plating, toppings) — do not present them as the actual menu. `hero.jpg` (the old hero box) was removed.
+The hero shows a small caption "Photos: Mozza By Cocotte" (TH "ภาพ: Mozza By Cocotte", AR "الصور: Mozza By Cocotte"; key `hero.photoCaption`, in `NATIVE_REVIEW.md`). The photos are brand-owner assets (see the note above): private pitch only. The photos contain the Mozza sign, so on desktop RTL (Arabic) the image is **not** mirrored; the text block moves to the left instead. `hero.jpg` (the old hero box) was removed.
 
 Still grey placeholders: `branch-central-chidlom.jpg` (no fifth photo), the six dish photos, and `map-placeholder.jpg`.
 The footer shows a "Demo photos" caption. When more photos are added, list each file's source URL and licence in this table.

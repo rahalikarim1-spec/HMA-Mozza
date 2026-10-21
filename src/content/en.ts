@@ -45,7 +45,7 @@ export const en: Dict = {
   hero: {
     h1: "Authentic Italian Trattoria in Bangkok",
     sub: "Wood-fired pizza and handmade pasta, La Cucina di Mamma",
-    aiCaption: "AI illustration",
+    photoCaption: "Photos: Mozza By Cocotte",
     cta: { reserve: "Reserve a table", menu: "See the menu" },
   },
   chooser: {

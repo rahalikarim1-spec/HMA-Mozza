@@ -35,7 +35,7 @@ export function buildMetadata(
       locale: OG_LOCALE[lang],
       siteName: "Mozza (concept demo)",
       type: "website",
-      images: [{ url: `${SITE_ORIGIN}/images/hero-bg.jpg`, width: 1536, height: 1024, alt: "Mozza concept demo (AI illustration)" }],
+      images: [{ url: `${SITE_ORIGIN}/images/hero-bg.jpg`, width: 1536, height: 1024, alt: "Mozza By Cocotte restaurant interiors and dishes" }],
     },
     twitter: {
       card: "summary_large_image",

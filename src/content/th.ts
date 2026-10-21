@@ -50,7 +50,7 @@ export const th: Dict = {
   hero: {
     h1: "ร้านอาหารอิตาเลียนแท้ในกรุงเทพฯ",
     sub: "พิซซ่าเตาฟืนและพาสต้าทำมือ La Cucina di Mamma",
-    aiCaption: "ภาพประกอบจาก AI",
+    photoCaption: "ภาพ: Mozza By Cocotte",
     cta: { reserve: "จองโต๊ะ", menu: "ดูเมนู" },
   },
   chooser: { title: "เลือกสาขา Mozza ของคุณ", intro: "6 สาขาทั่วกรุงเทพฯ เลือกสาขาที่ใกล้คุณที่สุด" },
