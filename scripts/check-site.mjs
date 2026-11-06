@@ -32,12 +32,19 @@ for (const [url, h] of Object.entries(html)) {
   }
 
   // --- links
-  if (url === "/strategy/") {
-    // private page: only noindex + single H1 + banner are required (no hreflang/canonical/sitemap/breadcrumbs)
+  const isStrategy = url === "/strategy/" || url.startsWith("/strategy/");
+  if (isStrategy) {
+    // intentional noindex pages (strategy hub + role presentations): only noindex + single H1 + banner are required (no hreflang/canonical/sitemap/breadcrumbs); links and images are still checked below
     if (!/<meta name="robots" content="noindex, nofollow"\/?>/.test(h)) errors.push(`${url}: missing noindex,nofollow`);
     if ((body.match(/<h1[\s>]/g) || []).length !== 1) errors.push(`${url}: needs exactly one <h1>`);
     if (!/Concept demo by Wadhah Belhassen/.test(body)) errors.push(`${url}: banner missing`);
-    continue;
+    if (url !== "/strategy/") {
+      // role presentations are shareable: nothing internal may leak into them (pricing, private outreach, third-party booking / link-quality material, forbidden word)
+      for (const [re, what] of [[/retainer/i, "pricing term"], [/180[,.]?000|300[,.]?000/, "pricing figure"], [/OUTREACH/, "private outreach reference"], [/Trip\.com/i, "internal observation (Trip.com)"], [/backlink|disavow/i, "internal observation (backlinks)"], [/halal|حلال/i, "forbidden word"]]) {
+        if (re.test(body)) errors.push(`${url}: contains ${what}`);
+      }
+      if (/<img /.test(body)) errors.push(`${url}: images are not allowed on presentation pages until usage rights are confirmed`);
+    }
   }
   for (const m of body.matchAll(/<a [^>]*?href="([^"]+)"/g)) {
     let href = m[1].replace(/&amp;/g, "&");
@@ -69,6 +76,8 @@ for (const [url, h] of Object.entries(html)) {
     const src = m[1].split("?")[0];
     if (!existsSync(join(OUT, src))) errors.push(`${url}: missing image ${src}`);
   }
+
+  if (isStrategy) continue;
 
   // --- SEO / rules
   const title = (h.match(/<title>([^<]*)<\/title>/) || [])[1] ?? "";
@@ -106,8 +115,8 @@ if (/Disallow:\s*\/\s*$/m.test(robots)) errors.push("robots.txt disallows everyt
 const sm = readFileSync(join(OUT, "sitemap.xml"), "utf8");
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
 for (const l of locs) if (!html[l]) errors.push(`sitemap lists ${l} which does not exist`);
-if (locs.includes("/strategy/")) errors.push("sitemap must NOT list /strategy/");
-for (const u of Object.keys(html)) if (u !== "/strategy/" && isCoreUrl(u) && !locs.includes(u)) errors.push(`page ${u} missing from sitemap`);
+for (const l of locs) if (l === "/strategy/" || l.startsWith("/strategy/")) errors.push(`sitemap must NOT list ${l}`);
+for (const u of Object.keys(html)) if (!u.startsWith("/strategy/") && isCoreUrl(u) && !locs.includes(u)) errors.push(`page ${u} missing from sitemap`);
 function isCoreUrl(u) { return u !== "/404/" && u !== "/404.html" && !u.startsWith("/_not-found"); }
 
 // --- /strategy: public URL, but noindex + not in sitemap + really rendered
@@ -120,6 +129,21 @@ function isCoreUrl(u) { return u !== "/404/" && u !== "/404.html" && !u.startsWi
     if (!/<meta name="robots" content="noindex, nofollow"/.test(st)) errors.push("/strategy/: missing noindex,nofollow");
   }
   console.log(st ? "/strategy/ rendered as a normal static page (noindex, not in sitemap)" : "");
+  // role hub (additive) + CEO presentation: hub links only to pages that exist; the other roles are "Coming soon" cards without links
+  if (st) {
+    if (!st.includes('href="/strategy/ceo/"')) errors.push("/strategy/: role hub link to /strategy/ceo/ missing");
+    for (const r of ["marketing", "brand", "operations", "restaurant"]) if (st.includes(`href="/strategy/${r}/"`)) errors.push(`/strategy/: links to unbuilt role page /strategy/${r}/`);
+    if ((strip(st).match(/Coming soon/g) || []).length !== 4) errors.push("/strategy/: expected 4 'Coming soon' role cards");
+  }
+  const ceo = html["/strategy/ceo/"];
+  if (!ceo) errors.push("/strategy/ceo/ page missing");
+  else {
+    const slides = (ceo.match(/<section id="slide-\d+"/g) || []).length;
+    if (slides !== 8) errors.push(`/strategy/ceo/: expected 8 slide sections, found ${slides}`);
+    if (!strip(ceo).includes("Mozza Has Built a Brand Worth Growing")) errors.push("/strategy/ceo/: content not rendered at build time");
+    if (!ceo.includes('href="/strategy/"')) errors.push("/strategy/ceo/: Back to Strategy link missing");
+    console.log(`/strategy/ceo/ rendered (${slides} slides, noindex, not in sitemap)`);
+  }
 }
 console.log(`checked ${Object.keys(html).length} pages, ${linkCount} internal links`);
 warn.forEach((w) => console.log("WARN", w));

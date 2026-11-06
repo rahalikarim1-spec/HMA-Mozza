@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDict } from "@/content";
 import Banner from "@/components/Banner";
 import StrategyDoc from "@/components/strategy/StrategyDoc";
+import RoleHub from "@/components/strategy/presentation/RoleHub";
 import { buildDoc } from "../../../../strategy/doc.mjs";
 
 // Public URL but NOT indexable: noindex, nofollow, not in the sitemap, not in the nav/footer. Only the sticky "Growth strategy" link leads here.
@@ -26,6 +27,7 @@ export default function Page() {
             {d.strategy.back}
           </Link>
         </div>
+        <RoleHub />
         <StrategyDoc en={buildDoc("en", { fx })} fr={buildDoc("fr", { fx })} />
       </main>
     </>
