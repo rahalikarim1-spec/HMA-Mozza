@@ -26,15 +26,15 @@ function Chip({ tag }: { tag: EvidenceTag }) {
   );
 }
 
-function ExtLink({ l, slide, className, children }: { l: DeckLink; slide: string; className?: string; children?: React.ReactNode }) {
+function ExtLink({ l, slide, role, className, children }: { l: DeckLink; slide: string; role: string; className?: string; children?: React.ReactNode }) {
   return (
     <a
       href={l.href}
       {...(l.external === false ? {} : { target: "_blank", rel: "noopener noreferrer" })}
       className={className}
       onClick={() => {
-        if (l.href.startsWith("https://wa.me")) track("whatsapp_contact_click", { location: `ceo-deck-${slide}` });
-        else track("external_link_click", { destination: l.href, section: `ceo-deck-${slide}` });
+        if (l.href.startsWith("https://wa.me")) track("whatsapp_contact_click", { location: `${role}-deck-${slide}` });
+        else track("external_link_click", { destination: l.href, section: `${role}-deck-${slide}` });
       }}
     >
       {children ?? l.label}
@@ -58,7 +58,7 @@ const BAR: Record<"base" | "prep" | "test", string> = {
   test: "bg-tomato",
 };
 
-function VisualView({ v, slide }: { v: Visual; slide: string }) {
+function VisualView({ v, slide, role }: { v: Visual; slide: string; role: string }) {
   switch (v.kind) {
     case "tiles":
       return (
@@ -74,7 +74,7 @@ function VisualView({ v, slide }: { v: Visual; slide: string }) {
     case "branches":
       return (
         <div className="mt-8">
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {v.items.map((b) => (
               <li key={b} className={card}>
                 <p className="flex items-center gap-2 font-display text-xl"><Icon name="pin" className="h-5 w-5 text-tomato" />{b}</p>
@@ -92,7 +92,7 @@ function VisualView({ v, slide }: { v: Visual; slide: string }) {
     case "pools":
       return (
         <div className="mt-8">
-          <ul className="grid gap-3 md:grid-cols-2">
+          <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {v.pools.map((p, i) => (
               <li key={p.title} className={`rounded-sm border-2 border-ink p-5 ${i === 0 ? "bg-white" : "bg-mustard"}`}>
                 <p className="font-display text-2xl">{p.title}</p>
@@ -114,7 +114,7 @@ function VisualView({ v, slide }: { v: Visual; slide: string }) {
     case "levers":
       return (
         <div className="mt-8">
-          <ul className="grid gap-3 md:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-3 md:grid-cols-3">
             {v.items.map((l, i) => (
               <li key={l.title} className={card}>
                 <p className="text-sm font-bold uppercase tracking-wide text-tomato">{i + 1}</p>
@@ -128,7 +128,7 @@ function VisualView({ v, slide }: { v: Visual; slide: string }) {
       );
     case "board":
       return (
-        <ul className="mt-8 grid gap-3 md:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-3">
           {v.cols.map((c) => (
             <li key={c.title} className={card}>
               <p className="flex items-center gap-2 font-display text-xl"><Chip tag={c.tag} />{c.title}</p>
@@ -194,6 +194,66 @@ function VisualView({ v, slide }: { v: Visual; slide: string }) {
           </ol>
         </div>
       );
+    case "bands": {
+      const cls: Record<string, string> = { brand: "bg-ink", nonbrand: "bg-tomato", thai: "bg-mustard ring-2 ring-inset ring-ink" };
+      return (
+        <div className="mt-8">
+          <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs" aria-label="Legend">
+            {Object.entries(v.groups).map(([k, label]) => (
+              <li key={k} className="flex items-center gap-1.5"><span className={`inline-block h-3 w-5 ${cls[k]}`} aria-hidden="true" />{label}</li>
+            ))}
+          </ul>
+          <ul className="mt-3 space-y-3">
+            {v.rows.map((r) => (
+              <li key={r.label}>
+                <p className="text-sm font-semibold">{r.label}</p>
+                <div className="relative mt-1 h-5 rounded-sm bg-white/80 ring-1 ring-ink/40" role="img" aria-label={`${r.label}: ${v.scale[r.band - 1]} monthly searches, ${v.groups[r.group]}`}>
+                  <div className={`absolute inset-y-0 rounded-sm ${cls[r.group]}`} style={{ insetInlineStart: `${((r.band - 1) / v.scale.length) * 100}%`, width: `${100 / v.scale.length}%` }} />
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-1 grid text-center text-[11px] font-semibold" style={{ gridTemplateColumns: `repeat(${v.scale.length}, minmax(0, 1fr))` }} aria-hidden="true">
+            {v.scale.map((x) => <span key={x} className="border-s border-ink/30">{x}</span>)}
+          </div>
+          <p className="mt-2 text-sm">{v.caption}</p>
+        </div>
+      );
+    }
+    case "table":
+      return (
+        <div className="mt-8">
+          {v.caption ? <p className="mb-2 text-sm">{v.caption}</p> : null}
+          <div className="hidden overflow-x-auto md:block">
+            <table className="w-full border-collapse text-start text-sm">
+              <thead><tr>{v.head.map((h) => <th key={h} scope="col" className="border-2 border-ink bg-ink p-2.5 text-start font-semibold text-cream">{h}</th>)}</tr></thead>
+              <tbody>{v.rows.map((r, i) => <tr key={i}>{r.map((c, k) => k === 0 ? <th key={k} scope="row" className="border-2 border-ink bg-mustard p-2.5 text-start font-semibold">{c}</th> : <td key={k} className="border-2 border-ink bg-white p-2.5 align-top">{c}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+          <ul className="space-y-2 md:hidden">
+            {v.rows.map((r, i) => (
+              <li key={i} className={card}>
+                <p className="font-display text-xl">{r[0]}</p>
+                <dl className="mt-2 space-y-1.5 text-sm">{r.slice(1).map((c, k) => <div key={k}><dt className="font-bold">{v.head[k + 1]}</dt><dd>{c}</dd></div>)}</dl>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    case "steps":
+      return (
+        <ol className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+          {v.items.map((it, i) => (
+            <li key={it.title} className={card}>
+              <p className="flex items-baseline gap-2"><span className="font-display text-3xl leading-none text-tomato">{i + 1}</span><span className="font-display text-xl">{it.title}</span></p>
+              <p className="mt-3 text-xs font-bold uppercase tracking-wide text-tomato">{v.labels.observed}</p>
+              <p className="text-sm">{it.observed}</p>
+              <p className="mt-2 text-xs font-bold uppercase tracking-wide text-tomato">{v.labels.test}</p>
+              <p className="text-sm">{it.test}</p>
+            </li>
+          ))}
+        </ol>
+      );
     case "cta":
       return (
         <div className="mt-8">
@@ -206,12 +266,12 @@ function VisualView({ v, slide }: { v: Visual; slide: string }) {
             ))}
           </ol>
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <ExtLink l={v.whatsapp} slide={slide} className={btnPrimary}>
+            <ExtLink l={v.whatsapp} slide={slide} role={role} className={btnPrimary}>
               <Icon name="whatsapp" />
               {v.whatsapp.label}
             </ExtLink>
             {v.links.map((l) => (
-              <ExtLink key={l.href} l={l} slide={slide} className="inline-flex min-h-12 items-center rounded-sm border-2 border-cream px-4 font-semibold hover:bg-cream hover:text-ink" />
+              <ExtLink key={l.href} l={l} slide={slide} role={role} className="inline-flex min-h-12 items-center rounded-sm border-2 border-cream px-4 font-semibold hover:bg-cream hover:text-ink" />
             ))}
           </div>
         </div>
@@ -251,7 +311,7 @@ function SlideView({
           {s.headline}
         </Heading>
         <p className="mt-6 max-w-3xl text-xl leading-snug md:text-2xl">{s.copy}</p>
-        <VisualView v={s.visual} slide={s.id} />
+        <VisualView v={s.visual} slide={s.id} role={deck.role} />
         <details className={`mt-8 rounded-sm border-2 ${dark ? "border-cream/70" : "border-ink"} p-3`}>
           <summary className="cursor-pointer font-semibold">{ui.evidenceToggle}</summary>
           <div className={`mt-3 space-y-4 rounded-sm p-4 ${dark ? "bg-cream text-ink" : "bg-white text-ink"}`}>

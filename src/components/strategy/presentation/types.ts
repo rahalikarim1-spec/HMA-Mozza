@@ -14,7 +14,10 @@ export type Visual =
   | { kind: "board"; cols: { title: string; tag: EvidenceTag; items: string[] }[] }
   | { kind: "timeline"; weeks: number; rows: { label: string; from: number; to: number; tone: "base" | "prep" | "test" }[]; decision: { label: string; outcomes: string[] }; note: string }
   | { kind: "equation"; terms: { label: string; op: "" | "−" }[]; result: string; ladder: string[]; ladderTitle: string }
-  | { kind: "cta"; steps: string[]; whatsapp: DeckLink; links: DeckLink[] };
+  | { kind: "cta"; steps: string[]; whatsapp: DeckLink; links: DeckLink[] }
+  | { kind: "bands"; caption: string; scale: string[]; groups: Record<string, string>; rows: { label: string; group: "brand" | "nonbrand" | "thai"; band: number }[] }
+  | { kind: "table"; caption?: string; head: string[]; rows: string[][] }
+  | { kind: "steps"; labels: { observed: string; test: string }; items: { title: string; observed: string; test: string }[] };
 
 export interface DeckSlide {
   id: string;
@@ -51,4 +54,4 @@ export interface DeckData {
   appendix: AppendixBlock[];
 }
 
-export interface RoleCard { role: string; title: string; who: string; href?: string; soon?: boolean }
+export interface RoleCard { role: string; title: string; who: string; href: string; dark?: boolean }
