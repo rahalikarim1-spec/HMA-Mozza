@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { getDict } from "@/content";
 import Banner from "@/components/Banner";
-import FindingsPage from "@/components/strategy/findings/FindingsPage";
-import { growthRisks } from "../../../../../strategy/growth-risks.mjs";
+import GrowthRisksGate from "@/components/strategy/findings/GrowthRisksGate";
 
-// PRIVATE REVIEW DRAFT. Public URL if deployed, but NOT indexable: noindex, nofollow, not in the sitemap. noindex is not access control:
-// do not publish this page to an unprotected host.
+// PASSWORD-PROTECTED. The content is AES-GCM encrypted at build time (scripts/encrypt-growth-risks.mjs, password from GROWTH_RISKS_PASSWORD)
+// and decrypted in the browser. This page module itself contains NO Growth Risks content, only the unlock screen.
+// noindex, nofollow, not in the sitemap.
 export const metadata: Metadata = {
   title: "Growth Risks & Structural Gaps | Mozza concept demo",
-  description: "Evidence-based findings, structural gaps and growth blockers for Mozza by Cocotte (concept demo, private review draft).",
+  description: "Confidential review for HMA (concept demo). Password required.",
   robots: { index: false, follow: false },
 };
+
+// Never publish this page unprotected: a production build without the encrypted payload must fail.
+if (process.env.NODE_ENV === "production" && !existsSync(join(process.cwd(), "public", "strategy-data", "growth-risks.json"))) {
+  throw new Error("Growth Risks payload missing: set GROWTH_RISKS_PASSWORD and build with `npm run build` (scripts/encrypt-growth-risks.mjs).");
+}
 
 export default function Page() {
   const d = getDict("en");
@@ -18,7 +25,7 @@ export default function Page() {
     <>
       <Banner d={d} />
       <main id="main">
-        <FindingsPage d={growthRisks} />
+        <GrowthRisksGate />
       </main>
     </>
   );

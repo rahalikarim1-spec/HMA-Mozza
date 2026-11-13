@@ -16,6 +16,9 @@ const pages = [];
 const urlOf = (file) => "/" + file.replace(/^out[\\/]?/, "").replace(/index\.html$/, "").replace(/\\/g, "/");
 const html = Object.fromEntries(pages.map((p) => [urlOf(p), readFileSync(p, "utf8")]));
 const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, "");
+// the floating Strategy speed-dial (on every page) links to all four strategy pages; page-level link rules below ignore it
+const DIAL_RE = /<ul[^>]*aria-label="Strategy pages"[^>]*>[\s\S]*?<\/ul>/;
+const noDial = (h) => h.replace(DIAL_RE, "");
 const idsOf = (h) => new Set([...strip(h).matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
 const idCache = {};
 
@@ -136,20 +139,23 @@ function isCoreUrl(u) { return u !== "/404/" && u !== "/404.html" && !u.startsWi
   console.log(st ? "/strategy/ rendered as a normal static page (noindex, not in sitemap)" : "");
   // Strategy hub: exactly the two approved experiences are linked. The CEO presentation and any other role route are archived (built, noindex, unlinked).
   if (st) {
-    for (const need of ["/strategy/marketing/", "/strategy/growth-risks/"]) if (!st.includes(`href="${need}"`)) errors.push(`/strategy/: hub link to ${need} missing`);
-    for (const r of ["ceo", "brand", "operations", "restaurant"]) if (st.includes(`href="/strategy/${r}/"`)) errors.push(`/strategy/: links to archived role page /strategy/${r}/`);
-    if (/Coming soon/i.test(strip(st))) errors.push("/strategy/: 'Coming soon' role cards must not be shown");
-    const heroLinks = (st.match(/href="\/strategy\/[a-z-]+\/"/g) || []).length;
+    const stRaw = st; const st0 = noDial(stRaw);
+    for (const need of ["/strategy/marketing/", "/strategy/growth-risks/"]) if (!st0.includes(`href="${need}"`)) errors.push(`/strategy/: hub link to ${need} missing`);
+    for (const r of ["ceo", "brand", "operations", "restaurant"]) if (st0.includes(`href="/strategy/${r}/"`)) errors.push(`/strategy/: links to archived role page /strategy/${r}/`);
+    if (/Coming soon/i.test(strip(st0))) errors.push("/strategy/: 'Coming soon' role cards must not be shown");
+    const heroLinks = (st0.match(/href="\/strategy\/[a-z-]+\/"/g) || []).length;
     if (heroLinks !== 2) errors.push(`/strategy/: expected exactly 2 experience links, found ${heroLinks}`);
   }
-  // No page may link to the archived CEO presentation
-  for (const [u, h] of Object.entries(html)) if (u !== "/strategy/ceo/" && /href="\/strategy\/ceo\//.test(h)) errors.push(`${u}: links to the archived /strategy/ceo/ page`);
+  // CEO briefing: reachable only from the floating Strategy speed-dial, never from page content
+  for (const [u, h] of Object.entries(html)) if (u !== "/strategy/ceo/" && /href="\/strategy\/ceo\//.test(noDial(h))) errors.push(`${u}: page content links to /strategy/ceo/ (only the speed-dial may)`);
+  // Speed-dial present on every page with exactly the four approved links
+  { let n = 0; for (const [u, h] of Object.entries(html)) { if (/^\/(_not-found|404)/.test(u)) continue; const m = h.match(DIAL_RE); const links = m ? (m[0].match(/href="[^"]+"/g) || []).join(",") : ""; n++; if (links !== 'href="/strategy/ceo/",href="/strategy/",href="/strategy/marketing/",href="/strategy/growth-risks/"') errors.push(`${u}: speed-dial missing or wrong links (${links})`); } console.log(`Strategy speed-dial present on ${n} pages with the 4 approved links`); }
   const ceo = html["/strategy/ceo/"];
   if (!ceo) errors.push("/strategy/ceo/ archived page missing");
   else {
     const slides = (ceo.match(/<section id="slide-\d+"/g) || []).length;
     if (slides !== 8) errors.push(`/strategy/ceo/: expected 8 slide sections, found ${slides}`);
-    console.log(`/strategy/ceo/ archived (${slides} slides, noindex, not in sitemap, unlinked)`);
+    console.log(`/strategy/ceo/ archived (${slides} slides, noindex, not in sitemap, reachable only from the speed-dial)`);
   }
   const mk = html["/strategy/marketing/"];
   if (!mk) errors.push("/strategy/marketing/ page missing");
@@ -161,33 +167,46 @@ function isCoreUrl(u) { return u !== "/404/" && u !== "/404.html" && !u.startsWi
     if (!/https:\/\/wa\.me\/21628320998/.test(mk)) errors.push("/strategy/marketing/: WhatsApp CTA missing");
     console.log(`/strategy/marketing/ rendered (${slides} slides, noindex, not in sitemap)`);
   }
-  // Growth Risks & Structural Gaps (private review draft): must be rendered, linked from the hub, and carry its safety framing.
-  // NOTE: no exception to the content guard is needed: this page does not use the words the guard blocks (backlink/disavow, pricing, Trip.com).
+  // Growth Risks & Structural Gaps: PASSWORD-PROTECTED. The deployed output must contain only the unlock screen + an AES-GCM ciphertext file.
+  // Content invariants are checked on the source data (the same data that gets encrypted); the leak check proves none of it is readable in out/.
   const gr = html["/strategy/growth-risks/"];
   if (!gr) errors.push("/strategy/growth-risks/ page missing");
   else {
-    const t = strip(gr);
-    if (!t.includes("Where Growth Meets Digital Risk")) errors.push("/strategy/growth-risks/: content not rendered at build time");
-    for (const need of ["Confirmed technical issues", "Third-party risk signals", "Commercial growth opportunities", "What it does NOT prove", "Investigation priority", "Evidence confidence", "Private review draft"]) {
-      if (!t.includes(need)) errors.push(`/strategy/growth-risks/: missing required text "${need}"`);
+    const { growthRisks } = await import("../strategy/growth-risks.mjs");
+    const strings = [];
+    (function walk(v) { if (typeof v === "string") strings.push(v); else if (Array.isArray(v)) v.forEach(walk); else if (v && typeof v === "object") Object.values(v).forEach(walk); })(growthRisks);
+    const t = strings.join("\n");
+    // 1) the page is only a gate
+    if (!/type="password"/.test(gr) || !/>Unlock</.test(gr)) errors.push("/strategy/growth-risks/: unlock form (password field + Unlock button) missing");
+    if (!gr.includes("Confidential · prepared for HMA · password provided by Wadhah Belhassen")) errors.push("/strategy/growth-risks/: unlock line missing");
+    if (/Where Growth Meets Digital Risk|Private review draft/.test(gr)) errors.push("/strategy/growth-risks/: readable content found in the HTML");
+    // 2) ciphertext file present and well-formed
+    const payloadPath = join(OUT, "strategy-data", "growth-risks.json");
+    if (!existsSync(payloadPath)) errors.push("/strategy/growth-risks/: encrypted payload missing from the build");
+    else {
+      let pl; try { pl = JSON.parse(readFileSync(payloadPath, "utf8")); } catch { errors.push("growth-risks.json is not valid JSON"); }
+      if (pl && !(pl.kdf === "PBKDF2-SHA256" && pl.iter >= 600000 && pl.salt && pl.iv && pl.data)) errors.push("growth-risks.json: unexpected format / KDF iterations below 600000");
     }
-    const nots = (t.match(/What it does NOT prove/g) || []).length;
-    const findings = (gr.match(/<li id="finding-/g) || []).length;
-    if (findings < 10 || nots !== findings) errors.push(`/strategy/growth-risks/: every finding needs a "does NOT prove" statement (findings ${findings}, statements ${nots})`);
-    // a third-party classification must never be presented as a confirmed critical issue or a proven penalty
-    if (/Critical<\/span>/.test(gr) && !/Critical<\/th>|Critical priority/.test(gr)) errors.push("/strategy/growth-risks/: a finding is labelled Critical (needs explicit approval)");
-    if (/confirmed\s+(google\s+)?penalt|proven\s+penalt|negative\s+seo\s+attack|manipulat/i.test(t)) errors.push("/strategy/growth-risks/: accusation / penalty / manipulation wording");
-    // link-profile safety framing: tool classification only, unit/thresholds unconfirmed, never a Google-penalty claim, never a bulk-disavow recommendation
-    for (const need of [/third-party/i, /not a google penalty/i, /unit and thresholds[^.]{0,40}not confirmed/i, /no bulk disavow without evidence/i]) {
-      if (!need.test(t)) errors.push(`/strategy/growth-risks/: missing safety framing ${need}`);
-    }
+    // 3) leak check: no long string of the Growth Risks data may appear in clear text anywhere in out/ (HTML, RSC payloads, JS, JSON, sitemap)
+    const needles = [...new Set(strings.map((x) => x.trim()).filter((x) => x.length >= 50 && !/^https?:/.test(x)))];
+    const walkOut = (d) => readdirSync(d).flatMap((f) => { const q = join(d, f); return statSync(q).isDirectory() ? walkOut(q) : [q]; });
+    const textFiles = walkOut(OUT).filter((f) => /\.(html|txt|js|json|xml|css|map|mjs)$/.test(f));
+    let leaks = 0;
+    for (const f of textFiles) { const c = readFileSync(f, "utf8"); for (const n of needles) if (c.includes(n) || c.includes(JSON.stringify(n).slice(1, -1))) { leaks++; if (leaks <= 5) errors.push(`LEAK: Growth Risks text readable in ${f.replace(OUT, "")}: "${n.slice(0, 60)}…"`); } }
+    console.log(`/strategy/growth-risks/ protected: unlock screen only; ${needles.length} content strings checked across ${textFiles.length} files, ${leaks} readable leaks`);
+    // 4) content invariants on the data
+    const findings = (growthRisks.findings || []);
+    if (findings.length < 10 || findings.some((f) => !f.notProve || !f.notProve.trim())) errors.push(`growth-risks data: every finding needs a "does NOT prove" statement (findings ${findings.length})`);
+    if (findings.some((f) => f.priority === "Critical")) errors.push("growth-risks data: a finding is labelled Critical (needs explicit approval)");
+    if (/confirmed\s+(google\s+)?penalt|proven\s+penalt|negative\s+seo\s+attack|manipulat/i.test(t)) errors.push("growth-risks data: accusation / penalty / manipulation wording");
+    for (const need of [/third-party/i, /not a google penalty/i, /unit and thresholds[^.]{0,40}not confirmed/i, /no bulk disavow without evidence/i]) if (!need.test(t)) errors.push(`growth-risks data: missing safety framing ${need}`);
     const dis = (t.match(/disavow/gi) || []).length, noBulk = (t.match(/No bulk disavow/g) || []).length;
-    if (dis !== noBulk) errors.push(`/strategy/growth-risks/: "disavow" appears outside the "No bulk disavow" statement (${dis} vs ${noBulk})`);
+    if (dis !== noBulk) errors.push(`growth-risks data: "disavow" appears outside the "No bulk disavow" statement (${dis} vs ${noBulk})`);
+    for (const need of ["Confirmed technical issues", "Third-party risk signals", "Commercial growth opportunities", "Investigation priority", "Evidence confidence", "Private review draft"]) if (!t.includes(need)) errors.push(`growth-risks data: missing required text "${need}"`);
     // figures that are reported but not verified from archived evidence must never be rendered (Position Tracking aggregates, Local Listings, unverified anchor counts)
     for (const [re, what] of [[/21\.48/, "Position Tracking visibility (unverified)"], [/106\.67/, "Position Tracking traffic (unverified)"], [/62\.20/, "Position Tracking average (unverified)"], [/\b10\s+(tracked\s+)?keywords\b/i, "tracked keyword count (unverified)"], [/28\s*(\/|of)\s*30/i, "Local Listings figure (M1 not supplied)"], [/\b(881|891)\b/, "anchor counts (unverified)"]]) {
-      if (re.test(t)) errors.push(`/strategy/growth-risks/: rendered figure not backed by verified evidence: ${what}`);
+      if (re.test(t)) errors.push(`growth-risks data: figure not backed by verified evidence: ${what}`);
     }
-    console.log("/strategy/growth-risks/ rendered (noindex, not in sitemap, no images, safety framing present)");
   }
 }
 console.log(`checked ${Object.keys(html).length} pages, ${linkCount} internal links`);
