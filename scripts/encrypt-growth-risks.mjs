@@ -1,8 +1,7 @@
 /**
  * Build step: encrypts the Growth Risks & Structural Gaps content (strategy/growth-risks.mjs) into public/strategy-data/growth-risks.json.
  *   AES-256-GCM, key = PBKDF2-SHA256(password, random 16-byte salt, 600 000 iterations). Decrypted in the browser with WebCrypto.
- * The password comes from the GROWTH_RISKS_PASSWORD environment variable (never committed, never logged).
- * Without it the build FAILS: the page must never be published unprotected. Use --allow-missing for `npm run dev` only (no payload is written).
+ * The password is GROWTH_RISKS_PASSWORD if set, otherwise the default below (the repo is public: this is a light gate, not strong secrecy).
  */
 import { webcrypto as crypto, randomBytes } from "node:crypto";
 import { mkdirSync, rmSync, writeFileSync } from "node:fs";
@@ -10,18 +9,8 @@ import { growthRisks } from "../strategy/growth-risks.mjs";
 
 const OUT_DIR = "public/strategy-data";
 const OUT = `${OUT_DIR}/growth-risks.json`;
-const pass = process.env.GROWTH_RISKS_PASSWORD;
+const pass = process.env.GROWTH_RISKS_PASSWORD || "mozza6"; // GROWTH_RISKS_PASSWORD overrides the default
 rmSync(OUT_DIR, { recursive: true, force: true });
-
-if (!pass) {
-  if (process.argv.includes("--allow-missing")) {
-    console.warn("encrypt-growth-risks: GROWTH_RISKS_PASSWORD is not set -> no payload (dev only; the page will show 'not available').");
-    process.exit(0);
-  }
-  console.error("encrypt-growth-risks: GROWTH_RISKS_PASSWORD is not set. Refusing to build: /strategy/growth-risks/ must never be published unprotected.");
-  process.exit(1);
-}
-if (pass.length < 12) console.warn("encrypt-growth-risks: WARNING - password shorter than 12 characters; an offline brute-force attack on a static file is realistic. Use a long passphrase.");
 
 const iter = 600000;
 const salt = randomBytes(16);

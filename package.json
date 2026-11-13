@@ -4,7 +4,7 @@
   "private": true,
   "description": "PRIVATE concept demo - not the official Mozza website",
   "scripts": {
-    "dev": "node scripts/encrypt-growth-risks.mjs --allow-missing && node scripts/copy-menus.mjs && next dev --webpack",
+    "dev": "node scripts/encrypt-growth-risks.mjs && node scripts/copy-menus.mjs && next dev --webpack",
     "build": "node scripts/encrypt-growth-risks.mjs && node scripts/copy-menus.mjs && next build --webpack",
     "start": "npx serve out",
     "build:protected": "npm run build && node scripts/protect-hostinger.mjs",
