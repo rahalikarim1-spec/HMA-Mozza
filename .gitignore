@@ -5,3 +5,6 @@ out
 next-env.d.ts
 .DS_Store
 public/menus
+public/strategy-data
+.env
+.env.local
